@@ -1,5 +1,4 @@
 import React from "react"
-const logo = "/assets/images/ycplanner_logo.png"
 
 function maintenance() {
   return (
@@ -9,7 +8,7 @@ function maintenance() {
     >
       <div className="flex items-center flex-col w-[360px] md:w-[517px] lg:w-[620px] xl:w-[744px] h-[595px] md:h-[448px] lg:h-[537px] xl:h-[537px] bg-white border-2 rounded-[10px] shadow-[0px_4px_4px_rgba(0,0,0,0.25)]">
         <div className="w-[199px] md:w-[127px] lg:w-[159px] mt-[62px] md:mt-[51px] lg:mt-16 xl:mt-20">
-          <img src={logo}></img>
+          <img alt="Logo Yanina" src={"../images/YaninaCorti-logo.png"}></img>
         </div>
         <div className="mt-[36px] md:mt-3 lg:mt-4 xl:mt-5 font-normal text-2xl md:text-4 lg:text-5 text-[#4D4C4C]">
           ¡Próximamente!
