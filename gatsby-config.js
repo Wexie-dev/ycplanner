@@ -15,7 +15,7 @@ module.exports = {
   siteMetadata: {
     title: "Yanina Corti event planner",
     description: "Haz realidad tu evento ideal",
-    author: "@gatsbyjs",
+    author: "Wexie",
   },
   plugins: [
     "gatsby-plugin-react-helmet",
@@ -45,7 +45,7 @@ module.exports = {
         background_color: "#C2857D",
         theme_color: "#C2857D",
         display: "minimal-ui",
-        icon: "docs/logo.svg", // This path is relative to the root of the site.
+        icon: "src/images/favicon.png"
       },
     },
     {
