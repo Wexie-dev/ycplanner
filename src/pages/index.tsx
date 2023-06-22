@@ -1,5 +1,5 @@
 import React from "react"
-import YaniLogo from "../images/YaninaCorti-logo.png"
+import YaniLogo from "../images/YaninaCorti-logo.svg"
 
 function maintenance() {
   return (
@@ -21,8 +21,10 @@ function maintenance() {
         <div className="mt-7 md:mt-[18px] lg:mt-[22px] text-base text-center text-[#4D4C4C]">
           Mientras tanto 👇
         </div>
-        <div className="flex justify-center items-center mt-7 md:mt-[18px] lg:mt-[22px] w-[241px] h-[45px] bg-[#C2857D] text-white rounded-[10px]">
-          Contactame en Instagram
+        <div className="flex justify-center items-center mt-7 md:mt-[18px] lg:mt-[22px] w-[241px] h-[45px] bg-[#C2857D] text-white font-semibold rounded-[10px]">
+          <a href="https://www.instagram.com/yc.planner/">
+            Contactame en Instagram
+          </a>
         </div>
       </div>
     </section>
