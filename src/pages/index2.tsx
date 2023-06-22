@@ -1,8 +1,6 @@
 import React, { ReactElement, useState } from "react"
 
-interface Props {}
-
-function Index(_props: Props): ReactElement {
+function Index(): ReactElement {
   const [isMenuOpen, setMenuOpen] = useState(false)
   return (
     <>
