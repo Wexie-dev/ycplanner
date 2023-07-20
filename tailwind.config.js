@@ -1,18 +1,22 @@
-const colors = require("tailwindcss/colors")
-
+/** @type {import('tailwindcss').Config} */
+const tailwindDefaultTheme = require("tailwindcss/defaultTheme");
 module.exports = {
   content: [
-    // Example content paths...
-    './public/**/*.html',
-    './src/**/*.{js,jsx,ts,tsx,vue}',
+    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
+    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
   theme: {
     extend: {
-      colors: {
-        teal: colors.teal,
+      fontFamily: {
+        sans: ["var(--font-montserrat)"],
+      },
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
     },
   },
- 
   plugins: [],
-}
+};
