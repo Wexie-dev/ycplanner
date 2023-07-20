@@ -7,7 +7,7 @@ export default function PageIndex() {
   return (
     <main className="flex min-h-screen flex-col items-center justify-between">
       <QueryClientProvider client={new QueryClient()}>
-        <Home></Home>
+        {process.env.NODE_ENV === "development" ? <Home /> : <Maintenance />}
       </QueryClientProvider>
     </main>
   );
