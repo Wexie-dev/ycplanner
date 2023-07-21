@@ -1,5 +1,7 @@
 import { useContentsQuery } from "@/hooks/useContents";
 import React from "react";
+import About from "../sections/About";
+import Banner from "../sections/Banner";
 
 export default function Home() {
   const { data: content, isLoading, isError, error } = useContentsQuery();
@@ -8,5 +10,10 @@ export default function Home() {
   if (isLoading) return <div>Loading...</div>;
 
   if (isError) return <div>Error: </div>;
-  return <div>Home</div>;
+  return (
+    <div>
+      <Banner></Banner>
+      <About></About>
+    </div>
+  );
 }
