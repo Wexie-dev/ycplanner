@@ -10,6 +10,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["var(--font-montserrat)"],
+        butler: ["var(--font-butler)"],
+        bellina: ["var(--font-bellina)"],
       },
       backgroundImage: {
         banner: "url('/images/sections/banner/banner.png')",
