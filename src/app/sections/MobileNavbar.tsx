@@ -3,6 +3,44 @@ import { Transition } from "@headlessui/react";
 import Image from "next/image";
 import logo_navbar_open from "../../../public/images/YCPlanner-logo-mobileNavbar-open.svg";
 import logo_navbar_closed from "../../../public/images/YCPlanner-logo-mobileNavbar-closed.svg";
+import logo_navbar_sobreMi from "../../../public/images/mobileNavbar-icon-SobreMi.svg";
+import logo_navbar_comoTrabajo from "../../../public/images/mobileNavbar-icon-ComoTrabajo.svg";
+import logo_navbar_galeria from "../../../public/images/mobileNavbar-icon-Galeria.svg";
+import logo_navbar_testimonios from "../../../public/images/mobileNavbar-icon-Testimonios.svg";
+import logo_navbar_contactame from "../../../public/images/mobileNavbar-icon-Contactame.svg";
+
+const navbarOptions = [
+  {
+    text: "Sobre mi",
+    icon: { src: logo_navbar_sobreMi, alt: "Sobre Mi" },
+    url: "#about",
+    size: { width: 20, height: 20 },
+  },
+  {
+    text: "¿Cómo trabajo?",
+    icon: { src: logo_navbar_comoTrabajo, alt: "¿Cómo trabajo?" },
+    url: "#",
+    size: { width: 24, height: 22 },
+  },
+  {
+    text: "Galería",
+    icon: { src: logo_navbar_galeria, alt: "Galería" },
+    url: "#",
+    size: { width: 24, height: 17 },
+  },
+  {
+    text: "Testimonios",
+    icon: { src: logo_navbar_testimonios, alt: "Testimonios" },
+    url: "#",
+    size: { width: 23, height: 20 },
+  },
+  {
+    text: "Contactame",
+    icon: { src: logo_navbar_contactame, alt: "Contactame" },
+    url: "#",
+    size: { width: 25, height: 19 },
+  },
+];
 
 function MobileNavbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -32,7 +70,7 @@ function MobileNavbar() {
         <button
           onClick={() => setIsOpen(!isOpen)}
           className={`block fixed top-2 left-3 z-50 ${
-            isOpen ? "left-[64%] ease-in duration-200" : "ease-in duration-200"
+            isOpen ? "left-[74%] ease-in duration-200" : "ease-in duration-200"
           }`}
         >
           <svg
@@ -77,7 +115,7 @@ function MobileNavbar() {
           leaveFrom="translate-x-0"
           leaveTo="-translate-x-full"
           className="sm:hidden fixed inset-0 bg-white z-40 shadow-3xl"
-          style={{ width: "80%" }}
+          style={{ width: "90%" }}
           ref={menuRef}
         >
           <div className="flex flex-col h-full text-black">
@@ -96,86 +134,23 @@ function MobileNavbar() {
               </div>
             </div>
             <div className="flex flex-col gap-8 pt-11 pl-6 font-normal text-base">
-              <div className="flex gap-4">
-                <div className="flex justify-center items-center">
-                  <Image
-                    width={24}
-                    height={23}
-                    className=""
-                    src={""}
-                    alt={""}
-                  />
+              {navbarOptions.map((option, index) => (
+                <div key={index} className="flex gap-4">
+                  <div className="flex justify-center items-center">
+                    <Image
+                      width={option.size.width}
+                      height={option.size.height}
+                      src={option.icon.src}
+                      alt={option.icon.alt}
+                    />
+                  </div>
+                  <div>
+                    <a href={option.url} className="" onClick={closeMenu}>
+                      {option.text}
+                    </a>
+                  </div>
                 </div>
-                <div>
-                  <a href="#about" className="" onClick={closeMenu}>
-                    Sobre mi
-                  </a>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex justify-center items-center">
-                  <Image
-                    width={24}
-                    height={22}
-                    className=""
-                    src={""}
-                    alt={""}
-                  />
-                </div>
-                <div>
-                  <a href="#" className="" onClick={closeMenu}>
-                    ¿Cómo trabajo?
-                  </a>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex justify-center items-center">
-                  <Image
-                    width={24}
-                    height={17}
-                    className=""
-                    src={""}
-                    alt={""}
-                  />
-                </div>
-                <div>
-                  <a href="#" className="" onClick={closeMenu}>
-                    Galería
-                  </a>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex justify-center items-center">
-                  <Image
-                    width={23}
-                    height={20}
-                    className=""
-                    src={""}
-                    alt={""}
-                  />
-                </div>
-                <div>
-                  <a href="#" className="" onClick={closeMenu}>
-                    Testimonios
-                  </a>
-                </div>
-              </div>
-              <div className="flex gap-4">
-                <div className="flex justify-center items-center">
-                  <Image
-                    width={25}
-                    height={19}
-                    className=""
-                    src={""}
-                    alt={""}
-                  />
-                </div>
-                <div>
-                  <a href="#" className="" onClick={closeMenu}>
-                    Contactame
-                  </a>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </Transition>
