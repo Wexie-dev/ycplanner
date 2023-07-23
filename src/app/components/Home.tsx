@@ -5,6 +5,7 @@ import { BannerProps } from "@/types";
 import Banner from "../sections/Banner";
 import MobileNavbar from "../sections/MobileNavbar";
 import useMediaQuery, { mediaQueries } from "@/hooks/useMediaQueries";
+import FullNavbar from "../sections/FullNavbar";
 
 export default function Home() {
   const { data: content, isLoading, isError, error } = useContentsQuery();
@@ -26,7 +27,7 @@ export default function Home() {
 
   return (
     <div>
-      {isMobile ? <MobileNavbar></MobileNavbar> : null}
+      {isMobile ? <MobileNavbar></MobileNavbar> : <FullNavbar></FullNavbar>}
       <Banner {...bannerProps}></Banner>
       <About></About>
     </div>
