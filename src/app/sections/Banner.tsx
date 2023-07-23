@@ -12,7 +12,7 @@ export default function Banner(bannerProps: BannerProps) {
         <div className="absolute top-0 left-0 w-full h-full bg-banner bg-cover bg-center"></div>
 
         {/* Sticky Navbar */}
-        <nav className="fixed top-0 left-0 w-full bg-white shadow-lg">
+        <nav className="sm:fixed top-0 left-0 w-full bg-white shadow-lg">
           <div className="container mx-auto px-4">
             <div className="flex justify-between items-center py-4">
               <div className="text-xl font-bold">Logo</div>
