@@ -1,8 +1,7 @@
 import { BannerProps } from "@/types";
 import React from "react";
-import Image from "next/image";
-import FullNavbar from "./FullNavbar";
-const logo = "../../../public/images/YaninaCorti-logo.svg";
+import FullNavbar from "../components/FullNavbar";
+import MobileNavbar from "../components/MobileNavbar";
 
 export default function Banner(bannerProps: BannerProps) {
   const bannerTitle = bannerProps.title ?? "Bienvenidos";
@@ -16,7 +15,8 @@ export default function Banner(bannerProps: BannerProps) {
         <div className="absolute top-0 left-0 w-full h-full bg-banner bg-cover bg-center"></div>
 
         {/* Sticky Navbar */}
-        <FullNavbar></FullNavbar>
+        <MobileNavbar />
+        <FullNavbar />
 
         {/* Banner Content */}
         <div className="absolute top-0 left-0 md:left-[60%] w-full h-full md:w-[672px] flex flex-col items-center justify-center text-white">

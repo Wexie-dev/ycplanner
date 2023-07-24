@@ -3,13 +3,12 @@ import React from "react";
 import About from "../sections/About";
 import { BannerProps } from "@/types";
 import Banner from "../sections/Banner";
-import MobileNavbar from "../sections/MobileNavbar";
+import MobileNavbar from "../components/MobileNavbar";
 import useMediaQuery, { mediaQueries } from "@/hooks/useMediaQueries";
-import FullNavbar from "../sections/FullNavbar";
+import FullNavbar from "../components/FullNavbar";
 
 export default function Home() {
   const { data: content, isLoading, isError, error } = useContentsQuery();
-  console.log("🚀 ~ file: Home.tsx:6 ~ Home ~ content:", content);
   const isMobile = useMediaQuery(mediaQueries.mobile);
   if (isLoading) return <div>Loading...</div>;
   if (isError) return <div>Error: </div>;
@@ -26,8 +25,7 @@ export default function Home() {
   };
 
   return (
-    <div>
-      {isMobile ? <MobileNavbar></MobileNavbar> : <FullNavbar></FullNavbar>}
+    <div className="w-full">
       <Banner {...bannerProps}></Banner>
       <About></About>
     </div>
