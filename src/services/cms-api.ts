@@ -1,5 +1,5 @@
-import { GetContentResponse } from "@/types";
-import { GraphQLClient, gql } from "graphql-request";
+import { GetContentResponse } from '@/types';
+import { GraphQLClient, gql } from 'graphql-request';
 const CMS_API_URL = process.env.NEXT_PUBLIC_CMS_API_URL as string;
 export const graphcms = new GraphQLClient(CMS_API_URL, {});
 

@@ -4,13 +4,14 @@ export interface GetContentResponse {
   abouts: AboutProps[];
 }
 
+export interface ImageContent {
+  url: string;
+  fileName: string;
+  height: number;
+  width: number;
+}
+
 export interface BannerProps {
-  backgroundImg: {
-    url: string;
-    fileName: string;
-    height: number;
-    width: number;
-  };
   title?: string;
   subTitle?: string;
 }
