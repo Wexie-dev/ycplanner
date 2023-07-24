@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import logo from "../../../public/images/YaninaCorti-logo.svg";
+import React from 'react';
+import Image from 'next/image';
+import logo from '../../../public/images/YaninaCorti-logo.svg';
 
 function FullNavbar() {
   return (
@@ -9,9 +9,7 @@ function FullNavbar() {
         <div className="flex justify-between items-center py-3">
           <div className="flex items-center">
             <Image width={72} height={57} src={logo} alt="Logo" />
-            <div className="flex font-butler text-[20px] font-normal">
-              Wedding & Event Planner
-            </div>
+            <div className="flex font-butler text-[20px] font-normal">Wedding & Event Planner</div>
           </div>
           {/* Add your navigation links here */}
           <ul className="hidden md:flex space-x-8">

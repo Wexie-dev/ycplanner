@@ -1,43 +1,43 @@
-import React, { useEffect, useRef, useState } from "react";
-import { Transition } from "@headlessui/react";
-import Image from "next/image";
-import logo_navbar_open from "../../../public/images/YCPlanner-logo-mobileNavbar-open.svg";
-import logo_navbar_closed from "../../../public/images/YCPlanner-logo-mobileNavbar-closed.svg";
-import logo_navbar_sobreMi from "../../../public/images/mobileNavbar-icon-SobreMi.svg";
-import logo_navbar_comoTrabajo from "../../../public/images/mobileNavbar-icon-ComoTrabajo.svg";
-import logo_navbar_galeria from "../../../public/images/mobileNavbar-icon-Galeria.svg";
-import logo_navbar_testimonios from "../../../public/images/mobileNavbar-icon-Testimonios.svg";
-import logo_navbar_contactame from "../../../public/images/mobileNavbar-icon-Contactame.svg";
+import React, { useEffect, useRef, useState } from 'react';
+import { Transition } from '@headlessui/react';
+import Image from 'next/image';
+import logo_navbar_open from '../../../public/images/YCPlanner-logo-mobileNavbar-open.svg';
+import logo_navbar_closed from '../../../public/images/YCPlanner-logo-mobileNavbar-closed.svg';
+import logo_navbar_sobreMi from '../../../public/images/mobileNavbar-icon-SobreMi.svg';
+import logo_navbar_comoTrabajo from '../../../public/images/mobileNavbar-icon-ComoTrabajo.svg';
+import logo_navbar_galeria from '../../../public/images/mobileNavbar-icon-Galeria.svg';
+import logo_navbar_testimonios from '../../../public/images/mobileNavbar-icon-Testimonios.svg';
+import logo_navbar_contactame from '../../../public/images/mobileNavbar-icon-Contactame.svg';
 
 const navbarOptions = [
   {
-    text: "Sobre mi",
-    icon: { src: logo_navbar_sobreMi, alt: "Sobre Mi" },
-    url: "#about",
+    text: 'Sobre mi',
+    icon: { src: logo_navbar_sobreMi, alt: 'Sobre Mi' },
+    url: '#about',
     size: { width: 20, height: 20 },
   },
   {
-    text: "¿Cómo trabajo?",
-    icon: { src: logo_navbar_comoTrabajo, alt: "¿Cómo trabajo?" },
-    url: "#",
+    text: '¿Cómo trabajo?',
+    icon: { src: logo_navbar_comoTrabajo, alt: '¿Cómo trabajo?' },
+    url: '#',
     size: { width: 24, height: 22 },
   },
   {
-    text: "Galería",
-    icon: { src: logo_navbar_galeria, alt: "Galería" },
-    url: "#",
+    text: 'Galería',
+    icon: { src: logo_navbar_galeria, alt: 'Galería' },
+    url: '#',
     size: { width: 24, height: 17 },
   },
   {
-    text: "Testimonios",
-    icon: { src: logo_navbar_testimonios, alt: "Testimonios" },
-    url: "#",
+    text: 'Testimonios',
+    icon: { src: logo_navbar_testimonios, alt: 'Testimonios' },
+    url: '#',
     size: { width: 23, height: 20 },
   },
   {
-    text: "Contactame",
-    icon: { src: logo_navbar_contactame, alt: "Contactame" },
-    url: "#",
+    text: 'Contactame',
+    icon: { src: logo_navbar_contactame, alt: 'Contactame' },
+    url: '#',
     size: { width: 25, height: 19 },
   },
 ];
@@ -57,10 +57,10 @@ function MobileNavbar() {
       }
     };
 
-    document.addEventListener("click", handleOutsideClick);
+    document.addEventListener('click', handleOutsideClick);
 
     return () => {
-      document.removeEventListener("click", handleOutsideClick);
+      document.removeEventListener('click', handleOutsideClick);
     };
   }, []);
 
@@ -69,7 +69,7 @@ function MobileNavbar() {
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`block fixed top-2 left-3 z-50 ${
-          isOpen ? "left-[74%] ease-in duration-200" : "ease-in duration-200"
+          isOpen ? 'left-[74%] ease-in duration-200' : 'ease-in duration-200'
         }`}
       >
         <svg
@@ -78,7 +78,7 @@ function MobileNavbar() {
           xmlns="http://www.w3.org/2000/svg"
         >
           <path
-            className={`${isOpen ? "hidden" : "block text-[#97989C]"}`}
+            className={`${isOpen ? 'hidden' : 'block text-[#97989C]'}`}
             d="M4 6H20M4 12H20M4 18H20"
             stroke="currentColor"
             strokeWidth="2"
@@ -86,7 +86,7 @@ function MobileNavbar() {
             strokeLinejoin="round"
           />
           <path
-            className={`${isOpen ? "block text-white" : "hidden"}`}
+            className={`${isOpen ? 'block text-white' : 'hidden'}`}
             d="M6 18L18 6M6 6l12 12"
             stroke="currentColor"
             strokeWidth="2"
@@ -100,7 +100,7 @@ function MobileNavbar() {
         height={44}
         className="fixed top-3 left-20"
         src={logo_navbar_closed}
-        alt={""}
+        alt={''}
       />
       <div className="fixed top-6 left-36 font-butler text-sm font-normal text-[#97989C]">
         Wedding & Event Planner
@@ -114,19 +114,13 @@ function MobileNavbar() {
         leaveFrom="translate-x-0"
         leaveTo="-translate-x-full"
         className="sm:hidden fixed inset-0 bg-white z-40 shadow-3xl"
-        style={{ width: "90%" }}
+        style={{ width: '90%' }}
         ref={menuRef}
       >
         <div className="flex flex-col h-full text-black">
           <div className="w-full h-[131px] bg-[#A6837F] flex flex-col items-center gap-4">
             <div className="bg-white shadow-lg rounded-full w-16 h-16 flex justify-center items-center mt-4 pl-2 pt-1 ">
-              <Image
-                width={50}
-                height={44}
-                className=""
-                src={logo_navbar_open}
-                alt={""}
-              />
+              <Image width={50} height={44} className="" src={logo_navbar_open} alt={''} />
             </div>
             <div className="flex font-butler text-sm font-normal text-white">
               Wedding & Event Planner

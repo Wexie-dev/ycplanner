@@ -1,11 +1,11 @@
-import { useContentsQuery } from "@/hooks/useContents";
-import React from "react";
-import About from "../sections/About";
-import { BannerProps } from "@/types";
-import Banner from "../sections/Banner";
-import MobileNavbar from "../components/MobileNavbar";
-import useMediaQuery, { mediaQueries } from "@/hooks/useMediaQueries";
-import FullNavbar from "../components/FullNavbar";
+import { useContentsQuery } from '@/hooks/useContents';
+import React from 'react';
+import About from '../sections/About';
+import { BannerProps } from '@/types';
+import Banner from '../sections/Banner';
+import MobileNavbar from '../components/MobileNavbar';
+import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
+import FullNavbar from '../components/FullNavbar';
 
 export default function Home() {
   const { data: content, isLoading, isError, error } = useContentsQuery();

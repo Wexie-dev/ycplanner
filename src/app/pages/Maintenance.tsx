@@ -1,6 +1,6 @@
-import React from "react";
-import Image from "next/image";
-import YaniLogo from "../../../public/images/YaninaCorti-logo.svg";
+import React from 'react';
+import Image from 'next/image';
+import YaniLogo from '../../../public/images/YaninaCorti-logo.svg';
 
 function Maintenance() {
   return (
@@ -16,16 +16,14 @@ function Maintenance() {
           ¡Próximamente!
         </div>
         <div className="md:w-[355px] lg:w-[444px] xl:w-[555px] mt-10 md:mt-3 lg:mt-4 xl:mt-5 text-base text-center text-[#4D4C4C]">
-          Estoy construyendo mi web para que puedas conocer más sobre mí y cómo
-          puedo ayudarte a planificar el día más especial de tu vida.
+          Estoy construyendo mi web para que puedas conocer más sobre mí y cómo puedo ayudarte a
+          planificar el día más especial de tu vida.
         </div>
         <div className="mt-7 md:mt-[18px] lg:mt-[22px] text-base text-center text-[#4D4C4C]">
           Mientras tanto 👇
         </div>
         <div className="flex justify-center items-center mt-7 md:mt-[18px] lg:mt-[22px] w-[241px] h-[45px] bg-[#C2857D] text-white font-semibold rounded-[10px]">
-          <a href="https://www.instagram.com/yc.planner/">
-            Contactame en Instagram
-          </a>
+          <a href="https://www.instagram.com/yc.planner/">Contactame en Instagram</a>
         </div>
       </div>
     </section>
