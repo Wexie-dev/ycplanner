@@ -65,15 +65,15 @@ function MobileNavbar() {
   }, []);
 
   return (
-    <div className="sm:hidden w-full bg-white shadow-lg h-16 fixed z-50">
+    <div className="fixed z-50 h-16 w-full bg-white shadow-lg sm:hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`block fixed top-2 left-3 z-50 ${
-          isOpen ? 'left-[74%] ease-in duration-200' : 'ease-in duration-200'
+        className={`fixed left-3 top-2 z-50 block ${
+          isOpen ? 'left-[74%] duration-200 ease-in' : 'duration-200 ease-in'
         }`}
       >
         <svg
-          className="w-12 h-12 fill-current"
+          className="h-12 w-12 fill-current"
           viewBox="0 0 24 24"
           xmlns="http://www.w3.org/2000/svg"
         >
@@ -98,11 +98,11 @@ function MobileNavbar() {
       <Image
         width={50}
         height={44}
-        className="fixed top-3 left-20"
+        className="fixed left-20 top-3"
         src={logo_navbar_closed}
         alt={''}
       />
-      <div className="fixed top-6 left-36 font-butler text-sm font-normal text-[#97989C]">
+      <div className="fixed left-36 top-6 font-butler text-sm font-normal text-[#97989C]">
         Wedding & Event Planner
       </div>
       <Transition
@@ -113,23 +113,23 @@ function MobileNavbar() {
         leave="transition-transform duration-300"
         leaveFrom="translate-x-0"
         leaveTo="-translate-x-full"
-        className="sm:hidden fixed inset-0 bg-white z-40 shadow-3xl"
+        className="shadow-3xl fixed inset-0 z-40 bg-white sm:hidden"
         style={{ width: '90%' }}
         ref={menuRef}
       >
-        <div className="flex flex-col h-full text-black">
-          <div className="w-full h-[131px] bg-[#A6837F] flex flex-col items-center gap-4">
-            <div className="bg-white shadow-lg rounded-full w-16 h-16 flex justify-center items-center mt-4 pl-2 pt-1 ">
+        <div className="flex h-full flex-col text-black">
+          <div className="flex h-[131px] w-full flex-col items-center gap-4 bg-[#A6837F]">
+            <div className="mt-4 flex h-16 w-16 items-center justify-center rounded-full bg-white pl-2 pt-1 shadow-lg ">
               <Image width={50} height={44} className="" src={logo_navbar_open} alt={''} />
             </div>
             <div className="flex font-butler text-sm font-normal text-white">
               Wedding & Event Planner
             </div>
           </div>
-          <div className="flex flex-col gap-8 pt-11 pl-6 font-normal text-base">
+          <div className="flex flex-col gap-8 pl-6 pt-11 text-base font-normal">
             {navbarOptions.map((option, index) => (
               <div key={index} className="flex gap-4">
-                <div className="flex justify-center items-center">
+                <div className="flex items-center justify-center">
                   <Image
                     width={option.size.width}
                     height={option.size.height}
