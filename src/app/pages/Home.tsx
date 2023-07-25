@@ -23,7 +23,7 @@ export default function Home() {
     subTitle: content!.abouts[0].subTitle,
     keyPoints: content!.abouts[0].keyPoints,
     events: content!.abouts[0].events,
-  }
+  };
 
   return (
     <div className="w-full">
