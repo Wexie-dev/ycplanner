@@ -65,7 +65,7 @@ function MobileNavbar() {
   }, []);
 
   return (
-    <div className="fixed z-50 h-16 w-full bg-white shadow-lg sm:hidden">
+    <div className="fixed z-50 h-16 w-full bg-white shadow-lg md:hidden">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className={`fixed left-3 top-2 z-50 block ${

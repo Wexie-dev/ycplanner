@@ -14,10 +14,10 @@ export default function Banner(bannerProps: BannerProps) {
 
   return (
     <section id="home" className="h-screen w-full overflow-x-hidden">
-      <div className="relative h-screen w-screen overflow-hidden">
+      <div className="relative h-screen w-screen overflow-hidden sm:h-[505px] md:h-[620px] xl:h-screen">
         {/* Background Image */}
         <div
-          className={`absolute left-0 top-0 h-full w-full bg-mobileBanner bg-cover bg-center lg:bg-banner `}
+          className={`absolute left-0 top-0 h-full w-full bg-mobileBanner bg-cover bg-center sm:bg-tabletBanner lg:bg-banner `}
         >
           <div className="opacity-85 h-full bg-gradient-to-b from-transparent via-transparent to-zinc-800 lg:hidden"></div>
         </div>
@@ -27,7 +27,7 @@ export default function Banner(bannerProps: BannerProps) {
         <FullNavbar />
 
         {/* Banner Content */}
-        <div className="absolute left-0 top-[300px] flex h-full w-full flex-col items-center justify-center text-white md:left-[10%] md:w-[672px] lg:left-[40%] lg:top-0 xl:left-[50%] 2xl:left-[60%]">
+        <div className="absolute left-0 top-1/3 flex h-full w-full flex-col items-center justify-center text-white sm:top-[150px] md:left-[10%] md:w-[672px] lg:left-[40%] lg:top-0 xl:left-[50%] 2xl:left-[60%]">
           <div className="font-bellina text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
             {bannerTitle}
           </div>

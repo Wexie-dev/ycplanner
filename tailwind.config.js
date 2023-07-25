@@ -16,6 +16,7 @@ module.exports = {
       backgroundImage: {
         banner: "url('/images/sections/banner/banner.png')",
         mobileBanner: "url('/images/sections/banner/mobile-banner.png')",
+        tabletBanner: "url('/images/sections/banner/tablet-banner.png')",
       },
     },
   },
