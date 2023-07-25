@@ -1,7 +1,7 @@
 import { useContentsQuery } from '@/hooks/useContents';
 import React from 'react';
 import About from '../sections/About';
-import { BannerProps } from '@/types';
+import { AboutProps, BannerProps } from '@/types';
 import Banner from '../sections/Banner';
 import MobileNavbar from '../components/MobileNavbar';
 import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
@@ -17,10 +17,18 @@ export default function Home() {
     subTitle: content!.banners[0].subTitle,
   };
 
+  const aboutProps: AboutProps = {
+    title: content!.abouts[0].title,
+    description: content!.abouts[0].description,
+    subTitle: content!.abouts[0].subTitle,
+    keyPoints: content!.abouts[0].keyPoints,
+    events: content!.abouts[0].events,
+  };
+
   return (
     <div className="w-full">
       <Banner {...bannerProps}></Banner>
-      <About></About>
+      <About {...aboutProps}></About>
     </div>
   );
 }
