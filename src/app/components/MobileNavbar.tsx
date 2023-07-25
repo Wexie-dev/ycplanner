@@ -122,7 +122,7 @@ function MobileNavbar() {
             <div className="mt-4 flex h-16 w-16 items-center justify-center rounded-full bg-white pl-2 pt-1 shadow-lg ">
               <Image width={50} height={44} className="" src={logo_navbar_open} alt={''} />
             </div>
-            <div className="flex font-butler text-sm font-normal text-white">
+            <div className="flex font-butler text-base font-normal text-white">
               Wedding & Event Planner
             </div>
           </div>
