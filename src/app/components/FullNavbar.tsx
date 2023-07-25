@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import Image from 'next/image';
 import logo from '../../../public/images/YaninaCorti-logo.svg';
 import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
-import { Transition } from '@headlessui/react';
+import SmoothScrollLink from './SmoothScroll';
 
 function FullNavbar() {
   const matchedMD = useMediaQuery(mediaQueries.tablet);
@@ -20,29 +20,19 @@ function FullNavbar() {
           {/* Add your navigation links here */}
           <ul className="hidden-[100px] font-montserrat w-full justify-end gap-8 text-[#5B5A5A] md:flex md:space-x-3 md:text-[16px] 2xl:space-x-8 2xl:text-[18px] 2xl:font-semibold">
             <li className="transition-all duration-300 ease-in-out">
-              <a className="scroll-smooth" href="#about">
-                Sobre mi
-              </a>
+              <SmoothScrollLink to="#about">Sobre mi</SmoothScrollLink>
             </li>
             <li className="transition-all duration-300 ease-in-out">
-              <a className="scroll-smooth" href="#ComoTrabajo">
-                ¿Cómo trabajo?
-              </a>
+              <SmoothScrollLink to="#ComoTrabajo">¿Cómo trabajo?</SmoothScrollLink>
             </li>
             <li className="transition-all duration-300 ease-in-out">
-              <a className="scroll-smooth" href="#Galeria">
-                Galería
-              </a>
+              <SmoothScrollLink to="#Galeria">Galería</SmoothScrollLink>
             </li>
             <li className="transition-all duration-300 ease-in-out">
-              <a className="scroll-smooth" href="#Testimonios">
-                Testimonios
-              </a>
+              <SmoothScrollLink to="#Testimonios">Testimonios</SmoothScrollLink>
             </li>
             <li className="transition-all duration-300 ease-in-out">
-              <a className="scroll-smooth" href="#Contactame">
-                Contactame
-              </a>
+              <SmoothScrollLink to="#Contactame">Contactame</SmoothScrollLink>
             </li>
           </ul>
         </div>
