@@ -17,5 +17,19 @@ export interface BannerProps {
 }
 
 export interface AboutProps {
+  title?: string;
+  description?: string;
+  subTitle?: string;
+  keyPoints?: KeyPoints[];
+  events?: AboutEvents[];
+}
+
+export interface KeyPoints {
+  highlightedText: string;
+  normalText: string;
+}
+
+export interface AboutEvents {
+  image: ImageContent;
   title: string;
 }
