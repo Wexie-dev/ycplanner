@@ -8,7 +8,7 @@ function FullNavbar() {
   const matchedMD = useMediaQuery(mediaQueries.tablet);
 
   return (
-    <nav className="ease-in duration-50 sm:fixed top-0 left-0 w-full 2xl:h-[80px] md:h-[72px] bg-white shadow-lg">
+    <nav className='ease-in duration-50 sm:fixed top-0 left-0 w-full 2xl:h-[80px] md:h-[72px] bg-white shadow-lg'>
       <div className="container 2xl:ml-[136px] md:ml-0 px-4">
         <div className="flex justify-between items-center py-3 w-full">
           <div className="flex items-center">
