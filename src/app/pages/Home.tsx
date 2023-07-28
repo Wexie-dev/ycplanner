@@ -1,11 +1,10 @@
 import { useContentsQuery } from '@/hooks/useContents';
 import React from 'react';
 import About from '../sections/About';
-import { AboutProps, BannerProps } from '@/types';
+import { AboutProps, BannerProps, HowIWorkProps } from '@/types';
 import Banner from '../sections/Banner';
-import MobileNavbar from '../components/MobileNavbar';
 import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
-import FullNavbar from '../components/FullNavbar';
+import HowIWork from '../sections/HowIWork';
 
 export default function Home() {
   const { data: content, isLoading, isError } = useContentsQuery();
@@ -25,10 +24,24 @@ export default function Home() {
     events: content!.abouts[0].events,
   };
 
+  const howIWorkProps: HowIWorkProps = {
+    title1: content!.howIWorks[0].title1,
+    image: content!.howIWorks[0].image,
+    subtitle1: content!.howIWorks[0].subtitle1,
+    paragraph1: content!.howIWorks[0].paragraph1,
+    subtitle2: content!.howIWorks[0].subtitle2,
+    paragraph2: content!.howIWorks[0].paragraph2,
+    subtitle3: content!.howIWorks[0].subtitle3,
+    paragraph3: content!.howIWorks[0].paragraph3,
+    title2: content!.howIWorks[0].title2,
+    paragraph_service_list: content!.howIWorks[0].paragraph_service_list,
+  };
+
   return (
     <div className="w-full">
       <Banner {...bannerProps}></Banner>
       <About {...aboutProps}></About>
+      <HowIWork {...howIWorkProps}></HowIWork>
     </div>
   );
 }

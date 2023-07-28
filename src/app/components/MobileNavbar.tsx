@@ -19,7 +19,7 @@ const navbarOptions = [
   {
     text: '¿Cómo trabajo?',
     icon: { src: logo_navbar_comoTrabajo, alt: '¿Cómo trabajo?' },
-    url: '#',
+    url: '#howIWork',
     size: { width: 24, height: 22 },
   },
   {
