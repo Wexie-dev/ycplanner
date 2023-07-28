@@ -3,6 +3,7 @@ export interface GetContentResponse {
   banners: BannerProps[];
   abouts: AboutProps[];
   galleries: GalleryProps[];
+  howIWorks: HowIWorkProps[];
 }
 
 export interface ImageContent {
@@ -38,4 +39,15 @@ export interface AboutEvents {
 export interface GalleryProps {
   title?: string;
   image?: ImageContent[];
+export interface HowIWorkProps {
+  title1?: string;
+  image?: ImageContent;
+  subtitle1?: string;
+  paragraph1?: string;
+  subtitle2?: string;
+  paragraph2?: string;
+  subtitle3?: string;
+  paragraph3?: string;
+  title2?: string;
+  paragraph_service_list?: string[];
 }

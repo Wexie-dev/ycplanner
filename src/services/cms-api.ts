@@ -25,6 +25,22 @@ export const fetchContent = async () => {
           width
           fileName
         }
+      howIWorks {
+        title1
+        image {
+          url
+          width
+          height
+          fileName
+        }
+        subtitle1
+        paragraph1
+        subtitle2
+        paragraph2
+        subtitle3
+        paragraph3
+        title2
+        paragraph_service_list
       }
     }
   `;

@@ -8,8 +8,8 @@ function FullNavbar() {
   const matchedLG = useMediaQuery(mediaQueries.tablet);
 
   return (
-    <nav className="duration-50 left-0 top-0 hidden w-full bg-white shadow-lg ease-in sm:fixed lg:block lg:h-[72px] 2xl:h-[80px] z-10">
-      <div className="container px-4 lg:ml-0 2xl:ml-[136px]">
+    <nav className="duration-50 left-0 top-0 z-50 w-full bg-white shadow-lg ease-in sm:fixed md:h-[72px] 2xl:h-[80px]">
+      <div className="container px-4 md:ml-0 2xl:ml-[136px]">
         <div className="flex w-full items-center justify-between py-3">
           <div className="flex items-center">
             <Image width={matchedLG ? 48 : 72} height={matchedLG ? 40 : 64} src={logo} alt="Logo" />
@@ -23,7 +23,7 @@ function FullNavbar() {
               <SmoothScrollLink to="#about">Sobre mi</SmoothScrollLink>
             </li>
             <li className="transition-all duration-300 ease-in-out">
-              <SmoothScrollLink to="#">¿Cómo trabajo?</SmoothScrollLink>
+              <SmoothScrollLink to="#howIWork">¿Cómo trabajo?</SmoothScrollLink>
             </li>
             <li className="transition-all duration-300 ease-in-out">
               <SmoothScrollLink to="#gallery">Galería</SmoothScrollLink>
