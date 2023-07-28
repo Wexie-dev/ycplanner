@@ -2,6 +2,7 @@
 export interface GetContentResponse {
   banners: BannerProps[];
   abouts: AboutProps[];
+  galleries: GalleryProps[];
 }
 
 export interface ImageContent {
@@ -32,4 +33,9 @@ export interface KeyPoints {
 export interface AboutEvents {
   image: ImageContent;
   title: string;
+}
+
+export interface GalleryProps {
+  title?: string;
+  image?: ImageContent[];
 }

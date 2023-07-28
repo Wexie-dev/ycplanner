@@ -17,6 +17,15 @@ export const fetchContent = async () => {
       abouts {
         title
       }
+      galleries {
+        title
+        image {
+          url
+          height
+          width
+          fileName
+        }
+      }
     }
   `;
 
