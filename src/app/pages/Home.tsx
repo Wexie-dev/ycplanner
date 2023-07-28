@@ -1,12 +1,10 @@
 import { useContentsQuery } from '@/hooks/useContents';
 import React from 'react';
 import About from '../sections/About';
-import { AboutProps, BannerProps, GalleryProps } from '@/types';
 import Banner from '../sections/Banner';
 import Gallery from '../sections/Gallery';
 import MobileNavbar from '../components/MobileNavbar';
-import { AboutProps, BannerProps, HowIWorkProps } from '@/types';
-import Banner from '../sections/Banner';
+import { AboutProps, BannerProps, HowIWorkProps, GalleryProps } from '@/types';
 import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
 import HowIWork from '../sections/HowIWork';
 
