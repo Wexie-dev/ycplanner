@@ -6,7 +6,7 @@ export type AboutCardProps = {
   title: string;
   body: string;
 };
-function AboutCard({ imageSrc, title, body }: AboutCardProps) {
+function Card({ imageSrc, title, body }: AboutCardProps) {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpanded = () => {
@@ -34,7 +34,7 @@ function AboutCard({ imageSrc, title, body }: AboutCardProps) {
         </Transition>
         <button
           onClick={toggleExpanded}
-          className="mt-4 rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-600"
+          className="mt-4 rounded bg-typographyPink px-4 py-2 text-white"
         >
           {isExpanded ? 'Read Less' : 'Read More'}
         </button>
@@ -43,4 +43,4 @@ function AboutCard({ imageSrc, title, body }: AboutCardProps) {
   );
 }
 
-export default AboutCard;
+export default Card;
