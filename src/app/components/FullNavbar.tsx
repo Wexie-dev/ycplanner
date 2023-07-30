@@ -8,7 +8,7 @@ function FullNavbar() {
   const matchedMD = useMediaQuery(mediaQueries.tablet);
 
   return (
-    <nav className="duration-50 left-0 top-0 hidden w-full bg-white shadow-lg ease-in sm:fixed md:block md:h-[72px] 2xl:h-[80px]">
+    <nav className="duration-50 left-0 top-0 z-50 w-full bg-white shadow-lg ease-in sm:fixed md:h-[72px] 2xl:h-[80px]">
       <div className="container px-4 md:ml-0 2xl:ml-[136px]">
         <div className="flex w-full items-center justify-between py-3">
           <div className="flex items-center">
@@ -23,7 +23,7 @@ function FullNavbar() {
               <SmoothScrollLink to="#about">Sobre mi</SmoothScrollLink>
             </li>
             <li className="transition-all duration-300 ease-in-out">
-              <SmoothScrollLink to="#ComoTrabajo">¿Cómo trabajo?</SmoothScrollLink>
+              <SmoothScrollLink to="#howIWork">¿Cómo trabajo?</SmoothScrollLink>
             </li>
             <li className="transition-all duration-300 ease-in-out">
               <SmoothScrollLink to="#Galeria">Galería</SmoothScrollLink>
