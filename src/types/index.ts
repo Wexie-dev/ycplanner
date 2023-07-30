@@ -18,11 +18,13 @@ export interface BannerProps {
 }
 
 export interface AboutProps {
-  title?: string;
-  description?: string;
-  subTitle?: string;
-  keyPoints?: KeyPoints[];
-  events?: AboutEvents[];
+  title: string;
+  description: string;
+  subTitle: string;
+  image: ImageContent;
+  keyPoints: KeyPoints[];
+  eventsTitle: string;
+  events: AboutEvents[];
 }
 
 export interface KeyPoints {

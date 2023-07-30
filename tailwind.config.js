@@ -8,6 +8,12 @@ module.exports = {
   ],
   theme: {
     extend: {
+      colors: {
+        typographyGray: '#36373A',
+        typographyPink: '#996058',
+        primary: '#C2857D', 
+        secondary: '#EFB8Aa9',
+      },
       fontFamily: {
         sans: ['var(--font-montserrat)'],
         butler: ['var(--font-butler)'],

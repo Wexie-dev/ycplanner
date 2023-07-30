@@ -17,7 +17,7 @@ export default function Banner(bannerProps: BannerProps) {
       <div className="relative h-screen w-screen overflow-hidden sm:h-[505px] md:h-[620px] xl:h-screen">
         {/* Background Image */}
         <div
-          className={`absolute left-0 top-0 h-full w-full bg-mobileBanner bg-cover bg-center sm:bg-tabletBanner lg:bg-banner `}
+          className={`lg:bg-to absolute left-0 top-0 h-full w-full bg-mobileBanner bg-cover bg-center sm:bg-tabletBanner lg:bg-banner`}
         >
           <div className="opacity-85 h-full bg-gradient-to-b from-transparent via-transparent to-zinc-800 lg:hidden"></div>
         </div>
