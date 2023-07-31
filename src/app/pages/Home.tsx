@@ -15,21 +15,24 @@ export default function Home() {
 
   const bannerProps: BannerProps = {
     title: content!.banners[0].title,
-    subTitle: content!.banners[0].subTitle,
+    subtitle: content!.banners[0].subtitle,
   };
 
   const aboutProps: AboutProps = {
     title: content!.abouts[0].title,
+    image: content!.abouts[0].image,
+    subtitle: content!.abouts[0].subtitle,
     description: content!.abouts[0].description,
-    subTitle: content!.abouts[0].subTitle,
     keyPoints: content!.abouts[0].keyPoints,
+    eventsTitle: content!.abouts[0].eventsTitle,
     events: content!.abouts[0].events,
+    closingText: content!.abouts[0].closingText,
   };
 
   const galleryProps: GalleryProps = {
     title: content!.galleries[0].title,
     image: content!.galleries[0].image,
-  }
+  };
   const howIWorkProps: HowIWorkProps = {
     title1: content!.howIWorks[0].title1,
     image: content!.howIWorks[0].image,

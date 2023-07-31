@@ -6,7 +6,7 @@ import MobileNavbar from '../components/MobileNavbar';
 
 export default function Banner(bannerProps: BannerProps) {
   const bannerTitle = bannerProps.title ?? 'Bienvenidos';
-  const bannerSubtitle = bannerProps.subTitle ?? '¡Hagamos que tu evento sea único!';
+  const bannerSubtitle = bannerProps.subtitle ?? '¡Hagamos que tu evento sea único!';
 
   const handleScrollDown = () => {
     window.scrollBy(0, window.innerHeight);
@@ -17,7 +17,7 @@ export default function Banner(bannerProps: BannerProps) {
       <div className="relative h-screen w-screen overflow-hidden sm:h-[505px] md:h-[620px] xl:h-screen">
         {/* Background Image */}
         <div
-          className={`absolute left-0 top-0 h-full w-full bg-mobileBanner bg-cover bg-center sm:bg-tabletBanner lg:bg-banner `}
+          className={`lg:bg-to absolute left-0 top-0 h-full w-full bg-mobileBanner bg-cover bg-center sm:bg-tabletBanner lg:bg-banner`}
         >
           <div className="opacity-85 h-full bg-gradient-to-b from-transparent via-transparent to-zinc-800 lg:hidden"></div>
         </div>

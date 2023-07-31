@@ -15,15 +15,18 @@ export interface ImageContent {
 
 export interface BannerProps {
   title?: string;
-  subTitle?: string;
+  subtitle?: string;
 }
 
 export interface AboutProps {
-  title?: string;
-  description?: string;
-  subTitle?: string;
-  keyPoints?: KeyPoints[];
-  events?: AboutEvents[];
+  title: string;
+  description: string;
+  subtitle: string;
+  image: ImageContent;
+  keyPoints: KeyPoints[];
+  eventsTitle: string;
+  events: AboutEvents[];
+  closingText: string;
 }
 
 export interface KeyPoints {
@@ -33,6 +36,7 @@ export interface KeyPoints {
 
 export interface AboutEvents {
   image: ImageContent;
+  mobileImage: ImageContent;
   title: string;
 }
 

@@ -1,5 +1,8 @@
 {
-  "cSpell.words": ["bellina"],
+  "cSpell.words": [
+    "abouts",
+    "bellina"
+  ],
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": true,
     "source.fixAll": true
@@ -12,9 +15,9 @@
     "editor.formatOnSave": false
   },
   "[typescript]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   },
   "[typescriptreact]": {
-    "editor.formatOnSave": false
+    "editor.formatOnSave": true
   }
 }
