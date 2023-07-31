@@ -21,7 +21,7 @@ export default function Home() {
     subtitle: content!.abouts[0].subtitle,
     description: content!.abouts[0].description,
     keyPoints: content!.abouts[0].keyPoints,
-    eventsTitle: content!.abouts[0].eventsTitle,  
+    eventsTitle: content!.abouts[0].eventsTitle,
     events: content!.abouts[0].events,
   };
 
