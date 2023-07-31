@@ -12,14 +12,16 @@ export default function Home() {
 
   const bannerProps: BannerProps = {
     title: content!.banners[0].title,
-    subTitle: content!.banners[0].subTitle,
+    subtitle: content!.banners[0].subtitle,
   };
 
   const aboutProps: AboutProps = {
     title: content!.abouts[0].title,
-    subTitle: content!.abouts[0].subTitle,
+    image: content!.abouts[0].image,
+    subtitle: content!.abouts[0].subtitle,
     description: content!.abouts[0].description,
     keyPoints: content!.abouts[0].keyPoints,
+    eventsTitle: content!.abouts[0].eventsTitle,  
     events: content!.abouts[0].events,
   };
 

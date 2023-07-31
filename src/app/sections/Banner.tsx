@@ -6,7 +6,7 @@ import MobileNavbar from '../components/MobileNavbar';
 
 export default function Banner(bannerProps: BannerProps) {
   const bannerTitle = bannerProps.title ?? 'Bienvenidos';
-  const bannerSubtitle = bannerProps.subTitle ?? '¡Hagamos que tu evento sea único!';
+  const bannerSubtitle = bannerProps.subtitle ?? '¡Hagamos que tu evento sea único!';
 
   const handleScrollDown = () => {
     window.scrollBy(0, window.innerHeight);

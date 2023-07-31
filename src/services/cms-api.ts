@@ -5,7 +5,7 @@ export const graphcms = new GraphQLClient(CMS_API_URL, {});
 
 export const fetchContent = async () => {
   const imageFragment = gql`
-    fragment ImageFragment on Image {
+    fragment ImageFragment on Asset {
       url
       height
       width
@@ -25,16 +25,14 @@ export const fetchContent = async () => {
     fragment AboutFragment on About {
       title
       description
-      subTitle
+      subtitle
       image {
         ...ImageFragment
       }
-      keyPoints {
-        highlightedText
-        normalText
-      }
+      keyPoints
       eventsTitle
       events {
+        title
         image {
           ...ImageFragment
         }
@@ -43,7 +41,7 @@ export const fetchContent = async () => {
   `;
 
   const howIWorksFragment = gql`
-    fragment HowIWorksFragment on HowIWorks {
+    fragment HowIWorksFragment on HowIWork {
       title1
       image {
         ...ImageFragment

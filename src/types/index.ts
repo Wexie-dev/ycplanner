@@ -14,13 +14,13 @@ export interface ImageContent {
 
 export interface BannerProps {
   title?: string;
-  subTitle?: string;
+  subtitle?: string;
 }
 
 export interface AboutProps {
   title: string;
   description: string;
-  subTitle: string;
+  subtitle: string;
   image: ImageContent;
   keyPoints: KeyPoints[];
   eventsTitle: string;
