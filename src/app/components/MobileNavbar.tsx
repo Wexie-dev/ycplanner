@@ -8,6 +8,7 @@ import logo_navbar_comoTrabajo from '../../../public/images/mobileNavbar-icon-Co
 import logo_navbar_galeria from '../../../public/images/mobileNavbar-icon-Galeria.svg';
 import logo_navbar_testimonios from '../../../public/images/mobileNavbar-icon-Testimonios.svg';
 import logo_navbar_contactame from '../../../public/images/mobileNavbar-icon-Contactame.svg';
+import SmoothScrollLink from './SmoothScroll';
 
 const navbarOptions = [
   {
@@ -138,9 +139,9 @@ function MobileNavbar() {
                   />
                 </div>
                 <div>
-                  <a href={option.url} className="" onClick={closeMenu}>
+                  <SmoothScrollLink to={option.url} onClick={closeMenu}>
                     {option.text}
-                  </a>
+                  </SmoothScrollLink>
                 </div>
               </div>
             ))}
