@@ -25,6 +25,7 @@ export interface AboutProps {
   keyPoints: KeyPoints[];
   eventsTitle: string;
   events: AboutEvents[];
+  closingText: string;
 }
 
 export interface KeyPoints {
@@ -34,6 +35,7 @@ export interface KeyPoints {
 
 export interface AboutEvents {
   image: ImageContent;
+  mobileImage: ImageContent;
   title: string;
 }
 

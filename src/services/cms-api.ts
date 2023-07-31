@@ -36,7 +36,11 @@ export const fetchContent = async () => {
         image {
           ...ImageFragment
         }
+        mobileImage {
+          ...ImageFragment
+        }
       }
+      closingText
     }
   `;
 

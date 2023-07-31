@@ -23,6 +23,7 @@ export default function Home() {
     keyPoints: content!.abouts[0].keyPoints,
     eventsTitle: content!.abouts[0].eventsTitle,
     events: content!.abouts[0].events,
+    closingText: content!.abouts[0].closingText,
   };
 
   const howIWorkProps: HowIWorkProps = {

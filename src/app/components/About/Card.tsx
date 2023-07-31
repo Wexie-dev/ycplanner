@@ -44,11 +44,11 @@ function Card({ image, body, subtitle, keyPoints }: AboutCardProps) {
             </p>
           ))}
         </Transition>
-        <div className="flex w-full items-center justify-center text-lg">
-          <span
-            onClick={toggleExpanded}
-            className="text-normal mt-4 cursor-pointer py-2 font-semibold text-typographyPink"
-          >
+        <div
+          onClick={toggleExpanded}
+          className="flex w-full cursor-pointer items-center justify-center text-lg"
+        >
+          <span className="text-normal mt-4  py-2 font-semibold text-typographyPink">
             {isExpanded ? 'Ocultar' : 'Leer Más'}
           </span>
           <img
