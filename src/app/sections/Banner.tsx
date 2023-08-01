@@ -13,7 +13,7 @@ export default function Banner(bannerProps: BannerProps) {
   };
 
   return (
-    <section id="home" className="h-screen w-full overflow-x-hidden">
+    <section id="home" className="h-screen w-full overflow-x-hidden overflow-y-hidden">
       <div className="relative h-screen w-screen overflow-hidden sm:h-[505px] md:h-[620px] xl:h-screen">
         {/* Background Image */}
         <div
@@ -28,7 +28,7 @@ export default function Banner(bannerProps: BannerProps) {
 
         {/* Banner Content */}
         <div className="absolute left-0 top-1/3 flex h-full w-full flex-col items-center justify-center text-white sm:top-[150px] md:left-[10%] md:w-[672px] lg:left-[40%] lg:top-0 xl:left-[50%] 2xl:left-[60%]">
-          <div className="font-bellina text-5xl md:text-6xl lg:text-7xl xl:text-8xl">
+          <div className="font-anguilla text-[76px] leading-none md:text-[92px] lg:text-[114px] xl:text-[166px]">
             {bannerTitle}
           </div>
           <div className="mt-6 w-[220px] text-center font-sans text-lg font-medium sm:w-full md:text-xl lg:text-2xl xl:text-3xl">

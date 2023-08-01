@@ -28,9 +28,9 @@ export default function About({
         <MobileDesign />
       ) : (
         <>
-          <div className="flex justify-between px-4 lg:px-12 xl:px-[221px]">
-            <div className="relative h-[576px] w-[584px] flex-initial">
-              <Image alt={image.fileName} src={image.url} fill />
+          <div className="flex justify-between px-4 md:px-12 xl:px-[100px] 2xl:px-[146px] 3xl:px-[218px]">
+            <div className="relative flex-initial md:h-[482px] md:w-[369px] lg:h-[460px] lg:w-[468px] xl:h-[576px] xl:w-[584px]">
+              <Image alt={image.fileName} src={image.url} fill objectFit="cover" />
             </div>
             <div className="max-w-2xl flex-1 text-left">
               <h1 className="mb-6 font-butler text-[48px] font-normal">{title}</h1>
@@ -39,7 +39,7 @@ export default function About({
                 dangerouslySetInnerHTML={{ __html: description }}
               />
               <div className="my-10">
-                <h5 className="text-center font-bellina text-xl text-typographyPink lg:text-[50px] xl:text-[64px] ">
+                <h5 className="text-center font-anguilla text-xl text-typographyPink sm:text-left lg:text-[50px] xl:text-[64px] ">
                   {subtitle}
                 </h5>
               </div>
@@ -57,7 +57,7 @@ export default function About({
             <Events title={eventsTitle} events={events}></Events>
           </div>
           <div className="mb-20 flex justify-center">
-            <h2 className="text-center font-bellina text-[100px] text-typographyPink">
+            <h2 className="text-center font-anguilla leading-none text-typographyPink md:text-[64px] xl:text-[100px]">
               {closingText}
             </h2>
           </div>

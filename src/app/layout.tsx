@@ -44,15 +44,15 @@ const butler = localFont({
   variable: '--font-butler',
 });
 
-const bellina = localFont({
+const anguilla = localFont({
   src: [
     {
-      path: '../../public/fonts/bellina/BellinaFlorence.otf',
+      path: '../../public/fonts/anguilla/Anguilla.otf',
       weight: '300',
       style: 'normal',
     },
   ],
-  variable: '--font-bellina',
+  variable: '--font-anguilla',
 });
 
 export const metadata: Metadata = {
@@ -64,7 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html className="scroll-smooth" lang="en">
       <body
-        className={`${montserrat.variable} ${butler.variable} ${bellina.variable} bg-[#F5F5F5] font-sans text-typographyGray`}
+        className={`${montserrat.variable} ${butler.variable} ${anguilla.variable} overflow-y-hidden bg-[#F5F5F5] font-sans text-typographyGray`}
       >
         {children}
       </body>

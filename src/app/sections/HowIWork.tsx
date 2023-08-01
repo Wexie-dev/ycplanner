@@ -85,7 +85,7 @@ function HowIWork(howIWorkProps: HowIWorkProps) {
               </p>
             ))}
           </div>
-          <div className="flex pt-8 font-bellina text-5xl text-[#996058] lg:pt-12 lg:text-[80px]">
+          <div className="flex pt-8 font-anguilla text-5xl text-[#996058] lg:pt-12 lg:text-[80px]">
             {subtitle3}
           </div>
           <div className="flex pb-12 pr-10 pt-8 text-base lg:pt-12">{paragraph3}</div>
@@ -94,7 +94,7 @@ function HowIWork(howIWorkProps: HowIWorkProps) {
 
       {/* Detalle del servicio */}
       <div className="bg-[#F5F5F5]">
-        <div className="flex justify-center pt-12 font-bellina text-[40px] text-[#996058] lg:justify-start lg:pl-36 lg:pt-[100px] lg:text-[75px] 2xl:text-8xl">
+        <div className="flex justify-center pt-12 font-anguilla text-[40px] text-[#996058] lg:justify-start lg:pl-36 lg:pt-[100px] lg:text-[75px] 2xl:text-8xl">
           {title2}
         </div>
         <div className="flex flex-col px-[92px] pt-14 lg:flex-row lg:flex-wrap lg:px-0 lg:pb-10 lg:pt-6 2xl:p-0">

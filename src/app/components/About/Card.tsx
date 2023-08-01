@@ -33,7 +33,7 @@ function Card({ image, body, subtitle, keyPoints }: AboutCardProps) {
           leaveTo="h-0 opacity-0"
         >
           <div className="my-10">
-            <h5 className="text-center font-bellina text-xl text-typographyPink ">{subtitle}</h5>
+            <h5 className="text-center font-anguilla text-xl text-typographyPink ">{subtitle}</h5>
           </div>
           {keyPoints.map((keyPoint) => (
             <p className="mb-5 text-left text-base text-typographyGray">
