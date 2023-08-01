@@ -70,6 +70,14 @@ export const fetchContent = async () => {
       abouts {
         ...AboutFragment
       }
+      galleries {
+        title
+        image {
+          url
+          height
+          width
+          fileName
+        }
       howIWorks {
         ...HowIWorksFragment
       }

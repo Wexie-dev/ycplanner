@@ -2,6 +2,7 @@
 export interface GetContentResponse {
   banners: BannerProps[];
   abouts: AboutProps[];
+  galleries: GalleryProps[];
   howIWorks: HowIWorkProps[];
 }
 
@@ -39,6 +40,9 @@ export interface AboutEvents {
   title: string;
 }
 
+export interface GalleryProps {
+  title?: string;
+  image?: ImageContent[];
 export interface HowIWorkProps {
   title1?: string;
   image?: ImageContent;
