@@ -41,8 +41,10 @@ export interface AboutEvents {
 }
 
 export interface GalleryProps {
-  title?: string;
-  image?: ImageContent[];
+  title: string;
+  image: ImageContent[];
+}
+
 export interface HowIWorkProps {
   title1?: string;
   image?: ImageContent;

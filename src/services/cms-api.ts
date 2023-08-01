@@ -78,6 +78,7 @@ export const fetchContent = async () => {
           width
           fileName
         }
+      }
       howIWorks {
         ...HowIWorksFragment
       }
