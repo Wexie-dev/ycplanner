@@ -31,7 +31,8 @@ export default function Home() {
 
   const galleryProps: GalleryProps = {
     title: content!.galleries[0].title,
-    image: content!.galleries[0].image,
+    images: content!.galleries[0].images,
+    mobileImages: content!.galleries[0].mobileImages,
   };
   const howIWorkProps: HowIWorkProps = {
     title1: content!.howIWorks[0].title1,

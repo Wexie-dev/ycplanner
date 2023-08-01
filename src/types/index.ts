@@ -42,7 +42,8 @@ export interface AboutEvents {
 
 export interface GalleryProps {
   title: string;
-  image: ImageContent[];
+  images: ImageContent[];
+  mobileImages: ImageContent[];
 }
 
 export interface HowIWorkProps {

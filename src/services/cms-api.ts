@@ -72,11 +72,11 @@ export const fetchContent = async () => {
       }
       galleries {
         title
-        image {
-          url
-          height
-          width
-          fileName
+        images {
+          ...ImageFragment
+        }
+        mobileImages {
+          ...ImageFragment
         }
       }
       howIWorks {
