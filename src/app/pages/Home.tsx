@@ -3,9 +3,7 @@ import React from 'react';
 import About from '../sections/About';
 import Banner from '../sections/Banner';
 import Gallery from '../sections/Gallery';
-import MobileNavbar from '../components/MobileNavbar';
 import { AboutProps, BannerProps, HowIWorkProps, GalleryProps } from '@/types';
-import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
 import HowIWork from '../sections/HowIWork';
 
 export default function Home() {
