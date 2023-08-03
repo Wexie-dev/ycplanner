@@ -2,6 +2,7 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Montserrat } from 'next/font/google';
 import localFont from '@next/font/local';
+import { keywordsArray } from '@/constants';
 
 const montserrat = Montserrat({
   subsets: ['latin'],
@@ -57,7 +58,41 @@ const anguilla = localFont({
 
 export const metadata: Metadata = {
   title: 'YC Planner',
-  description: 'Haz realidad tu evento ideal',
+  description: 'Haz realidad tu evento ideal. Yanina Corti - Wedding Planner y Event Planner',
+  applicationName: 'YC Planner web',
+  referrer: 'origin-when-cross-origin',
+  authors: [
+    {
+      name: 'Yanina Corti',
+    },
+  ],
+  keywords: [
+    'Yanina Corti',
+    'Wedding Planner',
+    'Event Planner',
+    'Wedding & Event Planner',
+    'Planificadora de eventos',
+    ...keywordsArray,
+  ],
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: 'white' },
+    { media: '(prefers-color-scheme: dark)', color: '#A6837F' },
+  ],
+  openGraph: {
+    title: 'YC Planner',
+    description: 'Haz realidad tu evento ideal.',
+    url: 'https://ycplanner.com.ar',
+    siteName: 'Yanina Corti - Wedding Planner en Argentina',
+    images: [
+      {
+        url: 'https://nextjs.org/og.png',
+        width: 800,
+        height: 600,
+      },
+    ],
+    locale: 'es_AR',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
