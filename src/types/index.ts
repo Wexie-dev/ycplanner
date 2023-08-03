@@ -47,14 +47,14 @@ export interface GalleryProps {
 }
 
 export interface HowIWorkProps {
-  title1?: string;
-  image?: ImageContent;
-  subtitle1?: string;
-  paragraph1?: string;
-  subtitle2?: string;
-  paragraph2?: string;
-  subtitle3?: string;
-  paragraph3?: string;
-  title2?: string;
-  paragraph_service_list?: string[];
+  title1: string;
+  image: ImageContent;
+  subtitle1: string;
+  paragraph1: string;
+  subtitle2: string;
+  paragraph2: string;
+  subtitle3: string;
+  paragraph3: string;
+  title2: string;
+  paragraph_service_list: string[];
 }
