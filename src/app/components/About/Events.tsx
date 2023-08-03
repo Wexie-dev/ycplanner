@@ -8,7 +8,7 @@ function Events({ title, events }: { title: string; events: AboutEvents[] }) {
   return (
     <div className="flex flex-col">
       <h6 className="my-6 text-xl font-medium">{title}</h6>
-      <div className="overflow-x-auto xl:overflow-hidden">
+      <div className="overflow-x-auto sm:overflow-hidden">
         <div className="flex min-w-min space-x-2 overflow-x-scroll whitespace-nowrap xl:overflow-hidden">
           {events.map((event) => (
             <div className="flex flex-col items-center">

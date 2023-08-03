@@ -64,7 +64,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html className="scroll-smooth" lang="en">
       <body
-        className={`${montserrat.variable} ${butler.variable} ${anguilla.variable} overflow-y-hidden bg-[#F5F5F5] font-sans text-typographyGray`}
+        className={`${montserrat.variable} ${butler.variable} ${anguilla.variable} bg-[#F5F5F5] font-sans text-typographyGray`}
       >
         {children}
       </body>
