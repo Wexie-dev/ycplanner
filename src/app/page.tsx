@@ -30,7 +30,7 @@ export default function PageIndex() {
   }, [secretCode, secretSequence]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between overflow-x-hidden">
+    <main className="flex min-h-screen flex-col items-center justify-between overflow-x-hidden overflow-y-hidden">
       <QueryClientProvider client={queryClient}>
         {process.env.NODE_ENV === 'development' || bypass ? <Home /> : <Maintenance />}
       </QueryClientProvider>
