@@ -51,8 +51,8 @@ export default function Home() {
     <div className="w-full">
       <Banner {...bannerProps}></Banner>
       <About {...aboutProps}></About>
-      <Gallery {...galleryProps}></Gallery>
       <HowIWork {...howIWorkProps}></HowIWork>
+      <Gallery {...galleryProps}></Gallery>
     </div>
   );
 }
