@@ -26,7 +26,7 @@ const navbarOptions = [
   {
     text: 'Galería',
     icon: { src: logo_navbar_galeria, alt: 'Galería' },
-    url: '#',
+    url: '#gallery',
     size: { width: 24, height: 17 },
   },
   {
@@ -67,33 +67,19 @@ function MobileNavbar() {
 
   return (
     <div className="fixed z-50 h-16 w-full bg-white shadow-lg md:hidden">
-      <button
-        onClick={() => setIsOpen(!isOpen)}
-        className={`fixed left-3 top-2 z-50 block ${
-          isOpen ? 'left-[74%] duration-200 ease-in' : 'duration-200 ease-in'
-        }`}
-      >
+      {/* Closed Menu */}
+      <button onClick={() => setIsOpen(!isOpen)}>
         <svg
-          className="h-12 w-12 fill-current"
-          viewBox="0 0 24 24"
+          width="32"
+          height="24"
+          viewBox="0 0 32 24"
+          fill="none"
           xmlns="http://www.w3.org/2000/svg"
+          className={`${isOpen ? 'hidden' : 'ml-5 mt-5'}`}
         >
-          <path
-            className={`${isOpen ? 'hidden' : 'block text-[#97989C]'}`}
-            d="M4 6H20M4 12H20M4 18H20"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            className={`${isOpen ? 'block text-white' : 'hidden'}`}
-            d="M6 18L18 6M6 6l12 12"
-            stroke="currentColor"
-            strokeWidth="2"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
+          <rect width="32" height="2.88" fill="#97989C" />
+          <rect y="10.56" width="32" height="2.88" fill="#97989C" />
+          <rect y="21.12" width="32" height="2.88" fill="#97989C" />
         </svg>
       </button>
       <Image
@@ -106,6 +92,8 @@ function MobileNavbar() {
       <div className="fixed left-36 top-6 font-butler text-sm font-normal text-[#97989C]">
         Wedding & Event Planner
       </div>
+
+      {/* Opened Menu */}
       <Transition
         show={isOpen}
         enter="transition-transform duration-300"
@@ -114,14 +102,45 @@ function MobileNavbar() {
         leave="transition-transform duration-300"
         leaveFrom="translate-x-0"
         leaveTo="-translate-x-full"
-        className="shadow-3xl fixed inset-0 z-40 bg-white sm:hidden"
+        className="shadow-3xl fixed inset-0 z-50 bg-white sm:hidden"
         style={{ width: '90%' }}
         ref={menuRef}
       >
         <div className="flex h-full flex-col text-black">
-          <div className="flex h-[131px] w-full flex-col items-center gap-4 bg-[#A6837F]">
-            <div className="mt-4 flex h-16 w-16 items-center justify-center rounded-full bg-white pl-2 pt-1 shadow-lg ">
-              <Image width={50} height={44} className="" src={logo_navbar_open} alt={''} />
+          <div className="flex h-[131px] w-full flex-col items-center gap-4 bg-[#A6837F] shadow-2xl">
+            <button onClick={() => setIsOpen(!isOpen)}>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className={`${isOpen ? 'fixed left-[85%] top-5 z-50 text-white' : 'hidden'}`}
+              >
+                <path
+                  d="M1.41174 1.41176L21.3771 21.3771"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+                <path
+                  d="M21.1764 1.41176L1.41174 21.1765"
+                  stroke="white"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                />
+              </svg>
+            </button>
+            <div className="flex h-16 w-16 items-center justify-center rounded-full bg-white pl-2 pt-1 shadow-lg ">
+              <SmoothScrollLink to="#home" onClick={closeMenu}>
+                <Image
+                  width={50}
+                  height={44}
+                  className="shadow-2xl"
+                  src={logo_navbar_open}
+                  alt={''}
+                ></Image>
+              </SmoothScrollLink>
             </div>
             <div className="flex font-butler text-base font-normal text-white">
               Wedding & Event Planner
