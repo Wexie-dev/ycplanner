@@ -7,6 +7,7 @@ import MobileNavbar from '../components/MobileNavbar';
 import { AboutProps, BannerProps, HowIWorkProps, GalleryProps } from '@/types';
 import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
 import HowIWork from '../sections/HowIWork';
+import InstagramPhotos from '../sections/Instagram';
 
 export default function Home() {
   const { data: content, isLoading, isError } = useContentsQuery();
@@ -53,6 +54,7 @@ export default function Home() {
       <About {...aboutProps}></About>
       <HowIWork {...howIWorkProps}></HowIWork>
       <Gallery {...galleryProps}></Gallery>
+      <InstagramPhotos />
     </div>
   );
 }

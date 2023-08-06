@@ -16,6 +16,8 @@ export interface ImageContent {
 export interface BannerProps {
   title?: string;
   subtitle?: string;
+  bgImage?: ImageContent;
+  mobileBgImage?: ImageContent;
 }
 
 export interface AboutProps {

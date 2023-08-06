@@ -15,7 +15,9 @@ export const fetchContent = async () => {
 
   const bannerFragment = gql`
     fragment BannerFragment on Banner {
-      backgroundImg {
+      title
+      subtitle
+      bgImage {
         ...ImageFragment
       }
     }
