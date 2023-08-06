@@ -4,9 +4,10 @@ import About from '../sections/About';
 import Banner from '../sections/Banner';
 import Gallery from '../sections/Gallery';
 import MobileNavbar from '../components/MobileNavbar';
-import { AboutProps, BannerProps, HowIWorkProps, GalleryProps } from '@/types';
+import { AboutProps, BannerProps, HowIWorkProps, GalleryProps, ContactMeProps } from '@/types';
 import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
 import HowIWork from '../sections/HowIWork';
+import Contactme from '../sections/Contactme';
 
 export default function Home() {
   const { data: content, isLoading, isError } = useContentsQuery();
@@ -46,13 +47,23 @@ export default function Home() {
     title2: content!.howIWorks[0].title2,
     paragraph_service_list: content!.howIWorks[0].paragraph_service_list,
   };
+  const contactMeProps: ContactMeProps = {
+    // title: content!.contactMe[0].title,
+    // subtitle: content!.contactMe[0].subtitle,
+    // name: content!.contactMe[0].name,
+    // email: content!.contactMe[0].email,
+    // phone: content!.contactMe[0].phone,
+    // estimatedate: content!.contactMe[0].estimatedate,
+    // description: content!.contactMe[0].description,
+  };
 
   return (
     <div className="w-full">
       <Banner {...bannerProps}></Banner>
-      <About {...aboutProps}></About>
-      <HowIWork {...howIWorkProps}></HowIWork>
-      <Gallery {...galleryProps}></Gallery>
+      {/* <About {...aboutProps}></About> */}
+      {/* <HowIWork {...howIWorkProps}></HowIWork> */}
+      {/* <Gallery {...galleryProps}></Gallery> */}
+      <Contactme {...contactMeProps}></Contactme>
     </div>
   );
 }

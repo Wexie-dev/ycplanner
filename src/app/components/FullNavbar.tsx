@@ -32,7 +32,7 @@ function FullNavbar() {
               <SmoothScrollLink to="#">Testimonios</SmoothScrollLink>
             </li>
             <li className="transition-all duration-300 ease-in-out 2xl:mr-[88px]">
-              <SmoothScrollLink to="#">Contactame</SmoothScrollLink>
+              <SmoothScrollLink to="#contactMe">Contactame</SmoothScrollLink>
             </li>
           </ul>
         </div>

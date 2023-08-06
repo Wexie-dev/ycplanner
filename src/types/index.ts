@@ -4,6 +4,7 @@ export interface GetContentResponse {
   abouts: AboutProps[];
   galleries: GalleryProps[];
   howIWorks: HowIWorkProps[];
+  contactMe: ContactMeProps[];
 }
 
 export interface ImageContent {
@@ -57,4 +58,14 @@ export interface HowIWorkProps {
   paragraph3?: string;
   title2?: string;
   paragraph_service_list?: string[];
+}
+
+export interface ContactMeProps {
+  title: string;
+  subtitle: string;
+  name: string;
+  email: string;
+  phone: number;
+  estimatedate: Date;
+  description: string;
 }
