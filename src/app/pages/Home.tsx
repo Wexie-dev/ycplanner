@@ -3,11 +3,9 @@ import React from 'react';
 import About from '../sections/About';
 import Banner from '../sections/Banner';
 import Gallery from '../sections/Gallery';
-import MobileNavbar from '../components/MobileNavbar';
 import { AboutProps, BannerProps, HowIWorkProps, GalleryProps, ContactMeProps } from '@/types';
-import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
 import HowIWork from '../sections/HowIWork';
-import Contactme from '../sections/Contactme';
+import Footer from '../components/Footer';
 
 export default function Home() {
   const { data: content, isLoading, isError } = useContentsQuery();
@@ -60,10 +58,11 @@ export default function Home() {
   return (
     <div className="w-full">
       <Banner {...bannerProps}></Banner>
-      {/* <About {...aboutProps}></About> */}
-      {/* <HowIWork {...howIWorkProps}></HowIWork> */}
-      {/* <Gallery {...galleryProps}></Gallery> */}
+      <About {...aboutProps}></About>
+      <HowIWork {...howIWorkProps}></HowIWork>
+      <Gallery {...galleryProps}></Gallery>
       <Contactme {...contactMeProps}></Contactme>
+      <Footer></Footer>
     </div>
   );
 }

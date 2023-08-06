@@ -4,7 +4,7 @@ import React from 'react';
 interface SmoothScrollLinkProps {
   to: string;
   children: React.ReactNode;
-  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+  onClick: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
 const SmoothScrollLink: React.FC<SmoothScrollLinkProps> = ({ to, children, onClick }) => {
@@ -14,6 +14,10 @@ const SmoothScrollLink: React.FC<SmoothScrollLinkProps> = ({ to, children, onCli
     if (targetElement) {
       const targetY = targetElement.getBoundingClientRect().top + window.scrollY;
       window.scrollTo({ top: targetY, behavior: 'smooth' });
+    }
+
+    if (onClick) {
+      onClick(e);
     }
   };
 

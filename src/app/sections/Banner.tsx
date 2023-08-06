@@ -13,7 +13,10 @@ export default function Banner(bannerProps: BannerProps) {
   };
 
   return (
-    <section id="home" className="h-screen w-full overflow-x-hidden overflow-y-hidden">
+    <section
+      id="home"
+      className="h-screen w-full overflow-x-hidden overflow-y-hidden sm:h-full xl:h-screen"
+    >
       <div className="relative h-screen w-screen overflow-hidden sm:h-[505px] md:h-[620px] xl:h-screen">
         {/* Background Image */}
         <div
