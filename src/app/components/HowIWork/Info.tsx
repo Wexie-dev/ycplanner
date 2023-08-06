@@ -41,7 +41,7 @@ function Info({
             alt={''}
           />
         </div>
-        <div className="absolute left-10 top-4 z-10 h-[352px] w-[304px] bg-[#AD837E] opacity-50 drop-shadow-[0_11px_48px_0_#00000040] sm:left-[32%] md:h-[458px] md:w-[395px] lg:left-[21%] lg:top-12 lg:h-[826px] lg:w-[712px] 2xl:left-16 2xl:top-10"></div>
+        <div className="absolute left-10 top-4 z-10 h-[352px] w-[304px] bg-[#AD837E] opacity-50 shadow-2xl sm:left-[32%] md:h-[458px] md:w-[395px] lg:left-[21%] lg:top-12 lg:h-[826px] lg:w-[712px] 2xl:left-16 2xl:top-10"></div>
       </div>
 
       <div className="ml-10 font-normal lg:ml-32 2xl:ml-[150px] 2xl:w-[575px]">
@@ -55,17 +55,14 @@ function Info({
         <div className="flex pt-6 font-butler text-2xl lg:pt-9 lg:text-4xl 2xl:pt-10">
           {subtitle2}
         </div>
-        <div className="">
-          {paragraph2?.split('.').map((paragraph, index) => (
-            <p className="flex pb-2 pr-10 pt-2 text-base lg:pt-4" key={index}>
-              {paragraph}.
-            </p>
-          ))}
-        </div>
-        <div className="flex pt-2 font-anguilla text-5xl text-[#996058] lg:pt-6 lg:text-[80px]">
+        <pre
+          className="my- flex whitespace-pre-wrap pr-10 font-sans text-base lg:pt-4"
+          dangerouslySetInnerHTML={{ __html: paragraph2 }}
+        />
+        <div className="flex pt-6 font-anguilla text-5xl text-[#996058] lg:pt-6 lg:text-[80px]">
           {subtitle3}
         </div>
-        <div className="flex pb-12 pr-10 pt-2 text-base lg:pt-6">{paragraph3}</div>
+        <div className="flex pb-12 pr-10 pt-6 text-base lg:pt-6">{paragraph3}</div>
       </div>
     </div>
   );

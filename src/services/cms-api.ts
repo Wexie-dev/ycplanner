@@ -17,6 +17,9 @@ export const fetchContent = async () => {
     fragment BannerFragment on Banner {
       title
       subtitle
+      mobileBgImage {
+        ...ImageFragment
+      }
       bgImage {
         ...ImageFragment
       }

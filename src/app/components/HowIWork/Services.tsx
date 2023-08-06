@@ -47,14 +47,14 @@ function Services({ title2, paragraph_service_list }: HowIWorkServicesProps) {
 
   return (
     <div className="bg-[#F5F5F5]">
-      <div className="flex justify-center pt-12 font-anguilla text-[40px] text-[#996058] lg:justify-start lg:pl-36 lg:text-[75px] 2xl:py-[55px] 2xl:text-8xl">
+      <div className="flex justify-center pt-12 font-anguilla text-[40px] text-[#996058] lg:justify-start lg:pl-36 lg:text-[75px] 2xl:pt-[55px] 2xl:text-8xl">
         {title2}
       </div>
-      <div className="flex flex-col px-[92px] pt-10 lg:flex-row lg:flex-wrap lg:px-0 lg:pb-10 lg:pt-6 2xl:p-0">
+      <div className="flex flex-col px-[92px] pt-10 lg:flex-row lg:flex-wrap lg:px-0 lg:pt-6 2xl:p-0">
         {serviceDetails.map((service, index) => (
           <div
             key={index}
-            className="flex flex-col items-center pb-8 text-center text-sm font-normal text-[#36373A] lg:mb-14 lg:ml-[140px] lg:w-[300px] lg:pb-0 lg:text-base 2xl:mb-20 2xl:ml-[136px]"
+            className="flex flex-col items-center pb-8 text-center text-sm font-normal text-[#36373A] lg:ml-[140px] lg:mt-14 lg:w-[300px] lg:pb-0 lg:text-base 2xl:ml-[136px] 2xl:mt-20"
           >
             <Image
               width={isMobile ? 32 : 56}
