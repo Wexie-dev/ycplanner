@@ -6,6 +6,7 @@ import Gallery from '../sections/Gallery';
 import { AboutProps, BannerProps, HowIWorkProps, GalleryProps, ContactMeProps } from '@/types';
 import HowIWork from '../sections/HowIWork';
 import Footer from '../components/Footer';
+import Contactme from '../sections/Contactme';
 
 export default function Home() {
   const { data: content, isLoading, isError } = useContentsQuery();
@@ -46,13 +47,13 @@ export default function Home() {
     paragraph_service_list: content!.howIWorks[0].paragraph_service_list,
   };
   const contactMeProps: ContactMeProps = {
-    // title: content!.contactMe[0].title,
-    // subtitle: content!.contactMe[0].subtitle,
-    // name: content!.contactMe[0].name,
-    // email: content!.contactMe[0].email,
-    // phone: content!.contactMe[0].phone,
-    // estimatedate: content!.contactMe[0].estimatedate,
-    // description: content!.contactMe[0].description,
+    title: content!.contactMe[0].title,
+    subtitle: content!.contactMe[0].subtitle,
+    name: content!.contactMe[0].name,
+    email: content!.contactMe[0].email,
+    phone: content!.contactMe[0].phone,
+    estimatedate: content!.contactMe[0].estimatedate,
+    description: content!.contactMe[0].description,
   };
 
   return (
