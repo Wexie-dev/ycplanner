@@ -3,10 +3,17 @@ import React from 'react';
 import Image from 'next/image';
 import FullNavbar from '../components/FullNavbar';
 import MobileNavbar from '../components/MobileNavbar';
+import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
 
 export default function Banner(bannerProps: BannerProps) {
+  const isMobile = useMediaQuery(mediaQueries.mobile);
   const bannerTitle = bannerProps.title ?? 'Bienvenidos';
   const bannerSubtitle = bannerProps.subtitle ?? '¡Hagamos que tu evento sea único!';
+  const desktopBannerImg = bannerProps.bgImage?.url;
+  const mobileBannerImg = bannerProps.mobileBgImage?.url;
+  const remoteBannerImg = isMobile ? mobileBannerImg : desktopBannerImg;
+
+  const useDefaultBannerImg = Boolean(remoteBannerImg);
 
   const handleScrollDown = () => {
     window.scrollBy(0, window.innerHeight);
@@ -20,7 +27,10 @@ export default function Banner(bannerProps: BannerProps) {
       <div className="relative h-screen w-screen overflow-hidden sm:h-[505px] md:h-[620px] xl:h-screen">
         {/* Background Image */}
         <div
-          className={`lg:bg-to absolute left-0 top-0 h-full w-full bg-mobileBanner bg-cover bg-center sm:bg-tabletBanner lg:bg-banner`}
+          style={useDefaultBannerImg ? { backgroundImage: `url(${remoteBannerImg})` } : {}}
+          className={`lg:bg-to absolute left-0 top-0 h-full w-full ${
+            useDefaultBannerImg ? 'bg-mobileBanner lg:bg-banner' : null
+          } bg-cover bg-center sm:bg-tabletBanner`}
         >
           <div className="opacity-85 h-full bg-gradient-to-b from-transparent via-transparent to-zinc-800 lg:hidden"></div>
         </div>

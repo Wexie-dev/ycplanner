@@ -97,7 +97,7 @@ export const metadata: Metadata = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className="scroll-smooth" lang="en">
+    <html className="scroll-smooth" lang="es">
       <body
         className={`${montserrat.variable} ${butler.variable} ${anguilla.variable} bg-[#F5F5F5] font-sans text-typographyGray`}
       >

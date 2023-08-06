@@ -5,6 +5,7 @@ import Banner from '../sections/Banner';
 import Gallery from '../sections/Gallery';
 import { AboutProps, BannerProps, HowIWorkProps, GalleryProps } from '@/types';
 import HowIWork from '../sections/HowIWork';
+import InstagramPhotos from '../sections/Instagram';
 import Footer from '../components/Footer';
 
 export default function Home() {
@@ -52,6 +53,7 @@ export default function Home() {
       <About {...aboutProps}></About>
       <HowIWork {...howIWorkProps}></HowIWork>
       <Gallery {...galleryProps}></Gallery>
+      <InstagramPhotos />
       <Footer></Footer>
     </div>
   );
