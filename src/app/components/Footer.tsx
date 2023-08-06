@@ -9,11 +9,13 @@ import youtube from '../../../public/images/footer-youtube-icon.svg';
 
 function Footer() {
   const isMobile = useMediaQuery(mediaQueries.mobile);
+
   const socialMedia = [
     {
       icon: {
         src: whatsapp,
-        url: '',
+        urlPath: 'https://api.whatsapp.com/send?phone=',
+        urlSrc: '+54 9 11 3478-0185',
         mobileWidth: 32,
         mobileHeight: 32,
         desktopWidth: 40,
@@ -24,7 +26,8 @@ function Footer() {
     {
       icon: {
         src: instagram,
-        url: 'https://www.instagram.com/yc.planner/',
+        urlPath: 'https://www.instagram.com/',
+        urlSrc: '@yc.planner',
         mobileWidth: 32,
         mobileHeight: 32,
         desktopWidth: 40,
@@ -35,7 +38,8 @@ function Footer() {
     {
       icon: {
         src: mail,
-        url: isMobile ? 'mailto:roccotc@gmail.com' : '',
+        urlPath: 'mailto:',
+        urlSrc: 'roccotc@gmail.com',
         mobileWidth: 48,
         mobileHeight: 32,
         desktopWidth: 56,
@@ -46,7 +50,8 @@ function Footer() {
     {
       icon: {
         src: youtube,
-        url: 'https://www.youtube.com/@yc.planner',
+        urlPath: 'https://www.youtube.com/',
+        urlSrc: '@yc.planner',
         mobileWidth: 40,
         mobileHeight: 32,
         desktopWidth: 46,
@@ -57,32 +62,66 @@ function Footer() {
   ];
 
   return (
-    <section id="#footer" className="h-full w-full">
-      <div className="mt-4 flex h-[318px] flex-col bg-[#A6837F]">
+    <section id="#footer" className="mt-4 h-[318px] w-full bg-[#A6837F]">
+      <div className="flex flex-col lg:flex-row lg:justify-center lg:gap-[80px] 2xl:gap-[120px]">
         <div className="flex justify-center">
-          <Image width={84} height={75} className="mt-6" src={footer_logo} alt={'Footer Logo'} />
+          <Image
+            width={84}
+            height={75}
+            className="mt-6 lg:h-[152px] lg:w-[171px]"
+            src={footer_logo}
+            alt={'Footer Logo'}
+          />
         </div>
-        <div className="mt-5 pl-10 text-sm font-medium text-white">Encontrame en</div>
-        <div className="mt-6 flex justify-center gap-10">
+        <div className="mt-5 pl-10 text-sm font-medium text-white lg:hidden">Encontrame en</div>
+        <div className="mt-6 flex justify-center gap-10 lg:items-center xl:gap-[100px]">
           {socialMedia.map((item, index) => (
             <div key={index} className="">
-              <a href={item.icon.url} target="_blank">
-                <Image
-                  width={isMobile ? item.icon.mobileWidth : item.icon.desktopWidth}
-                  height={isMobile ? item.icon.mobileHeight : item.icon.desktopHeight}
-                  src={item.icon.src}
-                  alt={item.icon.alt}
-                ></Image>
-              </a>
+              {index === 0 || index === 1 ? (
+                <a
+                  href={(item.icon.urlPath + item.icon.urlSrc).replace(/[ @+-]/g, '')}
+                  target="_blank"
+                >
+                  <div className="flex items-center gap-4 lg:flex-col 2xl:flex-row">
+                    <Image
+                      width={isMobile ? item.icon.mobileWidth : item.icon.desktopWidth}
+                      height={isMobile ? item.icon.mobileHeight : item.icon.desktopHeight}
+                      src={item.icon.src}
+                      alt={item.icon.alt}
+                    ></Image>
+                    <div className="hidden text-lg font-medium text-white lg:block">
+                      {item.icon.urlSrc}
+                    </div>
+                  </div>
+                </a>
+              ) : (
+                <a href={item.icon.urlPath + item.icon.urlSrc} target="_blank">
+                  <div className="flex items-center gap-4 lg:flex-col 2xl:flex-row">
+                    <Image
+                      width={isMobile ? item.icon.mobileWidth : item.icon.desktopWidth}
+                      height={isMobile ? item.icon.mobileHeight : item.icon.desktopHeight}
+                      src={item.icon.src}
+                      alt={item.icon.alt}
+                    ></Image>
+                    <div className="hidden text-lg font-medium text-white lg:block">
+                      {item.icon.urlSrc}
+                    </div>
+                  </div>
+                </a>
+              )}
             </div>
           ))}
         </div>
+      </div>
+      <div>
         <div className="mt-8 flex justify-center">
           <div className="h-0.5 w-[90%] bg-white"></div>
         </div>
-        <div className="mt-8 flex flex-col items-center text-center text-sm font-medium text-white">
+        <div className="mt-8 flex flex-col items-center text-center text-sm font-medium text-white xl:flex-row xl:justify-center xl:text-base">
           <div>Copyright © 2023 | Wexie Technology</div>
-          <div>Buenos Aires, Argentina</div>
+          <div className="flex">
+            <span className="mx-1 hidden xl:block">|</span>Buenos Aires, Argentina
+          </div>
         </div>
       </div>
     </section>
