@@ -5,108 +5,98 @@ import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
 import planta from '../../../public/images/plant.svg';
 import weddingpic from '../../../public/images/weddingpic.png';
 
-function Contactme(contactMeProps: ContactMeProps) {
-  const matchedSM = useMediaQuery(mediaQueries.mobile);
+function Contactme() {
+  const isMobile = useMediaQuery(mediaQueries.mobile);
 
   return (
-    <section id="contactMe" className={`mt-[60px] bg-[#D7D8DB] 2xl:mt-[40px]`}>
-      <div className="flex w-full flex-col-reverse items-center 2xl:flex-row 2xl:items-start 2xl:justify-evenly">
-        <div className="flex justify-center">
-          <div className="relative mb-[32px] block h-[742px] w-[328px] rounded bg-white shadow-2xl 2xl:h-[848px] 2xl:w-[725px]">
-            <div className="rotate -[-5deg] transform">
-              <Image
-                width={matchedSM ? 223 : 225}
-                height={matchedSM ? 99 : 100}
-                className="absolute -right-1 -top-5"
-                src={planta}
-                alt="Planta"
-              />
-            </div>
-            <>
-              <h1 className="mt-[92px] text-center font-butler text-[24px] font-normal text-[#C2857D]">
-                ¿Hacemos equipo?
-              </h1>
-              <div className="flex flex-col justify-center">
-                <p className="mx-[25px] mt-[19px] text-center text-[14px] font-normal text-[#36373A]">
-                  Me encantaría conocerlos y así poder armar su evento personalizado!
-                </p>
-                <p className="mx-[56px] mt-[8px] text-center text-[14px] font-normal text-[#36373A]">
-                  ¿Me cuentan cuál es su idea?
-                </p>
-              </div>
-              <form className="mx-auto w-[276px]">
-                <div className="mb-[24px]">
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    placeholder="Nombre*"
-                    className="focus:shadow-outline-[#C2857D] px-26 mt-[24px] block w-full appearance-none border-b-2 border-[#C2857D] pb-4 pl-0 text-[16px] font-semibold leading-normal placeholder-[#5B5A5A] focus:outline-none"
-                  />
-                </div>
-                <div className="mb-[24px]">
-                  <input
-                    type="text"
-                    id="email"
-                    name="email"
-                    placeholder="Email*"
-                    className="focus:shadow-outline-[#C2857D] px-26 mt-[24px] block w-full appearance-none border-b-2 border-[#C2857D] pb-4 pl-0 text-[16px] font-semibold leading-normal placeholder-[#5B5A5A] focus:outline-none"
-                  />
-                </div>
-                <div className="mb-[24px]">
-                  <input
-                    type="number"
-                    id="phone"
-                    name="phone"
-                    placeholder="Teléfono*"
-                    className="focus:shadow-outline-[#C2857D] px-26 mt-[24px] block w-full appearance-none border-b-2 border-[#C2857D] pb-4 pl-0 text-[16px] font-semibold leading-normal placeholder-[#5B5A5A] focus:outline-none"
-                  />
-                </div>
-                <div className="mb-[24px]">
-                  <input
-                    type="date"
-                    id="estimate"
-                    name="estimate"
-                    placeholder="Fecha estimada del evento*"
-                    className="focus:shadow-outline-[#C2857D] px-26 mt-[24px] block w-full appearance-none border-b-2 border-[#C2857D] pb-4 pl-0 text-[16px] font-semibold leading-normal placeholder-[#5B5A5A] focus:outline-none"
-                  />
-                </div>
-                <div className="">
-                  <div className="mt-[8px]">
-                    <label htmlFor="Adelanto" className="mb-2 block font-semibold text-[#5B5A5A]">
-                      ¿Quieren adelantarme algo?
-                    </label>
-                    <input
-                      type="text"
-                      id="adelanto"
-                      name="adelanto"
-                      placeholder="Escribí acá"
-                      className="block h-[96px] w-full rounded-sm border-2 border-[#C2857D] text-[18px] font-light placeholder-[#BEB0B0] shadow-sm focus:border-[#C2857D] focus:outline-none focus:ring-[#C2857D]"
-                    />
-                  </div>
-                </div>
-                <div className="mt-[32px] flex flex-col items-center justify-center">
-                  <button
-                    type="submit"
-                    className="flex h-[40px] w-[144px] items-center justify-center rounded-lg bg-[#C2857D] text-center text-[16px] font-semibold text-white focus:outline-none focus:ring-2 focus:ring-[#C2857D] focus:ring-offset-2"
-                  >
-                    Enviar
-                  </button>
-                </div>
-              </form>
-            </>
-          </div>
+    <section id="contactMe" className="w-full pt-16">
+      <div className="flex flex-col items-center bg-[#D7D8DB] lg:mt-36 lg:h-[530px] lg:flex-row-reverse lg:justify-center xl:h-[640px]">
+        <div className="flex justify-center lg:ml-4">
+          <Image
+            width={344}
+            height={392}
+            src={weddingpic}
+            className="lg:h-[530px] lg:w-[466px] 2xl:h-[884px] 2xl:w-[777px]"
+            alt="Wedding"
+            quality={100}
+          />
         </div>
-        <div className="mx-auto h-[392px] w-full">
-          <div className="relative flex justify-center">
+        <div className="mb-8 mt-6 h-[742px] w-[328px] rounded-lg bg-white drop-shadow-lg md:w-[460px] lg:h-[760px] 2xl:h-[848px] 2xl:w-[725px]">
+          <div className="rotate -[-5deg] transform">
             <Image
-              width={matchedSM ? 344 : 777}
-              height={matchedSM ? 392 : 884}
-              src={weddingpic}
-              className="absolute -top-10"
-              alt="Wedding"
+              width={223}
+              height={99}
+              className="absolute -right-1 -top-5"
+              src={planta}
+              alt="Planta"
             />
           </div>
+          <div className="md:px-5 2xl:px-[140px]">
+            <h1 className="pt-[92px] text-center font-butler text-2xl font-normal text-[#C2857D] lg:text-3xl 2xl:text-5xl">
+              ¿Hacemos equipo?
+            </h1>
+            <div className="mx-6 mt-5 text-center text-sm font-normal text-[#36373A] lg:text-base">
+              <p className="">
+                Me encantaría conocerlos y así poder armar su evento personalizado!
+              </p>
+              <p className="mt-2">¿Me cuentan cuál es su idea?</p>
+            </div>
+          </div>
+          <form className="mx-7 mt-8 flex flex-col gap-6 md:px-5 2xl:px-[140px]">
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Nombre*"
+              className="focus:shadow-outline-[#C2857D] block w-full appearance-none border-b-2 border-[#C2857D] pb-4 pl-0 text-base font-semibold leading-normal placeholder-[#5B5A5A] focus:outline-none 2xl:text-lg"
+            />
+            <input
+              type="text"
+              id="email"
+              name="email"
+              placeholder="Email*"
+              className="focus:shadow-outline-[#C2857D] block w-full appearance-none border-b-2 border-[#C2857D] pb-4 pl-0 text-base font-semibold leading-normal placeholder-[#5B5A5A] focus:outline-none 2xl:text-lg"
+            />
+            <input
+              type="number"
+              id="phone"
+              name="phone"
+              placeholder="Teléfono*"
+              className="focus:shadow-outline-[#C2857D] block w-full appearance-none border-b-2 border-[#C2857D] pb-4 pl-0 text-base font-semibold leading-normal placeholder-[#5B5A5A] focus:outline-none 2xl:text-lg"
+            />
+            <input
+              type="text"
+              onFocus={(e) => (e.target.type = 'date')}
+              onBlur={(e) => (e.target.type = 'text')}
+              id="date"
+              name="date"
+              placeholder="Fecha estimada del evento*"
+              className="focus:shadow-outline-[#C2857D] block w-full appearance-none border-b-2 border-[#C2857D] pb-4 pl-0 text-base font-semibold leading-normal placeholder-[#5B5A5A] focus:outline-none 2xl:text-lg"
+            />
+            <div>
+              <label
+                htmlFor="Adelanto"
+                className="mb-2 block font-semibold text-[#5B5A5A] xl:text-lg"
+              >
+                ¿Quieren adelantarme algo?
+              </label>
+              <textarea
+                id="adelanto"
+                name="adelanto"
+                rows={3}
+                placeholder="Escribí acá"
+                className="focus:shadow-outline-[#C2857D] block w-full appearance-none border-2 border-[#C2857D] pl-3 pt-3 text-lg font-light placeholder-[#BEB0B0] focus:outline-none"
+              />
+            </div>
+            <div className="flex justify-center">
+              <button
+                type="submit"
+                className="flex h-[40px] w-[144px] items-center justify-center rounded-lg bg-[#C2857D] text-center text-base font-semibold text-white focus:outline-none focus:ring-1 focus:ring-[#C2857D] focus:ring-offset-2 xl:h-[48px] xl:w-[240px]"
+              >
+                Enviar
+              </button>
+            </div>
+          </form>
         </div>
       </div>
     </section>

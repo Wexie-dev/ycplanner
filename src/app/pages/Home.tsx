@@ -49,15 +49,16 @@ export default function Home() {
     title2: content!.howIWorks[0].title2,
     paragraph_service_list: content!.howIWorks[0].paragraph_service_list,
   };
-  const contactMeProps: ContactMeProps = {
-    // title: content!.contactMe[0].title,
-    // subtitle: content!.contactMe[0].subtitle,
-    // name: content!.contactMe[0].name,
-    // email: content!.contactMe[0].email,
-    // phone: content!.contactMe[0].phone,
-    // estimatedate: content!.contactMe[0].estimatedate,
-    // description: content!.contactMe[0].description,
-  };
+
+  // const contactMeProps: ContactMeProps = {
+  //   // title: content!.contactMe[0].title,
+  //   // subtitle: content!.contactMe[0].subtitle,
+  //   // name: content!.contactMe[0].name,
+  //   // email: content!.contactMe[0].email,
+  //   // phone: content!.contactMe[0].phone,
+  //   // estimatedate: content!.contactMe[0].estimatedate,
+  //   // description: content!.contactMe[0].description,
+  // };
 
   return (
     <div className="w-full">
@@ -65,7 +66,7 @@ export default function Home() {
       <About {...aboutProps}></About>
       <HowIWork {...howIWorkProps}></HowIWork>
       <Gallery {...galleryProps}></Gallery>
-      <Contactme {...contactMeProps}></Contactme>
+      <Contactme></Contactme>
       <InstagramPhotos />
       <Footer></Footer>
     </div>

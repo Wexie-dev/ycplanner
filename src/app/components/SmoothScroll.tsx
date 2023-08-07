@@ -4,7 +4,7 @@ import React from 'react';
 interface SmoothScrollLinkProps {
   to: string;
   children: React.ReactNode;
-  onClick: (event: React.MouseEvent<HTMLAnchorElement>) => void;
+  onClick?: (event: React.MouseEvent<HTMLAnchorElement>) => void;
 }
 
 const SmoothScrollLink: React.FC<SmoothScrollLinkProps> = ({ to, children, onClick }) => {

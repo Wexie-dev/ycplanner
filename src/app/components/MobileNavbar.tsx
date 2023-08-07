@@ -38,7 +38,7 @@ const navbarOptions = [
   {
     text: 'Contactame',
     icon: { src: logo_navbar_contactame, alt: 'Contactame' },
-    url: '#',
+    url: '#contactMe',
     size: { width: 25, height: 19 },
   },
 ];
