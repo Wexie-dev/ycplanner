@@ -27,7 +27,7 @@ function Info({
   const isMobile = useMediaQuery(mediaQueries.mobile);
 
   return (
-    <div className="bg-[#E9EAED] text-[#36373A] 2xl:flex 2xl:justify-center">
+    <div className="mt-8 bg-[#E9EAED] text-[#36373A] lg:pt-9 2xl:flex 2xl:justify-center">
       <div className="flex justify-center pt-2 font-butler text-2xl font-normal lg:text-5xl 2xl:hidden">
         {title1}
       </div>
