@@ -47,23 +47,23 @@ export default function Home() {
     paragraph_service_list: content!.howIWorks[0].paragraph_service_list,
   };
   const contactMeProps: ContactMeProps = {
-    title: content!.contactMe[0].title,
-    subtitle: content!.contactMe[0].subtitle,
-    name: content!.contactMe[0].name,
-    email: content!.contactMe[0].email,
-    phone: content!.contactMe[0].phone,
-    estimatedate: content!.contactMe[0].estimatedate,
-    description: content!.contactMe[0].description,
+    // title: content!.contactMe[0].title,
+    // subtitle: content!.contactMe[0].subtitle,
+    // name: content!.contactMe[0].name,
+    // email: content!.contactMe[0].email,
+    // phone: content!.contactMe[0].phone,
+    // estimatedate: content!.contactMe[0].estimatedate,
+    // description: content!.contactMe[0].description,
   };
 
   return (
     <div className="w-full">
       <Banner {...bannerProps}></Banner>
-      <About {...aboutProps}></About>
-      <HowIWork {...howIWorkProps}></HowIWork>
-      <Gallery {...galleryProps}></Gallery>
+      {/* <About {...aboutProps}></About> */}
+      {/* <HowIWork {...howIWorkProps}></HowIWork> */}
+      {/* <Gallery {...galleryProps}></Gallery> */}
       <Contactme {...contactMeProps}></Contactme>
-      <Footer></Footer>
+      {/* <Footer></Footer> */}
     </div>
   );
 }
