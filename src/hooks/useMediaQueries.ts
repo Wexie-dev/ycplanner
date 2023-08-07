@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react';
 
 export const mediaQueries = {
   mobile: '(max-width:639px)',
-  tablet: '(min-width:640px) and (max-width:1365px)',
-  desktop: '(min-width:1366px)',
+  tablet: '(min-width:640px) and (max-width:1279px)',
+  laptop: '(min-width:1280px) and (max-width:1535px)',
+  desktop: '(min-width:1536px)',
 };
 
 const useMediaQuery = (query: (typeof mediaQueries)[keyof typeof mediaQueries]): boolean => {

@@ -9,8 +9,8 @@ function Gallery(galleryProps: GalleryProps) {
   const mobileImages = galleryProps.mobileImages;
 
   return (
-    <section id="gallery" className="h-full w-full pt-20">
-      <div className="mb-[24px] mt-[24px] flex justify-center sm:mb-[32px] sm:mt-[32px] 2xl:mb-[56px] 2xl:mt-[56px]">
+    <section id="gallery" className="h-full w-full pt-16 lg:pt-20">
+      <div className="mb-[24px] flex justify-center sm:mb-[32px] sm:mt-[32px] 2xl:mb-[56px] 2xl:mt-[56px]">
         <div className="font-butler text-[24px] font-normal text-[#36373A] sm:text-[26px] 2xl:text-5xl">
           {title}
         </div>

@@ -5,6 +5,7 @@ import Banner from '../sections/Banner';
 import Gallery from '../sections/Gallery';
 import { AboutProps, BannerProps, HowIWorkProps, GalleryProps, ContactMeProps } from '@/types';
 import HowIWork from '../sections/HowIWork';
+import InstagramPhotos from '../sections/Instagram';
 import Footer from '../components/Footer';
 import Contactme from '../sections/Contactme';
 
@@ -59,11 +60,11 @@ export default function Home() {
   return (
     <div className="w-full">
       <Banner {...bannerProps}></Banner>
-      {/* <About {...aboutProps}></About> */}
-      {/* <HowIWork {...howIWorkProps}></HowIWork> */}
-      {/* <Gallery {...galleryProps}></Gallery> */}
-      <Contactme {...contactMeProps}></Contactme>
-      {/* <Footer></Footer> */}
+      <About {...aboutProps}></About>
+      <HowIWork {...howIWorkProps}></HowIWork>
+      <Gallery {...galleryProps}></Gallery>
+      <InstagramPhotos />
+      <Footer></Footer>
     </div>
   );
 }

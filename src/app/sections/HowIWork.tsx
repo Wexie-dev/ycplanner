@@ -16,7 +16,7 @@ function HowIWork({
   paragraph_service_list,
 }: HowIWorkProps) {
   return (
-    <section className="h-full w-full bg-[#E9EAED] pt-16 lg:pt-[72px]" id="howIWork">
+    <section className="h-full w-full pt-8 lg:pt-9" id="howIWork">
       {/* Como trabajo */}
       <Info
         title1={title1}
