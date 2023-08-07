@@ -9,7 +9,6 @@ export type AboutCardProps = {
   keyPoints: KeyPoints[];
 };
 function Card({ image, body, subtitle, keyPoints }: AboutCardProps) {
-  console.log('🚀 ~ file: Card.tsx:12 ~ Card ~ keyPoints:', keyPoints);
   const [isExpanded, setIsExpanded] = useState(false);
 
   const toggleExpanded = () => {

@@ -12,7 +12,7 @@ function Events({ title, events }: { title: string; events: AboutEvents[] }) {
         <div className="flex min-w-min space-x-2 overflow-x-scroll whitespace-nowrap lg:space-x-4 lg:overflow-hidden">
           {events.map((event) => (
             <div className="flex flex-col items-center">
-              <div className="relative h-[328px] w-[216px] overflow-hidden rounded-sm sm:h-[356px] sm:w-[236px] md:h-[392px] md:w-[432px] lg:h-[254px] lg:w-[240px] xl:h-[324px] xl:w-[300px] 2xl:h-[384px] 2xl:w-[360px] 3xl:h-[392px] 3xl:w-[432px]">
+              <div className="relative h-[328px] w-[216px] overflow-hidden rounded-sm sm:h-[256px] sm:w-[200px] md:h-[392px] md:w-[432px] lg:h-[254px] lg:w-[240px] xl:h-[324px] xl:w-[300px] 2xl:h-[384px] 2xl:w-[360px] 3xl:h-[392px] 3xl:w-[432px]">
                 <Image
                   fill
                   alt={event.title}

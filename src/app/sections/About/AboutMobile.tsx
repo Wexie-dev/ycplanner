@@ -15,7 +15,11 @@ export const MobileDesign = ({
   <>
     <h1 className="my-8 text-center font-butler text-[32px] font-normal">{title}</h1>
     <Card image={image} body={description} subtitle={subtitle} keyPoints={keyPoints}></Card>
-    <Events title={eventsTitle} events={events}></Events>
+    <div className="px-4">
+      {' '}
+      <Events title={eventsTitle} events={events}></Events>
+    </div>
+
     <div className="mb-16 mt-20 flex justify-center">
       <h2 className="text-center font-anguilla text-[40px] leading-none text-typographyPink">
         {closingText}
