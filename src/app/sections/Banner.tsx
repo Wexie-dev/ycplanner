@@ -13,6 +13,7 @@ export default function Banner(bannerProps: BannerProps) {
   const desktopBannerImg = bannerProps.bgImage?.url;
   const mobileBannerImg = bannerProps.mobileBgImage?.url;
   const remoteBannerImg = isMobile ? mobileBannerImg : desktopBannerImg;
+  console.log('🚀 ~ file: Banner.tsx:15 ~ Banner ~ remoteBannerImg:', remoteBannerImg);
 
   const useDefaultBannerImg = Boolean(remoteBannerImg);
 

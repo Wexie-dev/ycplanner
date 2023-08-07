@@ -15,6 +15,8 @@ export default function Home() {
   if (isError) return <div>Error: </div>;
 
   const bannerProps: BannerProps = {
+    bgImage: content!.banners[0].bgImage,
+    mobileBgImage: content!.banners[0].mobileBgImage,
     title: content!.banners[0].title,
     subtitle: content!.banners[0].subtitle,
   };
