@@ -63,6 +63,7 @@ export default function Home() {
       <About {...aboutProps}></About>
       <HowIWork {...howIWorkProps}></HowIWork>
       <Gallery {...galleryProps}></Gallery>
+      <Contactme {...contactMeProps}></Contactme>
       <InstagramPhotos />
       <Footer></Footer>
     </div>
