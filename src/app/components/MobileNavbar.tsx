@@ -102,7 +102,7 @@ function MobileNavbar() {
         leave="transition-transform duration-300"
         leaveFrom="translate-x-0"
         leaveTo="-translate-x-full"
-        className="shadow-3xl fixed inset-0 z-50 bg-white sm:hidden"
+        className="shadow-3xl fixed inset-0 z-50 bg-white md:hidden"
         style={{ width: '90%' }}
         ref={menuRef}
       >
