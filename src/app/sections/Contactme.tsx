@@ -3,20 +3,14 @@ import React, { useMemo, useState } from 'react';
 import Image from 'next/image';
 import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
 import { useFormik } from 'formik';
+import { useMutation } from 'react-query';
 import * as Yup from 'yup';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
+import { ContactMePayload, postContactMe } from '@/services/contact';
 
 import planta from '../../../public/images/plant.svg';
 import weddingpic from '../../../public/images/weddingpic.png';
-
-type ContactMePayload = {
-  name: string;
-  email: string;
-  phone: string;
-  date: Date | null;
-  notes?: string;
-};
 
 type InitialValues = Partial<ContactMePayload>;
 
@@ -43,6 +37,7 @@ function Contactme() {
     validationSchema: contactMeValidationSchema,
     onSubmit: (values) => {
       const payload = values as ContactMePayload;
+      mutation.mutate(payload);
     },
   });
 
@@ -58,12 +53,13 @@ function Contactme() {
     [formik.isSubmitting, formik.isValid, formik.dirty],
   );
 
-  const ResponseMessage = () => {
-    if (customError) {
-      return <div className="text-center text-sm text-red-600">{customError}</div>;
-    } else {
-      return <div className="text-center text-sm text-green-600">Enviado correctamente</div>;
-    }
+  const Error = ({ error }: { error: unknown }) => {
+    const errorToRender = error as Error;
+    return (
+      <div className="text-center text-sm text-red-600">
+        {errorToRender.message ?? 'Hubo un error!'}
+      </div>
+    );
   };
 
   const Success = () => (
@@ -76,6 +72,20 @@ function Contactme() {
       </div>
     </div>
   );
+
+  const mutation = useMutation(postContactMe, {
+    onSuccess: (data) => {
+      if (data.success) {
+        //TODO: render check for success
+        console.log('Exito enviando');
+      } else {
+        setCustomError('Error al enviar el formulario. Por favor intenta nuevamente');
+      }
+    },
+    onError() {
+      setCustomError('Hubo un error enviando el formulario. Por favor intenta nuevamente!');
+    },
+  });
 
   console.log(formik.errors, formik.touched);
 
@@ -112,6 +122,7 @@ function Contactme() {
               method="POST"
               className="mx-7 mt-8 flex flex-col gap-6 md:px-5 2xl:px-[140px]"
               data-netlify="true"
+              onSubmit={formik.handleSubmit}
             >
               <div>
                 <input
@@ -195,6 +206,8 @@ function Contactme() {
                 >
                   Enviar
                 </button>
+                {mutation.isSuccess && <Success />}
+                {mutation.isError && <Error error={mutation.error} />}
               </div>
             </form>
           </div>
