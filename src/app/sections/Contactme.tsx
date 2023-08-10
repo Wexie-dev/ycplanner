@@ -119,7 +119,6 @@ function Contactme() {
               </div>
             </div>
             <form
-              method="POST"
               className="mx-7 mt-8 flex flex-col gap-6 md:px-5 2xl:px-[140px]"
               data-netlify="true"
               onSubmit={formik.handleSubmit}
