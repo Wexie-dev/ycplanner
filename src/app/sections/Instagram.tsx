@@ -45,7 +45,7 @@ const InstagramPhotos = () => {
             rel="noopener noreferrer"
           >
             {photo.media_type === 'VIDEO' ? (
-              <video controls className="h-auto w-full">
+              <video controls className="h-full w-full" controlsList="nodownload">
                 <source src={photo.media_url} type="video/mp4" />
                 Your browser does not support the video tag.
               </video>
@@ -53,7 +53,7 @@ const InstagramPhotos = () => {
               <Image
                 src={photo.media_url}
                 alt={`Instagram Post ${photo.id}`}
-                className="h-auto w-full rounded object-cover"
+                className="rounded object-cover"
                 fill
                 priority
                 quality={100}
