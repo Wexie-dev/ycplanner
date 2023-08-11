@@ -30,7 +30,7 @@ const InstagramPhotos = () => {
 
   const Content = () => (
     <>
-      <div className="mb-[24px] mt-[24px] flex justify-center sm:mb-[32px] sm:mt-[32px] 2xl:mb-[56px] 2xl:mt-[56px]">
+      <div className="mb-[24px] mt-[24px] flex justify-center sm:mb-[32px] sm:mt-[32px] 2xl:mb-[123px] 2xl:mt-[56px]">
         <h4 className="font-butler text-[24px] font-normal text-[#36373A] sm:text-[26px] 2xl:text-5xl">
           Seguime en Instagram
         </h4>
@@ -66,7 +66,10 @@ const InstagramPhotos = () => {
   );
 
   return (
-    <section className="h-screen px-4 lg:px-8 xl:px-16 3xl:px-[75px]" id="instagram">
+    <section
+      className="xl-mb-[285px] mb-[102px] mt-8 h-auto px-4 lg:px-8 xl:mt-[223px] xl:px-16 3xl:px-[75px]"
+      id="instagram"
+    >
       {isLoading ? <LoadingState /> : error ? <ErrorState /> : <Content />}
     </section>
   );
