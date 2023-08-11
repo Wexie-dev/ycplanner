@@ -19,10 +19,13 @@ function Contactme() {
   const [customError, setCustomError] = useState<undefined | string>();
 
   const contactMeValidationSchema = Yup.object().shape({
-    name: Yup.string().min(3, 'Muy corto').max(35, 'Muy largo').required('Nombre requerido'),
-    email: Yup.string().max(45, 'Muy largo').required('Correo requerido').email('Correo no válido'),
-    phone: Yup.string().max(20, 'Muy largo').required('Número requerido'),
-    date: Yup.date().required('Fecha requerida'),
+    name: Yup.string().min(3, 'Muy corto').max(35, 'Muy largo').required('Campo obligatorio'),
+    email: Yup.string()
+      .max(45, 'Muy largo')
+      .required('Campo obligatorio')
+      .email('Correo no válido'),
+    phone: Yup.string().max(20, 'Muy largo').required('Campo obligatorio'),
+    date: Yup.date().required('Campo obligatorio'),
     notes: Yup.string().max(200, 'Muy largo'),
   });
 
