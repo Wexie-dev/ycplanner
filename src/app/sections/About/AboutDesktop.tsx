@@ -46,7 +46,7 @@ export default function AboutDesktop({
               <span className="font-bold text-typographyPink">
                 {keyPoint.highlightedText.toLocaleUpperCase()},
               </span>{' '}
-              {keyPoint.normalText}
+              {keyPoint.normalText}.
             </p>
           ))}
         </div>

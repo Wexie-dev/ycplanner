@@ -35,14 +35,30 @@ const InstagramPhotos = () => {
           Seguime en Instagram
         </h4>
       </div>
-      <div className="grid grid-cols-2 gap-4 md:grid-cols-3">
+      <div className="grid grid-cols-2 place-items-center gap-8 place-self-center md:grid-cols-3 xl:grid-cols-4">
         {photos!.map((photo: InstagramPhoto) => (
-          <a key={photo.id} href={photo.permalink} target="_blank" rel="noopener noreferrer">
-            <img
-              src={photo.media_url}
-              alt={`Instagram Post ${photo.id}`}
-              className="h-auto w-full rounded"
-            />
+          <a
+            key={photo.id}
+            href={photo.permalink}
+            className="relative h-[155px] w-[155px] md:h-[218px] md:w-[218px] lg:h-[272px] lg:w-[272px] xl:h-[340px] xl:w-[340px] 2xl:h-[424px] 2xl:w-[424px]"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            {photo.media_type === 'VIDEO' ? (
+              <video controls className="h-auto w-full">
+                <source src={photo.media_url} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
+            ) : (
+              <Image
+                src={photo.media_url}
+                alt={`Instagram Post ${photo.id}`}
+                className="h-auto w-full rounded object-cover"
+                fill
+                priority
+                quality={100}
+              />
+            )}
           </a>
         ))}
       </div>
@@ -50,7 +66,7 @@ const InstagramPhotos = () => {
   );
 
   return (
-    <section className="h-screen" id="instagram">
+    <section className="h-screen px-4 lg:px-8 xl:px-16 3xl:px-[75px]" id="instagram">
       {isLoading ? <LoadingState /> : error ? <ErrorState /> : <Content />}
     </section>
   );

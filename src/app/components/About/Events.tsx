@@ -22,7 +22,9 @@ function Events({ title, events }: { title: string; events: AboutEvents[] }) {
                 />
               </div>
               <div className="mt-4">
-                <span className="text-center text-lg xl:text-xl 2xl:text-2xl">{event.title}</span>
+                <span className="text-center text-lg xl:text-xl xl:font-medium 2xl:text-2xl">
+                  {event.title}
+                </span>
               </div>
             </div>
           ))}
