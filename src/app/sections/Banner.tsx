@@ -4,8 +4,9 @@ import Image from 'next/image';
 import FullNavbar from '../components/FullNavbar';
 import MobileNavbar from '../components/MobileNavbar';
 import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
+import WhatsappButton from '../components/WhatsappButton';
 
-export default function Banner(bannerProps: BannerProps) {
+function Banner(bannerProps: BannerProps) {
   const isMobile = useMediaQuery(mediaQueries.mobile);
   const bannerTitle = bannerProps.title ?? 'Bienvenidos';
   const bannerSubtitle = bannerProps.subtitle ?? '¡Hagamos que tu evento sea único!';
@@ -55,7 +56,12 @@ export default function Banner(bannerProps: BannerProps) {
             <Image src="/images/sections/banner/scrolldown-arrow.svg" alt="Scroll Down" fill />
           </button>
         </div>
+
+        {/* Whatsapp Sticky Button */}
+        <WhatsappButton />
       </div>
     </section>
   );
 }
+
+export default React.memo(Banner);
