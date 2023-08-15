@@ -127,6 +127,7 @@ function Contactme() {
               data-netlify="true"
               onSubmit={handleSubmit}
               name="contact"
+              method="post"
             >
               <input type="hidden" name="form-name" value="contact" />
               <div>
