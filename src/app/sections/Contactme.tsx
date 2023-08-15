@@ -28,6 +28,13 @@ function Contactme() {
     notes: Yup.string().max(200, 'Muy largo'),
   });
 
+  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const payload = formik.values as ContactMePayload;
+    console.log('🚀 ~ file: Contactme.tsx:42 ~ Contactme ~ payload:', payload);
+    mutation.mutate(payload);
+  };
+
   const formik = useFormik<InitialValues>({
     initialValues: {
       name: '',
@@ -37,11 +44,7 @@ function Contactme() {
       notes: '',
     },
     validationSchema: contactMeValidationSchema,
-    onSubmit: (values) => {
-      const payload = values as ContactMePayload;
-      console.log('🚀 ~ file: Contactme.tsx:42 ~ Contactme ~ payload:', payload);
-      mutation.mutate(payload);
-    },
+    onSubmit: () => {},
   });
 
   const isBtnDisabled = useMemo(
@@ -90,8 +93,6 @@ function Contactme() {
     },
   });
 
-  console.log(formik.errors, formik.touched);
-
   return (
     <section id="contactMe" className="w-full pt-16">
       <div className="flex flex-col items-center bg-[#D7D8DB] lg:mt-36 lg:h-[530px] lg:flex-row-reverse lg:justify-center xl:h-[640px]">
@@ -125,8 +126,7 @@ function Contactme() {
               className="mx-7 mt-8 flex flex-col gap-6 md:px-5 2xl:px-[140px]"
               data-netlify="true"
               method="POST"
-              onSubmit={formik.handleSubmit}
-              action="/thank-you"
+              onSubmit={handleSubmit}
             >
               <div>
                 <input
