@@ -87,7 +87,7 @@ function MobileNavbar() {
         height={44}
         className="fixed left-20 top-3"
         src={logo_navbar_closed}
-        alt={''}
+        alt={'close-navbar'}
       />
       <div className="fixed left-36 top-6 font-butler text-sm font-normal text-[#97989C]">
         Wedding & Event Planner
@@ -138,7 +138,7 @@ function MobileNavbar() {
                   height={44}
                   className="shadow-2xl"
                   src={logo_navbar_open}
-                  alt={''}
+                  alt={'open-navbar'}
                 ></Image>
               </SmoothScrollLink>
             </div>

@@ -21,7 +21,7 @@ export async function postContactMe(values: ContactMePayload) {
       ...values,
     }),
   });
-
+  console.log('Despues del fetch');
   const response = await postRequest.json();
   console.log('🚀 ~ file: contact.ts:26 ~ postContactMe ~ response:', response);
   return response;

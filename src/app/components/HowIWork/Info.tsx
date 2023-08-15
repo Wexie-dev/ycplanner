@@ -24,8 +24,6 @@ function Info({
   subtitle3,
   paragraph3,
 }: HowIWorkInfoProps) {
-  const isMobile = useMediaQuery(mediaQueries.mobile);
-
   return (
     <div className="mt-8 bg-[#E9EAED] text-[#36373A] lg:pt-9 2xl:flex 2xl:justify-center">
       <div className="flex justify-center pt-2 font-butler text-2xl font-normal lg:text-5xl 2xl:hidden">
@@ -38,7 +36,7 @@ function Info({
             className="relative z-20 ml-4 mt-8 lg:mt-20 2xl:mb-8 2xl:mt-20"
             src={`${image?.url}`}
             quality={100}
-            alt={''}
+            alt={'yanina'}
           />
         </div>
         <div className="absolute left-10 top-4 z-10 h-[352px] w-[304px] bg-[#AD837E] opacity-50 shadow-2xl sm:left-[32%] md:h-[458px] md:w-[395px] lg:left-[21%] lg:top-12 lg:h-[826px] lg:w-[712px] 2xl:left-16 2xl:top-10"></div>
