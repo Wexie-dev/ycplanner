@@ -126,6 +126,7 @@ function Contactme() {
               data-netlify="true"
               method="POST"
               onSubmit={formik.handleSubmit}
+              action="/thank-you"
             >
               <div>
                 <input
@@ -196,6 +197,7 @@ function Contactme() {
                   id="notes"
                   name="notes"
                   rows={3}
+                  onChange={formik.handleChange}
                   placeholder="Escribí acá"
                   className="focus:shadow-outline-[#C2857D] block w-full appearance-none border-2 border-[#C2857D] pl-3 pt-3 text-lg font-light placeholder-[#BEB0B0] focus:outline-none"
                 />

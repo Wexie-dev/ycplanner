@@ -23,5 +23,6 @@ export async function postContactMe(values: ContactMePayload) {
   });
 
   const response = await postRequest.json();
+  console.log('🚀 ~ file: contact.ts:26 ~ postContactMe ~ response:', response);
   return response;
 }
