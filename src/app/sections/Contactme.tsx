@@ -15,7 +15,6 @@ import weddingpic from '../../../public/images/weddingpic.png';
 type InitialValues = Partial<ContactMePayload>;
 
 function Contactme() {
-  const isMobile = useMediaQuery(mediaQueries.mobile);
   const [customError, setCustomError] = useState<undefined | string>();
 
   const contactMeValidationSchema = Yup.object().shape({
