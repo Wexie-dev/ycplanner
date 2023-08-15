@@ -126,7 +126,9 @@ function Contactme() {
               className="mx-7 mt-8 flex flex-col gap-6 md:px-5 2xl:px-[140px]"
               data-netlify="true"
               onSubmit={handleSubmit}
+              name="contact"
             >
+              <input type="hidden" name="form-name" value="contact" />
               <div>
                 <input
                   type="text"
