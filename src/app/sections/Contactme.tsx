@@ -39,6 +39,7 @@ function Contactme() {
     validationSchema: contactMeValidationSchema,
     onSubmit: (values) => {
       const payload = values as ContactMePayload;
+      console.log('🚀 ~ file: Contactme.tsx:42 ~ Contactme ~ payload:', payload);
       mutation.mutate(payload);
     },
   });
@@ -123,6 +124,7 @@ function Contactme() {
             <form
               className="mx-7 mt-8 flex flex-col gap-6 md:px-5 2xl:px-[140px]"
               data-netlify="true"
+              method="POST"
               onSubmit={formik.handleSubmit}
             >
               <div>
