@@ -3,11 +3,19 @@ import React from 'react';
 import About from '../sections/About';
 import Banner from '../sections/Banner';
 import Gallery from '../sections/Gallery';
-import { AboutProps, BannerProps, HowIWorkProps, GalleryProps, ContactMeProps } from '@/types';
+import {
+  AboutProps,
+  BannerProps,
+  HowIWorkProps,
+  GalleryProps,
+  ContactMeProps,
+  TestimonyProps,
+} from '@/types';
 import HowIWork from '../sections/HowIWork';
 import InstagramPhotos from '../sections/Instagram';
 import Footer from '../components/Footer';
 import Contactme from '../sections/Contactme';
+import Testimony from '../sections/Testimony';
 
 export default function Home() {
   const { data: content, isLoading, isError } = useContentsQuery();
@@ -37,6 +45,7 @@ export default function Home() {
     images: content!.galleries[0].images,
     mobileImages: content!.galleries[0].mobileImages,
   };
+
   const howIWorkProps: HowIWorkProps = {
     title1: content!.howIWorks[0].title1,
     image: content!.howIWorks[0].image,
@@ -50,15 +59,9 @@ export default function Home() {
     paragraph_service_list: content!.howIWorks[0].paragraph_service_list,
   };
 
-  // const contactMeProps: ContactMeProps = {
-  //   // title: content!.contactMe[0].title,
-  //   // subtitle: content!.contactMe[0].subtitle,
-  //   // name: content!.contactMe[0].name,
-  //   // email: content!.contactMe[0].email,
-  //   // phone: content!.contactMe[0].phone,
-  //   // estimatedate: content!.contactMe[0].estimatedate,
-  //   // description: content!.contactMe[0].description,
-  // };
+  const testimonyProps: TestimonyProps = {
+    sharedExperiences: content!.testimonies[0].sharedExperiences,
+  };
 
   return (
     <div className="w-full">
@@ -66,6 +69,7 @@ export default function Home() {
       <About {...aboutProps}></About>
       <HowIWork {...howIWorkProps}></HowIWork>
       <Gallery {...galleryProps}></Gallery>
+      <Testimony {...testimonyProps}></Testimony>
       <Contactme></Contactme>
       <InstagramPhotos />
       <Footer></Footer>

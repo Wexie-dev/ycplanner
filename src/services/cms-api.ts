@@ -66,6 +66,20 @@ export const fetchContent = async () => {
     }
   `;
 
+  const testimoniesFragment = gql`
+    fragment TestimoniesFragment on Testimony {
+      testimonies {
+        image {
+          ...ImageFragment
+        }
+        title
+        description
+        name
+        date
+      }
+    }
+  `;
+
   // Actual content query
   const query = gql`
     query Contents {
@@ -87,11 +101,15 @@ export const fetchContent = async () => {
       howIWorks {
         ...HowIWorksFragment
       }
+      testimonies {
+        ...TestimoniesFragment
+      }
     }
     ${imageFragment}
     ${bannerFragment}
     ${aboutFragment}
     ${howIWorksFragment}
+    ${testimoniesFragment}
   `;
 
   const data = await graphcms.request<GetContentResponse>(query);

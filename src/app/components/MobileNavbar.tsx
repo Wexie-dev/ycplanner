@@ -32,7 +32,7 @@ const navbarOptions = [
   {
     text: 'Testimonios',
     icon: { src: logo_navbar_testimonios, alt: 'Testimonios' },
-    url: '#',
+    url: '#testimonies',
     size: { width: 23, height: 20 },
   },
   {
