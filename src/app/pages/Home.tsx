@@ -9,13 +9,13 @@ import {
   HowIWorkProps,
   GalleryProps,
   ContactMeProps,
-  TestimonyProps,
+  Testimony,
 } from '@/types';
 import HowIWork from '../sections/HowIWork';
 import InstagramPhotos from '../sections/Instagram';
 import Footer from '../components/Footer';
 import Contactme from '../sections/Contactme';
-import Testimony from '../sections/Testimony';
+import PeopleExperiences from '../sections/PeopleExperiences';
 
 export default function Home() {
   const { data: content, isLoading, isError } = useContentsQuery();
@@ -59,9 +59,7 @@ export default function Home() {
     paragraph_service_list: content!.howIWorks[0].paragraph_service_list,
   };
 
-  const testimonyProps: TestimonyProps = {
-    sharedExperiences: content!.testimonies[0].sharedExperiences,
-  };
+  const testimonies: Testimony[] = content!.testimonies;
 
   return (
     <div className="w-full">
@@ -69,7 +67,7 @@ export default function Home() {
       <About {...aboutProps}></About>
       <HowIWork {...howIWorkProps}></HowIWork>
       <Gallery {...galleryProps}></Gallery>
-      <Testimony {...testimonyProps}></Testimony>
+      <PeopleExperiences testimonies={testimonies}></PeopleExperiences>
       <Contactme></Contactme>
       <InstagramPhotos />
       <Footer></Footer>

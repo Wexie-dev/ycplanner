@@ -68,15 +68,13 @@ export const fetchContent = async () => {
 
   const testimoniesFragment = gql`
     fragment TestimoniesFragment on Testimony {
-      testimonies {
-        image {
-          ...ImageFragment
-        }
-        title
-        description
-        name
-        date
+      image {
+        ...ImageFragment
       }
+      title
+      description
+      names
+      date
     }
   `;
 

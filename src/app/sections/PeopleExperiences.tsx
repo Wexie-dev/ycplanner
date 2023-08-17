@@ -1,8 +1,9 @@
-import { TestimonyProps } from '@/types';
+import { Testimony } from '@/types';
 import React from 'react';
 
-function Testimony(testimonies: TestimonyProps) {
-  //const title = testimonies.sharedExperiences[0].title;
+function PeopleExperiences(props: { testimonies: Testimony[] }) {
+  const title = props.testimonies[0].title;
+  console.log(title);
 
   return (
     <section className="h-full w-full pt-20" id="testimonies">
@@ -30,4 +31,4 @@ function Testimony(testimonies: TestimonyProps) {
   );
 }
 
-export default Testimony;
+export default PeopleExperiences;
