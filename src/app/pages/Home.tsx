@@ -1,4 +1,5 @@
-import { useContentsQuery } from '@/hooks/useContents';
+'use client';
+
 import React from 'react';
 import About from '../sections/About';
 import Banner from '../sections/Banner';
@@ -10,17 +11,17 @@ import {
   GalleryProps,
   ContactMeProps,
   TestimonyProps,
+  GetContentResponse,
 } from '@/types';
 import HowIWork from '../sections/HowIWork';
 import InstagramPhotos from '../sections/Instagram';
 import Footer from '../components/Footer';
 import Contactme from '../sections/Contactme';
 import Testimony from '../sections/Testimony';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
-export default function Home() {
-  const { data: content, isLoading, isError } = useContentsQuery();
-  if (isLoading) return <div>Loading...</div>;
-  if (isError) return <div>Error: </div>;
+export default function Home({ content }: { content: GetContentResponse }) {
+  const queryClient = new QueryClient();
 
   const bannerProps: BannerProps = {
     bgImage: content!.banners[0].bgImage,
@@ -64,15 +65,17 @@ export default function Home() {
   };
 
   return (
-    <div className="w-full">
-      <Banner {...bannerProps}></Banner>
-      <About {...aboutProps}></About>
-      <HowIWork {...howIWorkProps}></HowIWork>
-      <Gallery {...galleryProps}></Gallery>
-      <Testimony {...testimonyProps}></Testimony>
-      <Contactme></Contactme>
-      <InstagramPhotos />
-      <Footer></Footer>
-    </div>
+    <QueryClientProvider client={queryClient}>
+      <div className="w-full">
+        <Banner {...bannerProps}></Banner>
+        <About {...aboutProps}></About>
+        <HowIWork {...howIWorkProps}></HowIWork>
+        <Gallery {...galleryProps}></Gallery>
+        <Testimony {...testimonyProps}></Testimony>
+        <Contactme></Contactme>
+        <InstagramPhotos />
+        <Footer></Footer>
+      </div>
+    </QueryClientProvider>
   );
 }
