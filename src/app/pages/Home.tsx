@@ -16,7 +16,7 @@ import {
 import HowIWork from '../sections/HowIWork';
 import InstagramPhotos from '../sections/Instagram';
 import Footer from '../components/Footer';
-import Contactme from '../sections/Contactme';
+import ContactMe from '../sections/Contactme';
 import PeopleExperiences from '../sections/PeopleExperiences';
 
 export default function Home({ content }: { content: GetContentResponse }) {
@@ -60,7 +60,7 @@ export default function Home({ content }: { content: GetContentResponse }) {
   };
 
   const testimonies: Testimony[] = content!.testimonies;
-
+  const isDevelopment = process.env.NODE_ENV === 'development';
   return (
     <QueryClientProvider client={queryClient}>
       <div className="w-full">
@@ -68,7 +68,8 @@ export default function Home({ content }: { content: GetContentResponse }) {
         <About {...aboutProps}></About>
         <HowIWork {...howIWorkProps}></HowIWork>
         <Gallery {...galleryProps}></Gallery>
-        <PeopleExperiences testimonies={testimonies}></PeopleExperiences>
+        {isDevelopment && <PeopleExperiences testimonies={testimonies}></PeopleExperiences>}
+        {isDevelopment && <ContactMe></ContactMe>}
         <InstagramPhotos />
         <Footer></Footer>
       </div>
