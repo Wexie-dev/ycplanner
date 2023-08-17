@@ -5,7 +5,7 @@ export interface GetContentResponse {
   galleries: GalleryProps[];
   howIWorks: HowIWorkProps[];
   contactMe: ContactMeProps[];
-  testimonies: TestimonyProps[];
+  testimonies: Testimony[];
 }
 
 export interface ImageContent {
@@ -73,14 +73,10 @@ export interface ContactMeProps {
   description: string;
 }
 
-export interface Testimonies {
+export interface Testimony {
   image: ImageContent;
   title: string;
   description: string;
   name: string;
   date: string;
-}
-
-export interface TestimonyProps {
-  sharedExperiences: Testimonies[];
 }

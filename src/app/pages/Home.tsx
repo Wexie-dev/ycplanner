@@ -1,5 +1,5 @@
 'use client';
-
+import { QueryClient, QueryClientProvider } from 'react-query';
 import React from 'react';
 import About from '../sections/About';
 import Banner from '../sections/Banner';
@@ -10,15 +10,14 @@ import {
   HowIWorkProps,
   GalleryProps,
   ContactMeProps,
-  TestimonyProps,
+  Testimony,
   GetContentResponse,
 } from '@/types';
 import HowIWork from '../sections/HowIWork';
 import InstagramPhotos from '../sections/Instagram';
 import Footer from '../components/Footer';
 import Contactme from '../sections/Contactme';
-import Testimony from '../sections/Testimony';
-import { QueryClient, QueryClientProvider } from 'react-query';
+import PeopleExperiences from '../sections/PeopleExperiences';
 
 export default function Home({ content }: { content: GetContentResponse }) {
   const queryClient = new QueryClient();
@@ -60,9 +59,7 @@ export default function Home({ content }: { content: GetContentResponse }) {
     paragraph_service_list: content!.howIWorks[0].paragraph_service_list,
   };
 
-  const testimonyProps: TestimonyProps = {
-    sharedExperiences: content!.testimonies[0].sharedExperiences,
-  };
+  const testimonies: Testimony[] = content!.testimonies;
 
   return (
     <QueryClientProvider client={queryClient}>
@@ -71,8 +68,7 @@ export default function Home({ content }: { content: GetContentResponse }) {
         <About {...aboutProps}></About>
         <HowIWork {...howIWorkProps}></HowIWork>
         <Gallery {...galleryProps}></Gallery>
-        <Testimony {...testimonyProps}></Testimony>
-        <Contactme></Contactme>
+        <PeopleExperiences testimonies={testimonies}></PeopleExperiences>
         <InstagramPhotos />
         <Footer></Footer>
       </div>
