@@ -36,6 +36,7 @@ function Info({
             className="relative z-20 ml-4 mt-8 lg:mt-20 2xl:mb-8 2xl:mt-20"
             src={`${image?.url}`}
             quality={100}
+            sizes="(max-width: 768px) 100vw, 50vw"
             alt={'yanina'}
           />
         </div>

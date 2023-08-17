@@ -5,6 +5,7 @@ import FullNavbar from '../components/FullNavbar';
 import MobileNavbar from '../components/MobileNavbar';
 import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
 import WhatsappButton from '../components/WhatsappButton';
+import ScrollToTopButton from '../components/HowIWork/ScrollToTopButton';
 
 function Banner(bannerProps: BannerProps) {
   const isMobile = useMediaQuery(mediaQueries.mobile);
@@ -13,7 +14,6 @@ function Banner(bannerProps: BannerProps) {
   const desktopBannerImg = bannerProps.bgImage?.url;
   const mobileBannerImg = bannerProps.mobileBgImage?.url;
   const remoteBannerImg = isMobile ? mobileBannerImg : desktopBannerImg;
-  console.log('🚀 ~ file: Banner.tsx:15 ~ Banner ~ remoteBannerImg:', remoteBannerImg);
 
   const useDefaultBannerImg = Boolean(remoteBannerImg);
 
@@ -57,8 +57,14 @@ function Banner(bannerProps: BannerProps) {
           </button>
         </div>
 
-        {/* Whatsapp Sticky Button */}
-        <WhatsappButton />
+        <div className="fixed bottom-16 right-5 z-40 ">
+          <div className="flex flex-col items-center justify-center gap-y-14">
+            {/* Whatsapp Sticky Button */}
+            <WhatsappButton />
+            {/* Scroll to top Sticky Button */}
+            <ScrollToTopButton />
+          </div>
+        </div>
       </div>
     </section>
   );

@@ -26,6 +26,7 @@ export default function AboutDesktop({
               fill
               objectFit="cover"
               className="rounded-sm"
+              sizes="(max-width: 768px) 100vw, 50vw"
               quality={100}
             />
           </div>

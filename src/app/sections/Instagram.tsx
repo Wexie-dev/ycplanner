@@ -31,8 +31,8 @@ const InstagramPhotos = () => {
 
   const Content = () => (
     <>
-      <div className="mb-[24px] mt-[24px] flex justify-center sm:mb-[32px] sm:mt-[32px] 2xl:mb-[123px] 2xl:mt-[56px]">
-        <h4 className="font-butler text-[24px] font-normal text-[#36373A] sm:text-[26px] 2xl:text-5xl">
+      <div className="mb-[24px] mt-[24px] flex justify-center sm:mb-[32px] sm:mt-[32px] xl:mb-[80px] 2xl:mb-[100px] 2xl:mt-[56px] 3xl:mb-[123px]">
+        <h4 className="font-butler text-[24px] font-normal text-[#36373A] sm:text-[26px] xl:text-4xl 2xl:text-5xl">
           Seguime en Instagram
         </h4>
       </div>
@@ -41,7 +41,7 @@ const InstagramPhotos = () => {
           <a
             key={photo.id}
             href={photo.permalink}
-            className="relative h-[155px] w-[155px] md:h-[218px] md:w-[218px] lg:h-[272px] lg:w-[272px] xl:h-[340px] xl:w-[340px] 2xl:h-[424px] 2xl:w-[424px]"
+            className="23xl:w-[424px] relative h-[155px] w-[155px] md:h-[218px] md:w-[218px] lg:h-[272px] lg:w-[272px] xl:h-[296px] xl:w-[296px] 2xl:h-[360px] 2xl:w-[360px] 3xl:h-[424px]"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -68,7 +68,7 @@ const InstagramPhotos = () => {
 
   return (
     <section
-      className="xl-mb-[285px] mb-[102px] mt-8 h-auto px-4 lg:px-8 xl:mt-[223px] xl:px-16 3xl:px-[75px]"
+      className="xl-mb-[285px] mb-[102px] mt-8 h-auto px-4 sm:mt-16 lg:px-8 lg:max-xl:mt-44 xl:mt-[223px] xl:px-16 3xl:px-[75px]"
       id="instagram"
     >
       {isLoading ? <LoadingState /> : error ? <ErrorState /> : <Content />}
