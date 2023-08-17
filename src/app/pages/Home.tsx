@@ -69,7 +69,7 @@ export default function Home({ content }: { content: GetContentResponse }) {
         <HowIWork {...howIWorkProps}></HowIWork>
         <Gallery {...galleryProps}></Gallery>
         {isDevelopment && <PeopleExperiences testimonies={testimonies}></PeopleExperiences>}
-        {isDevelopment && <ContactMe></ContactMe>}
+        <ContactMe></ContactMe>
         <InstagramPhotos />
         <Footer></Footer>
       </div>
