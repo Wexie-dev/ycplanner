@@ -4,7 +4,7 @@ import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
 import { MobileDesign } from './About/AboutMobile';
 import AboutDesktop from './About/AboutDesktop';
 
-export default function About(props: AboutProps) {
+export default React.memo(function About(props: AboutProps) {
   const isMobile = useMediaQuery(mediaQueries.mobile);
 
   return (
@@ -12,4 +12,4 @@ export default function About(props: AboutProps) {
       {isMobile ? <MobileDesign {...props} /> : <AboutDesktop {...props} />}
     </section>
   );
-}
+});

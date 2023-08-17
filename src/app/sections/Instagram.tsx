@@ -3,6 +3,7 @@ import { InstagramPhoto } from '@/services/instagram';
 import { useInstagramPhotos } from '@/hooks/useInstagramPhotos';
 import Image from 'next/image';
 import WarningImg from '../../../public/images/warning.png';
+import React from 'react';
 
 const InstagramPhotos = () => {
   const { data: photos, isLoading, error } = useInstagramPhotos();
@@ -75,4 +76,4 @@ const InstagramPhotos = () => {
   );
 };
 
-export default InstagramPhotos;
+export default React.memo(InstagramPhotos);

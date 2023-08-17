@@ -35,4 +35,4 @@ function HowIWork({
   );
 }
 
-export default HowIWork;
+export default React.memo(HowIWork);

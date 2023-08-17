@@ -2,7 +2,6 @@ import React from 'react';
 import Image from 'next/image';
 import { AboutProps } from '@/types';
 import Events from '@/app/components/About/Events';
-import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
 export default function AboutDesktop({
   title,
   description,
@@ -42,8 +41,8 @@ export default function AboutDesktop({
               {subtitle}
             </h5>
           </div>
-          {keyPoints.map((keyPoint) => (
-            <p className="mb-5 text-left text-base text-typographyGray">
+          {keyPoints.map((keyPoint, index) => (
+            <p key={index} className="mb-5 text-left text-base text-typographyGray">
               <span className="font-bold text-typographyPink">
                 {keyPoint.highlightedText.toLocaleUpperCase()},
               </span>{' '}

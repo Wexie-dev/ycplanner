@@ -31,4 +31,4 @@ function PeopleExperiences(props: { testimonies: Testimony[] }) {
   );
 }
 
-export default PeopleExperiences;
+export default React.memo(PeopleExperiences);

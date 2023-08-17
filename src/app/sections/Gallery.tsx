@@ -73,4 +73,4 @@ function Gallery(galleryProps: GalleryProps) {
   );
 }
 
-export default Gallery;
+export default React.memo(Gallery);
