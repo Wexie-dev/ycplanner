@@ -15,7 +15,7 @@ function Footer() {
       icon: {
         src: whatsapp,
         urlPath: 'https://api.whatsapp.com/send?phone=',
-        urlSrc: '+54 9 11 3478-0185',
+        urlSrc: '+54 9 11 6653-9611',
         mobileWidth: 32,
         mobileHeight: 32,
         desktopWidth: 40,
@@ -39,7 +39,7 @@ function Footer() {
       icon: {
         src: mail,
         urlPath: 'mailto:',
-        urlSrc: 'roccotc@gmail.com',
+        urlSrc: 'info@ycplanner.com.ar',
         mobileWidth: 48,
         mobileHeight: 32,
         desktopWidth: 56,
