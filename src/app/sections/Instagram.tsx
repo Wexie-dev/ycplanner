@@ -4,6 +4,7 @@ import { useInstagramPhotos } from '@/hooks/useInstagramPhotos';
 import Image from 'next/image';
 import WarningImg from '../../../public/images/warning.png';
 import React from 'react';
+import logo from '../../../public/images/instalogo.svg';
 
 const InstagramPhotos = () => {
   const { data: photos, isLoading, error } = useInstagramPhotos();
@@ -35,6 +36,24 @@ const InstagramPhotos = () => {
         <h4 className="font-butler text-[24px] font-normal text-[#36373A] sm:text-[26px] xl:text-4xl 2xl:text-5xl">
           Seguime en Instagram
         </h4>
+      </div>
+      <div className="mb-[28px] ml-0 flex h-[37px] w-[220px] items-center bg-gray-100 sm:ml-2 md:h-[68px] md:w-[407px] 2xl:mb-[40px] 2xl:ml-[22px]">
+        <div className="mr-[5px] flex h-full w-[42px] justify-center md:mr-[9px] md:w-[78px]">
+          <Image src={logo} alt="Logo" className="mr-2 h-[37px] w-[42px] md:h-[68px] md:w-[78px]" />
+        </div>
+        <div className="flex h-full w-[173px] items-center justify-around rounded-[20px] bg-white pl-1 md:w-[319px] md:pl-8">
+          <div className="w-[80px] text-[14px] font-bold text-black md:w-[100px] md:text-[18px]">
+            yc.planner
+          </div>
+          <a
+            href="https://www.instagram.com/yc.planner/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="h-[24px] rounded-xl bg-gray-100 px-[10px] py-1 text-[12px] text-black md:h-[40px] md:px-6 md:py-2 md:text-[16px]"
+          >
+            Follow
+          </a>
+        </div>
       </div>
       <div className="grid grid-cols-2 place-items-center gap-8 place-self-center md:grid-cols-3 xl:grid-cols-4">
         {photos!.map((photo: InstagramPhoto) => (
@@ -68,7 +87,7 @@ const InstagramPhotos = () => {
 
   return (
     <section
-      className="xl-mb-[285px] mb-[102px] mt-8 h-auto px-4 sm:mt-16 lg:px-8 lg:max-xl:mt-44 xl:mt-[223px] xl:px-16 3xl:px-[75px]"
+      className="xl-mb-[285px] mb-[102px] mt-8 h-auto px-5 sm:mt-16 lg:px-8 lg:max-xl:mt-44 xl:mt-[223px] xl:px-16 3xl:px-[75px]"
       id="instagram"
     >
       {isLoading ? <LoadingState /> : error ? <ErrorState /> : <Content />}
