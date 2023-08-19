@@ -11,6 +11,7 @@ import { ContactMePayload, postContactMe } from '@/services/contact';
 
 import planta from '../../../public/images/plant.svg';
 import weddingpic from '../../../public/images/weddingpic.png';
+import calendar from '../../../public/images/calendar.svg';
 
 type InitialValues = Partial<ContactMePayload>;
 
@@ -181,7 +182,7 @@ function Contactme() {
                   <div className="text-xs text-red-700">{formik.errors.phone}</div>
                 ) : null}
               </div>
-              <div>
+              <div className="relative">
                 <DatePicker
                   selected={formik.values.date}
                   onChange={(date) => formik.setFieldValue('date', date)}
@@ -194,6 +195,13 @@ function Contactme() {
                 {formik.errors.date && formik.touched.date ? (
                   <div className="text-xs text-red-700">{formik.errors.date}</div>
                 ) : null}
+                <Image
+                  width={26}
+                  height={26}
+                  src={calendar}
+                  alt="Calendario"
+                  className="absolute -right-1 top-1/2 mr-2 -translate-y-6 transform"
+                />
               </div>
               <div>
                 <label
