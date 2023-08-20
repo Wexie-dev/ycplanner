@@ -13,7 +13,7 @@ const encode = (data: Record<string, any>) => {
 };
 
 export async function postContactMe(values: ContactMePayload) {
-  const postRequest = await fetch('/', {
+  const response = await fetch('/', {
     method: 'POST',
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: encode({
@@ -22,8 +22,5 @@ export async function postContactMe(values: ContactMePayload) {
       ...values,
     }),
   });
-  console.log('Despues del fetch');
-  const response = await postRequest.json();
-  console.log('🚀 ~ file: contact.ts:26 ~ postContactMe ~ response:', response);
-  return response;
+  return response.ok;
 }

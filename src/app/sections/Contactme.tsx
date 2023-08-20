@@ -1,7 +1,5 @@
-import { ContactMeProps } from '@/types';
 import React, { useMemo, useState } from 'react';
 import Image from 'next/image';
-import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
 import { useFormik } from 'formik';
 import { useMutation } from 'react-query';
 import * as Yup from 'yup';
@@ -32,7 +30,6 @@ function Contactme() {
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const payload = formik.values as ContactMePayload;
-    console.log('🚀 ~ file: Contactme.tsx:42 ~ Contactme ~ payload:', payload);
     mutation.mutate(payload);
   };
 
@@ -64,7 +61,7 @@ function Contactme() {
     const errorToRender = error as Error;
     return (
       <div className="text-center text-sm text-red-600">
-        {errorToRender.message ?? 'Hubo un error!'}
+        {errorToRender?.message ?? 'Hubo un error!'}
       </div>
     );
   };
@@ -81,18 +78,21 @@ function Contactme() {
   );
 
   const mutation = useMutation(postContactMe, {
-    onSuccess: (data) => {
-      if (data.success) {
-        //TODO: render check for success
-        console.log('Exito enviando');
-      } else {
-        setCustomError('Error al enviar el formulario. Por favor intenta nuevamente');
-      }
-    },
     onError() {
       setCustomError('Hubo un error enviando el formulario. Por favor intenta nuevamente!');
     },
   });
+
+  const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    const inputPhoneNumber = event.target.value.replace(/[^+\d]/g, '');
+    formik.setFieldValue('phone', inputPhoneNumber);
+  };
+
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLInputElement>) => {
+    if (!/[0-9+]/.test(event.key)) {
+      event.preventDefault();
+    }
+  };
 
   return (
     <section id="contactMe" className="w-full pt-16">
@@ -176,10 +176,12 @@ function Contactme() {
               </div>
               <div>
                 <input
-                  type="phone"
+                  type="text"
+                  pattern="[0-9]+"
                   id="phone"
                   name="phone"
-                  onChange={formik.handleChange}
+                  onChange={handleInputChange}
+                  onKeyPress={handleKeyPress}
                   onBlur={formik.handleBlur}
                   placeholder="Teléfono*"
                   className="focus:shadow-outline-[#C2857D] block w-full appearance-none border-b-2 border-[#C2857D] pb-4 pl-0 text-base font-semibold leading-normal placeholder-[#5B5A5A] focus:outline-none 2xl:text-lg"
