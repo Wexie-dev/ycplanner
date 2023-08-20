@@ -132,11 +132,17 @@ function Contactme() {
             <form
               className="mt-8 flex flex-col gap-6"
               data-netlify="true"
+              netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               name="contact"
               method="post"
             >
               <input type="hidden" name="form-name" value="contact" />
+              <p className="hidden">
+                <label>
+                  No llenes esto si eres humano: <input name="bot-field" />
+                </label>
+              </p>
               <div>
                 <input
                   type="text"

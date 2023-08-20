@@ -18,6 +18,7 @@ export async function postContactMe(values: ContactMePayload) {
     headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
     body: encode({
       'form-name': 'contact',
+      'netlify-honeypot': 'bot-field',
       ...values,
     }),
   });
