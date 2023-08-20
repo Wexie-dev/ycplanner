@@ -47,7 +47,7 @@ function Services({ title2, paragraph_service_list }: HowIWorkServicesProps) {
 
   return (
     <div className="bg-[#F5F5F5]">
-      <div className="flex justify-center pt-12 font-anguilla text-[40px] text-[#996058] lg:justify-start lg:pl-36 lg:text-[75px] 2xl:pt-[55px] 2xl:text-8xl">
+      <div className="flex justify-center pt-14 font-anguilla text-[40px] text-[#996058] lg:justify-start lg:pl-36 lg:text-[75px] 2xl:pt-[55px] 2xl:text-8xl">
         {title2}
       </div>
       <div className="flex flex-col px-[92px] pt-10 lg:flex-row lg:flex-wrap lg:px-0 lg:pt-6 2xl:p-0">

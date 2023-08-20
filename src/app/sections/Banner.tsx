@@ -42,7 +42,7 @@ function Banner(bannerProps: BannerProps) {
         <FullNavbar />
 
         {/* Banner Content */}
-        <div className="absolute left-0 top-[30%] flex h-full w-full flex-col items-center justify-center text-white sm:top-[150px] md:left-[10%] md:w-[672px] lg:left-[40%] lg:top-0 xl:left-[50%] 2xl:left-[54%] 3xl:left-[8%]">
+        <div className="absolute left-0 top-[28%] flex h-full w-full flex-col items-center justify-center text-white sm:top-[120px] md:left-[10%] md:w-[672px] lg:left-[40%] lg:top-[80px] xl:left-[50%] 2xl:left-[54%] 3xl:left-[56%]">
           <div className="font-anguilla text-[76px] leading-none md:text-[92px] lg:text-[114px] xl:text-[166px]">
             {bannerTitle}
           </div>
