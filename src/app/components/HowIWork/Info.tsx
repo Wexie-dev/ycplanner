@@ -25,8 +25,8 @@ function Info({
   paragraph3,
 }: HowIWorkInfoProps) {
   return (
-    <div className="mt-8 bg-[#E9EAED] text-[#36373A] lg:pt-9 2xl:flex 2xl:justify-center">
-      <div className="flex justify-center pt-2 font-butler text-2xl font-normal lg:text-5xl 2xl:hidden">
+    <div className="text-[#36373A] 2xl:flex 2xl:justify-center">
+      <div className="flex justify-center pb-4 pt-4 font-butler text-2xl font-normal sm:text-3xl md:pt-[60px] md:text-3xl lg:pt-[75px] lg:text-5xl 2xl:hidden">
         {title1}
       </div>
       <div className="relative sm:flex sm:items-center sm:justify-center 2xl:block">
@@ -40,7 +40,7 @@ function Info({
             alt={'yanina'}
           />
         </div>
-        <div className="absolute left-10 top-4 z-10 h-[352px] w-[304px] bg-[#AD837E] opacity-50 shadow-2xl sm:left-[32%] md:h-[458px] md:w-[395px] lg:left-[21%] lg:top-12 lg:h-[826px] lg:w-[712px] 2xl:left-16 2xl:top-10"></div>
+        <div className="absolute left-10 top-4 z-10 h-[352px] w-[304px] bg-[#AD837E] opacity-50 shadow-2xl sm:left-[32%] md:h-[458px] md:w-[395px] lg:left-[21%] lg:top-12 lg:h-[826px] lg:w-[712px] xl:drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] 2xl:left-16 2xl:top-10"></div>
       </div>
 
       <div className="ml-10 font-normal lg:ml-32 2xl:ml-[150px] 2xl:w-[575px]">

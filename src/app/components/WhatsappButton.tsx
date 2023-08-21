@@ -1,18 +1,23 @@
 import React from 'react';
-import { useState, useEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 import Image from 'next/image';
 import whatsapp from '../../../public/images/whatsapp-sticky-icon.svg';
 
 function WhatsappButton() {
   const [showButton, setShowButton] = useState(false);
-  useEffect(() => {
+  const [showAtBottom, setShowAtBottom] = useState(true);
+  useLayoutEffect(() => {
     const handleScroll = () => {
-      const footerHeight = document.getElementById('footer')?.offsetHeight ?? 320;
+      const isOnBanner = window.scrollY < 700;
+      const footerHeight = document.getElementById('footer')?.offsetHeight ?? 300;
       const scrolledToBottom =
         window.innerHeight + window.scrollY >= document.body.offsetHeight - footerHeight;
 
       if (scrolledToBottom) setShowButton(false);
       else setShowButton(true);
+
+      if (isOnBanner) setShowAtBottom(true);
+      else setShowAtBottom(false);
     };
 
     setTimeout(() => {
@@ -27,9 +32,10 @@ function WhatsappButton() {
 
   return (
     <a
-      className={`transition-opacity duration-500 ${
+      className={`transition-all duration-500 ${
         showButton ? 'opacity-100 ease-out' : 'opacity-0 ease-in'
-      }`}
+      }
+      ${showAtBottom ? 'translate-y-20' : 'translate-y-0'}`}
       href="https://api.whatsapp.com/send?phone=5491134780185"
       target="_blank"
     >
