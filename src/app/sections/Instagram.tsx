@@ -88,7 +88,7 @@ const InstagramPhotos = () => {
   return (
     <section
       ref={igRef}
-      className="xl-mb-[285px] mb-[102px] mt-8 h-auto px-5 sm:mt-16 lg:px-8 lg:max-xl:mt-44 xl:mt-[223px] xl:px-16 3xl:px-[75px]"
+      className="mb-[102px] mt-8 h-auto px-5 sm:mt-16 lg:px-8 lg:max-xl:mt-44 xl:mb-[285px] xl:mt-[150px] xl:px-16 3xl:px-[75px]"
       id="instagram"
     >
       {isLoading ? <LoadingState /> : error ? <ErrorState /> : <Content />}

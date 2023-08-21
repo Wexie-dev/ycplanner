@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 export const mediaQueries = {
   mobile: '(max-width:639px)',
   tablet: '(min-width:640px) and (max-width:1279px)',
+  iPad: '(min-width:640px) and (max-width:1023px)',
   laptop: '(min-width:1280px) and (max-width:1535px)',
   desktop: '(min-width:1536px)',
 };

@@ -68,7 +68,7 @@ export default function Home({ content }: { content: GetContentResponse }) {
         <About {...aboutProps}></About>
         <HowIWork {...howIWorkProps}></HowIWork>
         <Gallery {...galleryProps}></Gallery>
-        {isDevelopment && <PeopleExperiences testimonies={testimonies}></PeopleExperiences>}
+        <PeopleExperiences testimonies={testimonies}></PeopleExperiences>
         <ContactMe></ContactMe>
         <InstagramPhotos />
         <Footer></Footer>

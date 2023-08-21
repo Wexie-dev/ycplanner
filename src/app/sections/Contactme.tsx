@@ -6,6 +6,7 @@ import * as Yup from 'yup';
 import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { ContactMePayload, postContactMe } from '@/services/contact';
+import '../sections/DatePicker.css';
 
 import planta from '../../../public/images/plant.svg';
 import weddingpic from '../../../public/images/weddingpic.png';
@@ -114,7 +115,7 @@ function Contactme() {
 
   return (
     <section id="contactMe" className="w-full pt-16">
-      <div className="flex flex-col items-center bg-[#D7D8DB] lg:mt-36 lg:h-[530px] lg:flex-row-reverse lg:justify-around xl:h-[640px]">
+      <div className="flex flex-col items-center bg-[#D7D8DB] lg:mt-28 lg:h-[530px] lg:flex-row-reverse lg:justify-around xl:h-[640px]">
         <div className="relative flex h-[392px] w-[344px] justify-center lg:ml-4 lg:h-[530px] lg:w-[466px] 2xl:h-[884px] 2xl:w-[777px]">
           <Image
             fill
@@ -223,6 +224,7 @@ function Contactme() {
                     placeholderText="Fecha estimada del evento*"
                     className="focus:shadow-outline-[#C2857D] block w-full appearance-none border-b-2 border-[#C2857D] pb-4 pl-0 text-base font-semibold leading-normal placeholder-[#5B5A5A] focus:outline-none 2xl:text-lg"
                     wrapperClassName="w-full"
+                    calendarClassName="my-calendar"
                   />
                   {formik.errors.date && formik.touched.date ? (
                     <div className="text-xs text-red-700">{formik.errors.date}</div>
