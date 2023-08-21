@@ -33,8 +33,8 @@ function PeopleExperiencesMobile(props: { testimonies: Testimony[] }) {
         Experiencias Compartidas
       </div>
       <div className="mr-4 mt-4 flex items-center justify-end gap-1">
-        <p className="text-xs font-semibold text-[#C2857D]">Desliza</p>
-        <div className="relative h-[14px] w-[18px]">
+        <p className="text-xs font-semibold text-[#C2857D] md:text-base">Desliza</p>
+        <div className="relative h-[14px] w-[18px] md:h-[17px] md:w-[22px]">
           <Image fill src={mobileArrow} alt="arrow" />
         </div>
       </div>
@@ -113,7 +113,7 @@ function PeopleExperiencesMobile(props: { testimonies: Testimony[] }) {
           </div>
         ))}
       </div>
-      <div className="flex justify-center gap-7">
+      {/* <div className="flex justify-center gap-7">
         {testimonies.map((_, index) => (
           <button
             key={index}
@@ -123,7 +123,7 @@ function PeopleExperiencesMobile(props: { testimonies: Testimony[] }) {
             onClick={() => handleButtonClick(index)}
           ></button>
         ))}
-      </div>
+      </div> */}
     </div>
   );
 }
