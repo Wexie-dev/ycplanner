@@ -55,8 +55,8 @@ export default function AboutDesktop({
       <div className="my-6 flex justify-center px-5 sm:my-8 xl:my-32">
         <Events title={eventsTitle} events={events}></Events>
       </div>
-      <div className="mb-20 flex justify-center md:mt-20">
-        <h2 className="text-center font-anguilla leading-none text-typographyPink sm:text-[56px] md:text-[50px] xl:text-[100px]">
+      <div className="flex justify-center sm:mb-16 sm:mt-16 md:mb-20 md:mt-20">
+        <h2 className="text-center font-anguilla leading-none text-typographyPink sm:text-[56px] md:text-[50px] xl:text-[70px] 3xl:text-[100px]">
           {closingText}
         </h2>
       </div>

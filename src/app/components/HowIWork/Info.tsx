@@ -26,7 +26,7 @@ function Info({
 }: HowIWorkInfoProps) {
   return (
     <div className="text-[#36373A] 2xl:flex 2xl:justify-center">
-      <div className="flex justify-center pb-4 pt-4 font-butler text-2xl font-normal sm:text-3xl md:pt-[60px] md:text-3xl lg:pt-[75px] lg:text-5xl 2xl:hidden">
+      <div className="flex justify-center pb-4 pt-10 font-butler text-2xl font-normal sm:text-3xl md:pt-[60px] md:text-3xl lg:pt-[75px] lg:text-5xl 2xl:hidden">
         {title1}
       </div>
       <div className="relative sm:flex sm:items-center sm:justify-center 2xl:block">
@@ -47,7 +47,7 @@ function Info({
         <div className="hidden pt-24 font-butler text-2xl font-normal lg:text-5xl 2xl:flex">
           {title1}
         </div>
-        <div className="flex pt-16 font-butler text-2xl lg:pt-32 lg:text-4xl 2xl:pt-16">
+        <div className="flex pt-20 font-butler text-2xl lg:pt-32 lg:text-4xl 2xl:pt-16">
           {subtitle1}
         </div>
         <div className="flex pr-10 pt-2 text-base lg:pt-4">{paragraph1}</div>

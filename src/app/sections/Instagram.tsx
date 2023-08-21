@@ -37,7 +37,7 @@ const InstagramPhotos = () => {
 
   const Content = () => (
     <>
-      <div className="mb-[24px] mt-[24px] flex justify-center sm:mb-[32px] sm:mt-[32px] xl:mb-[80px] 2xl:mb-[100px] 2xl:mt-[56px] 3xl:mb-[123px]">
+      <div className="mb-[24px] mt-[24px] flex justify-center sm:mb-[8px] sm:mt-[32px] xl:mb-[16px] 2xl:mt-[56px]">
         <h4 className="font-butler text-[24px] font-normal text-[#36373A] sm:text-[26px] xl:text-4xl 2xl:text-5xl">
           Seguime en Instagram
         </h4>
