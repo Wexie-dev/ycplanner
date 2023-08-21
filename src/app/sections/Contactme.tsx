@@ -224,6 +224,7 @@ function Contactme() {
                     placeholderText="Fecha estimada del evento*"
                     className="focus:shadow-outline-[#C2857D] block w-full appearance-none border-b-2 border-[#C2857D] pb-4 pl-0 text-base font-semibold leading-normal placeholder-[#5B5A5A] focus:outline-none 2xl:text-lg"
                     wrapperClassName="w-full"
+                    calendarClassName="my-calendar"
                   />
                   {formik.errors.date && formik.touched.date ? (
                     <div className="text-xs text-red-700">{formik.errors.date}</div>
