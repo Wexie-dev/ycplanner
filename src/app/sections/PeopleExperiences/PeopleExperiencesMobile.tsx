@@ -3,9 +3,11 @@ import React, { useRef, useState } from 'react';
 import Image from 'next/image';
 import mobileArrow from '../../../../public/images/testimony_mobile_arrow.svg';
 import quoteIcon from '../../../../public/images/testimony_quote_icon.svg';
+import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
 
 function PeopleExperiencesMobile(props: { testimonies: Testimony[] }) {
   const testimonies = props.testimonies;
+  const isTablet = useMediaQuery(mediaQueries.tablet);
 
   const [isExpanded, setIsExpanded] = useState<boolean[]>([]);
   const cardRefs = useRef<Array<HTMLDivElement | null>>([]);
@@ -22,7 +24,11 @@ function PeopleExperiencesMobile(props: { testimonies: Testimony[] }) {
   const handleButtonClick = (index: number) => {
     const testimonyCard = cardRefs.current[index];
     if (testimonyCard) {
-      testimonyCard.scrollIntoView({ behavior: 'smooth', inline: 'start' });
+      testimonyCard.scrollIntoView({
+        behavior: 'smooth',
+        inline: isTablet ? 'nearest' : 'center',
+        block: 'nearest',
+      });
       setSelectedButton(index);
     }
   };
@@ -113,7 +119,7 @@ function PeopleExperiencesMobile(props: { testimonies: Testimony[] }) {
           </div>
         ))}
       </div>
-      {/* <div className="flex justify-center gap-7">
+      <div className="flex justify-center gap-7">
         {testimonies.map((_, index) => (
           <button
             key={index}
@@ -123,7 +129,7 @@ function PeopleExperiencesMobile(props: { testimonies: Testimony[] }) {
             onClick={() => handleButtonClick(index)}
           ></button>
         ))}
-      </div> */}
+      </div>
     </div>
   );
 }
