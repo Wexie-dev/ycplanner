@@ -116,17 +116,16 @@ function Contactme() {
   return (
     <section id="contactMe" className="w-full pt-16">
       <div className="flex flex-col items-center bg-[#D7D8DB] lg:mt-28 lg:h-[530px] lg:flex-row-reverse lg:justify-around xl:h-[640px]">
-        <div className="relative flex h-[392px] w-[344px] justify-center lg:ml-4 lg:h-[530px] lg:w-[466px] 2xl:h-[884px] 2xl:w-[777px]">
+        <div className="relative flex h-[392px] w-[344px] justify-center sm:h-[470px] sm:w-[400px] lg:ml-4 lg:h-[530px] lg:w-[466px] xl:h-[636px] xl:w-[540px] 2xl:h-[884px] 2xl:w-[777px]">
           <Image
             fill
             src={weddingpic}
-            className=""
             alt="Wedding"
             sizes="(max-width: 768px) 33vw, 50vw"
             quality={100}
           />
         </div>
-        <div className="mb-8 mt-6 h-[742px] w-[328px] rounded-lg bg-white drop-shadow-lg sm:h-[736px] sm:w-[330px] md:w-[460px] lg:h-[775px] 2xl:h-[820px] 2xl:w-[600px] 3xl:h-[848px] 3xl:w-[725px]">
+        <div className="mb-8 mt-6 h-[742px] w-[328px] rounded-lg bg-white drop-shadow-lg sm:h-[736px] sm:w-[420px] md:w-[460px] lg:h-[765px] xl:h-[775px] xl:w-[524px] 2xl:h-[820px] 2xl:w-[600px] 3xl:h-[848px] 3xl:w-[725px]">
           <div className="rotate -[-5deg] transform">
             <Image
               width={223}

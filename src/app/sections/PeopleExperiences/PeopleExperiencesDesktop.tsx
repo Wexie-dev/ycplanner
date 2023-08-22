@@ -4,6 +4,7 @@ import Image from 'next/image';
 import quoteIcon from '../../../../public/images/testimony_quote_icon.svg';
 import leftArrow from '../../../../public/images/testimony_leftArrow_icon.svg';
 import rightArrow from '../../../../public/images/testimony_rightArrow_icon.svg';
+import Title from '@/app/components/Title';
 
 function PeopleExperiencesDesktop(props: { testimonies: Testimony[] }) {
   const testimonies = props.testimonies;
@@ -29,9 +30,9 @@ function PeopleExperiencesDesktop(props: { testimonies: Testimony[] }) {
   };
 
   return (
-    <div className="flex flex-col justify-center xl:mt-7 2xl:mt-0">
-      <div className="flex justify-center font-butler text-2xl font-normal xl:text-4xl 3xl:text-5xl">
-        Experiencias Compartidas
+    <div className="flex flex-col items-center justify-center xl:mt-7 2xl:mt-0">
+      <div className="mb-5">
+        <Title>Experiencias Compartidas</Title>
       </div>
       <div className=" ml-6 mt-[30px] flex flex-row items-center xl:mt-[56px] 2xl:mt-32 3xl:ml-[72px] 3xl:mt-[56px]">
         <div

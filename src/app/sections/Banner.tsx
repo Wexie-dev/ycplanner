@@ -5,7 +5,7 @@ import FullNavbar from '../components/FullNavbar';
 import MobileNavbar from '../components/MobileNavbar';
 import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
 import WhatsappButton from '../components/WhatsappButton';
-import ScrollToTopButton from '../components/HowIWork/ScrollToTopButton';
+import ScrollToTopButton from '../components/ScrollToTopButton';
 
 function Banner(bannerProps: BannerProps) {
   const isMobile = useMediaQuery(mediaQueries.mobile);

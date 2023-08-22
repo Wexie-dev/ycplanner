@@ -9,7 +9,7 @@ function PeopleExperiences(props: { testimonies: Testimony[] }) {
   const isIpad = useMediaQuery(mediaQueries.iPad);
 
   return (
-    <section className="h-full w-full pt-24" id="testimonies">
+    <section className="h-auto w-full pt-24" id="testimonies">
       {isMobile || isIpad ? (
         <PeopleExperiencesMobile testimonies={props.testimonies} />
       ) : (

@@ -4,6 +4,7 @@ import Image from 'next/image';
 import mobileArrow from '../../../../public/images/testimony_mobile_arrow.svg';
 import quoteIcon from '../../../../public/images/testimony_quote_icon.svg';
 import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
+import Title from '@/app/components/Title';
 
 function PeopleExperiencesMobile(props: { testimonies: Testimony[] }) {
   const testimonies = props.testimonies;
@@ -34,17 +35,15 @@ function PeopleExperiencesMobile(props: { testimonies: Testimony[] }) {
   };
 
   return (
-    <div className="flex flex-col">
-      <div className="flex justify-center font-butler text-2xl font-normal">
-        Experiencias Compartidas
-      </div>
-      <div className="mr-4 mt-4 flex items-center justify-end gap-1">
+    <div className="flex flex-col items-center justify-center">
+      <Title>Experiencias Compartidas</Title>
+      <div className="mr-4 mt-4 flex w-full items-center justify-end gap-1">
         <p className="text-xs font-semibold text-[#C2857D] md:text-base">Desliza</p>
         <div className="relative h-[14px] w-[18px] md:h-[17px] md:w-[22px]">
           <Image fill src={mobileArrow} alt="arrow" />
         </div>
       </div>
-      <div className="mt-[10px] flex overflow-x-auto">
+      <div className="mt-[10px] flex w-full overflow-x-auto">
         {testimonies.map((testimony, index) => (
           <div id={`testimony-${index}`} key={index}>
             {/* Imagen */}
