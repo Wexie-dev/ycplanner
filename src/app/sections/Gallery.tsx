@@ -15,8 +15,8 @@ function Gallery(galleryProps: GalleryProps) {
         <Title>{title}</Title>
       </div>
       <div className="h-full w-full">
-        <div className="mx-[10px] h-[1592px] sm:mx-[24px] sm:h-[424px] 2xl:mx-[72px] 2xl:h-[776px]">
-          <div className="flex h-full w-full flex-col justify-center gap-[8px] sm:flex-row sm:gap-[8px] 2xl:gap-[16px]">
+        <div className="mx-[10px] sm:mx-[24px] 2xl:mx-[72px]">
+          <div className="flex w-full flex-col justify-center gap-[8px] sm:flex-row sm:gap-[8px] 2xl:gap-[16px]">
             <div className="mx-auto flex-col sm:mx-0">
               <img
                 src={isMobile ? mobileImages[0].url : images[0].url}
