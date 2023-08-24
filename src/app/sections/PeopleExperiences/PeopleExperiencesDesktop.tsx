@@ -34,9 +34,9 @@ function PeopleExperiencesDesktop(props: { testimonies: Testimony[] }) {
       <div className="mb-5">
         <Title>Experiencias Compartidas</Title>
       </div>
-      <div className=" ml-6 mt-[30px] flex flex-row items-center xl:mt-[56px] 2xl:mt-32 3xl:ml-[72px] 3xl:mt-[56px]">
+      <div className="mt-[30px] flex flex-row items-center xl:mt-[56px] 2xl:mt-32 3xl:ml-[72px] 3xl:mt-[56px]">
         <div
-          className="relative h-[26px] w-[16px] cursor-pointer 3xl:h-[46px] 3xl:w-[28px]"
+          className="absolute left-[24px] h-[26px] w-[16px] cursor-pointer 3xl:left-[72px] 3xl:h-[46px] 3xl:w-[28px]"
           onClick={() => handleArrowClick('previous')}
         >
           <Image fill src={leftArrow} alt="leftArrow" />
