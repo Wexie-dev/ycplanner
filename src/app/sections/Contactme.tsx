@@ -125,7 +125,7 @@ function Contactme() {
             quality={100}
           />
         </div>
-        <div className="mb-8 mt-6 w-[328px] rounded-lg bg-white drop-shadow-lg sm:w-[420px] md:w-[460px] xl:w-[524px] 2xl:w-[600px] 3xl:w-[725px]">
+        <div className="mb-8 mt-6 h-[740px] w-[328px] rounded-lg bg-white drop-shadow-lg sm:h-[736px] sm:w-[420px] md:h-[756px] md:w-[460px] lg:h-[765px] xl:h-[775px] xl:w-[524px] 2xl:h-[820px] 2xl:w-[600px] 3xl:h-[848px] 3xl:w-[725px]">
           <div className="rotate -[-5deg] transform">
             <Image
               width={223}
@@ -136,18 +136,18 @@ function Contactme() {
             />
           </div>
 
-          {mutation.isSuccess ? (
+          {mutation.isSuccess || true ? (
             <Success />
           ) : (
             <div
               id="form-container"
-              className="px-7 md:px-10 xl:px-12 2xl:px-[80px] 3xl:px-[140px]"
+              className="h-full px-7 md:px-10 xl:px-12 2xl:px-[80px] 3xl:px-[140px]"
             >
               <div>
                 <h1 className="pt-[92px] text-center font-butler text-2xl font-normal text-[#C2857D] lg:text-3xl 2xl:text-5xl">
                   ¿Hacemos equipo?
                 </h1>
-                <div className="mx-6 mt-5 text-center text-sm font-normal text-[#36373A] lg:text-base">
+                <div className="mt-5 text-center text-sm font-normal text-[#36373A] lg:text-base">
                   <p>Me encantaría conocerlos y así poder armar su evento personalizado!</p>
                   <p className="mt-2">¿Me cuentan cuál es su idea?</p>
                 </div>
@@ -254,7 +254,7 @@ function Contactme() {
                 <div className="flex flex-col items-center justify-center">
                   <button
                     type="submit"
-                    className={`mb-[60px] mt-4 flex h-[40px] w-[144px] items-center justify-center rounded-lg bg-[#C2857D] text-center text-base font-semibold text-white focus:outline-none focus:ring-1 focus:ring-[#C2857D] focus:ring-offset-2 xl:h-[48px] xl:w-[240px] ${
+                    className={`flex h-[40px] w-[144px] items-center justify-center rounded-lg bg-[#C2857D] text-center text-base font-semibold text-white focus:outline-none focus:ring-1 focus:ring-[#C2857D] focus:ring-offset-2 xl:h-[48px] xl:w-[240px] ${
                       isBtnDisabled ? 'cursor-not-allowed opacity-50' : ''
                     }`}
                   >

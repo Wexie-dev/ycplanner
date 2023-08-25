@@ -32,8 +32,8 @@ function WhatsappButton() {
 
   return (
     <a
-      className={`transition-all duration-500 ${
-        showButton ? 'opacity-100 ease-out' : 'opacity-0 ease-in'
+      className={`z-50 transition-all duration-500 ${
+        showButton ? 'opacity-100 ease-out' : '-z-50 opacity-0 ease-in'
       }
       ${showAtBottom ? 'translate-y-20' : 'translate-y-0'}`}
       href="https://api.whatsapp.com/send?phone=5491166539611"

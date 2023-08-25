@@ -25,7 +25,7 @@ function IgWidget({ show = true }: { show?: boolean }) {
             href="https://www.instagram.com/yc.planner/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex h-3/4 items-center rounded-xl bg-gray-100 px-[10px] py-1 text-[12px] text-black md:px-6 md:py-2 md:text-[16px]"
+            className="flex h-3/4 items-center rounded-xl bg-gray-100 px-[10px] py-1 text-[12px] text-black hover:bg-gray-200 md:px-6 md:py-2 md:text-[16px]"
           >
             Follow
           </a>
