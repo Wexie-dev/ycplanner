@@ -17,6 +17,27 @@ type InitialValues = Partial<ContactMePayload>;
 
 function Contactme() {
   const [customError, setCustomError] = useState<undefined | string>();
+  const [isPlaceholderVisible, setIsPlaceholderVisible] = useState({
+    name: true,
+    email: true,
+    phone: true,
+  });
+
+  const handleFocus = (inputName: string) => {
+    setIsPlaceholderVisible((prevVisibility) => ({
+      ...prevVisibility,
+      [inputName]: false,
+    }));
+  };
+
+  const handleBlur = (e: React.FocusEvent<HTMLInputElement>, inputName: string) => {
+    if (!e.target.value) {
+      setIsPlaceholderVisible((prevVisibility) => ({
+        ...prevVisibility,
+        [inputName]: true,
+      }));
+    }
+  };
 
   const contactMeValidationSchema = Yup.object().shape({
     name: Yup.string().min(3, 'Muy corto').max(35, 'Muy largo').required('Campo obligatorio'),
@@ -126,7 +147,7 @@ function Contactme() {
             quality={100}
           />
         </div>
-        <div className="mb-8 mt-6 h-[740px] w-[328px] rounded-lg bg-white drop-shadow-lg sm:h-[736px] sm:w-[420px] md:h-[756px] md:w-[460px] lg:h-[765px] xl:h-[775px] xl:w-[524px] 2xl:h-[820px] 2xl:w-[600px] 3xl:h-[848px] 3xl:w-[725px]">
+        <div className="mb-8 mt-6 min-h-[740px] w-[328px] rounded-lg bg-white drop-shadow-lg sm:min-h-[736px] sm:w-[420px] md:min-h-[756px] md:w-[460px] lg:min-h-[765px] xl:min-h-[775px] xl:w-[524px] 2xl:min-h-[820px] 2xl:w-[600px] 3xl:min-h-[848px] 3xl:w-[725px]">
           <div className="rotate -[-5deg] transform">
             <Image
               width={223}
@@ -174,8 +195,9 @@ function Contactme() {
                     name="name"
                     value={formik.values.name}
                     onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    placeholder="Nombre*"
+                    onBlur={(e) => handleBlur(e, 'name')}
+                    onFocus={() => handleFocus('name')}
+                    placeholder={isPlaceholderVisible.name ? 'Nombre*' : ''}
                     className="focus:shadow-outline-[#C2857D] block w-full appearance-none border-b-2 border-[#C2857D] pb-4 pl-0 text-base font-semibold leading-normal placeholder-[#5B5A5A] focus:outline-none 2xl:text-lg"
                   />
                   {formik.errors.name && formik.touched.name ? (
@@ -189,8 +211,9 @@ function Contactme() {
                     name="email"
                     value={formik.values.email}
                     onChange={formik.handleChange}
-                    onBlur={formik.handleBlur}
-                    placeholder="Email*"
+                    onBlur={(e) => handleBlur(e, 'email')}
+                    onFocus={() => handleFocus('email')}
+                    placeholder={isPlaceholderVisible.email ? 'Email*' : ''}
                     className="focus:shadow-outline-[#C2857D] block w-full appearance-none border-b-2 border-[#C2857D] pb-4 pl-0 text-base font-semibold leading-normal placeholder-[#5B5A5A] focus:outline-none 2xl:text-lg"
                   />
                   {formik.errors.email && formik.touched.email ? (
@@ -205,8 +228,9 @@ function Contactme() {
                     name="phone"
                     onChange={handleInputChange}
                     onKeyPress={handleKeyPress}
-                    onBlur={formik.handleBlur}
-                    placeholder="Teléfono*"
+                    onBlur={(e) => handleBlur(e, 'phone')}
+                    onFocus={() => handleFocus('phone')}
+                    placeholder={isPlaceholderVisible.phone ? 'Teléfono*' : ''}
                     className="focus:shadow-outline-[#C2857D] block w-full appearance-none border-b-2 border-[#C2857D] pb-4 pl-0 text-base font-semibold leading-normal placeholder-[#5B5A5A] focus:outline-none 2xl:text-lg"
                   />
                   {formik.errors.phone && formik.touched.phone ? (
@@ -255,7 +279,7 @@ function Contactme() {
                 <div className="flex flex-col items-center justify-center">
                   <button
                     type="submit"
-                    className={`flex h-[40px] w-[144px] items-center justify-center rounded-lg bg-[#C2857D] text-center text-base font-semibold text-white focus:outline-none focus:ring-1 focus:ring-[#C2857D] focus:ring-offset-2 xl:h-[48px] xl:w-[240px] ${
+                    className={`mb-3 mt-4 flex h-[40px] w-[144px] items-center justify-center rounded-lg bg-[#C2857D] text-center text-base font-semibold text-white focus:outline-none focus:ring-1 focus:ring-[#C2857D] focus:ring-offset-2 xl:h-[48px] xl:w-[240px] ${
                       isBtnDisabled ? 'cursor-not-allowed opacity-50' : ''
                     }`}
                   >
