@@ -80,7 +80,7 @@ export const metadata: Metadata = {
   ],
   openGraph: {
     title: 'YC Planner',
-    description: 'Haz realidad tu evento ideal.',
+    description: 'Wedding & Event Planner',
     url: 'https://ycplanner.com.ar',
     siteName: 'Yanina Corti - Wedding Planner en Argentina',
     images: [
