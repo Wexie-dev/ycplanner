@@ -136,7 +136,7 @@ function Contactme() {
             />
           </div>
 
-          {mutation.isSuccess || true ? (
+          {mutation.isSuccess ? (
             <Success />
           ) : (
             <div

@@ -36,3 +36,6 @@
     animation-duration: 2s;
     animation-iteration-count: infinite;
   }
+
+  @media (max-width: 767px) { ::-webkit-scrollbar { display: none; }}
+ 
