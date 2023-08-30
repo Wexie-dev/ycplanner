@@ -85,7 +85,7 @@ export const metadata: Metadata = {
     siteName: 'Yanina Corti - Wedding Planner en Argentina',
     images: [
       {
-        url: '/images/OPEN-GRAPH.png',
+        url: 'https://media.graphassets.com/Ovt4kJ9kRvqP9xwKg0lw',
         width: 600,
         height: 600,
       },

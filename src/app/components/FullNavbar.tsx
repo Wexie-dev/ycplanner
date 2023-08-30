@@ -11,9 +11,9 @@ function FullNavbar() {
     <nav className="duration-50 left-0 top-0 z-50 hidden items-center bg-white shadow-lg ease-in md:fixed md:flex md:h-[72px] md:w-full 2xl:h-[80px]">
       <div className="mr-0 px-4 md:ml-0 md:w-full xl:ml-[8%]">
         <div className="flex w-full items-center justify-between">
-          <div className="flex items-center">
+          <div className="ml-10 flex items-center">
             <Image width={matchedLG ? 48 : 72} height={matchedLG ? 40 : 64} src={logo} alt="Logo" />
-            <div className="flex w-full font-butler font-normal text-[#36373A] lg:text-sm 2xl:text-[20px]">
+            <div className="ml-4 flex w-full font-butler font-normal text-[#36373A] lg:text-sm 2xl:text-[20px]">
               Wedding & Event Planner
             </div>
           </div>

@@ -15,8 +15,6 @@ function Banner(bannerProps: BannerProps) {
   const mobileBannerImg = bannerProps.mobileBgImage?.url;
   const remoteBannerImg = isMobile ? mobileBannerImg : desktopBannerImg;
 
-  const useDefaultBannerImg = Boolean(remoteBannerImg);
-
   const handleScrollDown = () => {
     window.scrollBy(0, window.innerHeight);
   };
@@ -28,13 +26,22 @@ function Banner(bannerProps: BannerProps) {
     >
       <div className="relative h-screen w-screen overflow-hidden sm:h-[505px] md:h-[620px] xl:h-screen">
         {/* Background Image */}
-        <div
-          style={useDefaultBannerImg ? { backgroundImage: `url(${remoteBannerImg})` } : {}}
-          className={`lg:bg-to absolute left-0 top-0 h-full w-full ${
-            useDefaultBannerImg ? 'bg-mobileBanner lg:bg-banner' : null
-          } bg-cover bg-center sm:bg-tabletBanner`}
-        >
-          <div className="opacity-85 h-full bg-gradient-to-b from-transparent via-transparent to-zinc-800 lg:hidden"></div>
+        <div className={`absolute -z-10 h-full w-full`}>
+          <div className="relative h-full">
+            <Image
+              alt="banner image"
+              src={remoteBannerImg ?? ''}
+              layout="fill"
+              objectFit="cover"
+              quality={100}
+              priority
+              className="z-0"
+            />
+            <div
+              className="z-1 opacity-85 absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-zinc-800 lg:hidden"
+              style={{ mixBlendMode: 'multiply' }}
+            ></div>
+          </div>
         </div>
 
         {/* Sticky Navbar */}
