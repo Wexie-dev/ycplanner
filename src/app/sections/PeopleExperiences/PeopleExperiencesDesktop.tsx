@@ -94,6 +94,7 @@ function PeopleExperiencesDesktop(props: { testimonies: Testimony[] }) {
       <div className="flex justify-center gap-7">
         {testimonies.map((_, index) => (
           <button
+            aria-label={`testimony-button ${index}`}
             key={index}
             className={`mb-2 mt-10 h-4 w-4 rounded-full xl:mt-16 2xl:mt-32 3xl:mt-16 ${
               selectedButton === index ? 'bg-[#C2857D]' : 'bg-[#D9D9D9]'

@@ -30,10 +30,12 @@ function Banner(bannerProps: BannerProps) {
           <div className="relative h-full">
             <Image
               alt="banner image"
-              src={remoteBannerImg ?? ''}
+              src={remoteBannerImg ?? '/images/sections/banner/banner.png'}
+              placeholder="blur"
+              blurDataURL="/images/sections/banner/banner-blur.png"
               layout="fill"
               objectFit="cover"
-              quality={100}
+              quality={90}
               priority
               className="z-0"
             />
