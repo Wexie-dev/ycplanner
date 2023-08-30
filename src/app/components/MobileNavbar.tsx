@@ -68,8 +68,13 @@ function MobileNavbar() {
   return (
     <div className="fixed z-50 h-16 w-full bg-white shadow-lg md:hidden">
       {/* Closed Menu */}
-      <button onClick={() => setIsOpen(!isOpen)}>
+      <button
+        aria-description="Open mobile navigation to the left"
+        aria-label="Mobile menu button"
+        onClick={() => setIsOpen(!isOpen)}
+      >
         <svg
+          aria-labelledby="mobile-menu"
           width="32"
           height="24"
           viewBox="0 0 32 24"
@@ -89,7 +94,7 @@ function MobileNavbar() {
         src={logo_navbar_closed}
         alt={'close-navbar'}
       />
-      <div className="fixed left-36 top-6 font-butler text-sm font-normal text-[#97989C]">
+      <div className="fixed left-36 top-6 font-butler text-sm font-normal text-[#757575]">
         Wedding & Event Planner
       </div>
 

@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useLayoutEffect } from 'react';
 
 const ScrollToTopButton = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -6,10 +6,10 @@ const ScrollToTopButton = () => {
 
   const handleScroll = () => {
     const scrollTop = window.scrollY;
-    setIsVisible(scrollTop > 100); // Show the button when scrolling down 100 pixels
+    setIsVisible(scrollTop > 700); // Show the button when scrolling down 100 pixels
 
     // To render a different color at footer
-    const footerHeight = document.getElementById('footer')?.offsetHeight ?? 320;
+    const footerHeight = document.getElementById('footer')?.offsetHeight ?? 300;
     const scrolledToBottom =
       window.innerHeight + window.scrollY >= document.body.offsetHeight - footerHeight;
 
@@ -24,7 +24,7 @@ const ScrollToTopButton = () => {
     });
   };
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     window.addEventListener('scroll', handleScroll);
     return () => {
       window.removeEventListener('scroll', handleScroll);
@@ -35,8 +35,11 @@ const ScrollToTopButton = () => {
     <button
       className={`p-2 text-white transition-opacity ${isVisible ? 'opacity-100' : 'opacity-0'}`}
       onClick={scrollToTop}
+      aria-description="Scroll to the top of the page"
+      aria-label="Scroll to top button"
     >
       <svg
+        aria-labelledby="Scroll to top SVG"
         width="40"
         height="40"
         viewBox="0 0 40 40"

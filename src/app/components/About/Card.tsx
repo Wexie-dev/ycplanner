@@ -32,9 +32,7 @@ function Card({ image, body, subtitle, keyPoints }: AboutCardProps) {
           leaveTo="h-0 opacity-0"
         >
           <div className="my-10">
-            <h5 className="text-center font-anguilla text-[32px] text-typographyPink ">
-              {subtitle}
-            </h5>
+            <h5 className="text-left font-anguilla text-[32px] text-typographyPink ">{subtitle}</h5>
           </div>
           {keyPoints.map((keyPoint) => (
             <p className="mb-5 text-left text-base text-typographyGray">
@@ -53,6 +51,7 @@ function Card({ image, body, subtitle, keyPoints }: AboutCardProps) {
             {isExpanded ? 'Ocultar' : 'Leer Más'}
           </span>
           <img
+            alt="arrow down"
             className={`ml-3 mt-[18px] ${isExpanded ? 'rotate-180 transform' : ''}`}
             src="/images/sections/about/down-chevron.svg"
           />

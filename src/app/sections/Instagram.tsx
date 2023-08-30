@@ -3,9 +3,16 @@ import { InstagramPhoto } from '@/services/instagram';
 import { useInstagramPhotos } from '@/hooks/useInstagramPhotos';
 import Image from 'next/image';
 import WarningImg from '../../../public/images/warning.png';
-import React from 'react';
+import React, { useRef } from 'react';
+import IgWidget from '../components/IgWidget';
+import useElementVisibility from '@/hooks/useElementVisibility';
+import { Transition } from '@headlessui/react';
+import Title from '../components/Title';
 
 const InstagramPhotos = () => {
+  const igRef = useRef(null);
+  const isVisible = useElementVisibility(igRef);
+
   const { data: photos, isLoading, error } = useInstagramPhotos();
 
   const LoadingState = () => {
@@ -31,44 +38,56 @@ const InstagramPhotos = () => {
 
   const Content = () => (
     <>
-      <div className="mb-[24px] mt-[24px] flex justify-center sm:mb-[32px] sm:mt-[32px] xl:mb-[80px] 2xl:mb-[100px] 2xl:mt-[56px] 3xl:mb-[123px]">
-        <h4 className="font-butler text-[24px] font-normal text-[#36373A] sm:text-[26px] xl:text-4xl 2xl:text-5xl">
-          Seguime en Instagram
-        </h4>
+      <div className="mb-[24px] mt-[24px] flex justify-center sm:mb-[8px] sm:mt-[32px] xl:mb-[16px] 2xl:mt-[56px]">
+        <Title>Seguime en Instagram</Title>
       </div>
-      <div className="grid grid-cols-2 place-items-center gap-8 place-self-center md:grid-cols-3 xl:grid-cols-4">
-        {photos!.map((photo: InstagramPhoto) => (
-          <a
-            key={photo.id}
-            href={photo.permalink}
-            className="23xl:w-[424px] relative h-[155px] w-[155px] md:h-[218px] md:w-[218px] lg:h-[272px] lg:w-[272px] xl:h-[296px] xl:w-[296px] 2xl:h-[360px] 2xl:w-[360px] 3xl:h-[424px]"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            {photo.media_type === 'VIDEO' ? (
-              <video controls className="h-full w-full" controlsList="nodownload">
-                <source src={photo.media_url} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-            ) : (
-              <Image
-                src={photo.media_url}
-                alt={`Instagram Post ${photo.id}`}
-                className="rounded object-cover"
-                fill
-                priority
-                quality={100}
-              />
-            )}
-          </a>
-        ))}
+      <IgWidget />
+      <div id="ig-gallery">
+        <Transition
+          show={isVisible}
+          enter="transition-opacity duration-500 ease-out"
+          enterFrom="opacity-0"
+          enterTo="opacity-100"
+          leave="transition-opacity duration-300 ease-in"
+          leaveFrom="opacity-100"
+          leaveTo="opacity-0"
+        >
+          <div className="grid grid-cols-2 place-items-center gap-8 place-self-center md:grid-cols-3 xl:grid-cols-4">
+            {photos!.map((photo: InstagramPhoto) => (
+              <a
+                key={photo.id}
+                href={photo.permalink}
+                className="23xl:w-[424px] relative h-[155px] w-[155px] md:h-[218px] md:w-[218px] lg:h-[272px] lg:w-[272px] xl:h-[296px] xl:w-[296px] 2xl:h-[360px] 2xl:w-[360px] 3xl:h-[424px]"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {photo.media_type === 'VIDEO' ? (
+                  <video controls className="h-full w-full" controlsList="nodownload">
+                    <source src={photo.media_url} type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                ) : (
+                  <Image
+                    src={photo.media_url}
+                    alt={`Instagram Post ${photo.id}`}
+                    className="rounded object-cover"
+                    fill
+                    priority
+                    quality={100}
+                  />
+                )}
+              </a>
+            ))}
+          </div>
+        </Transition>
       </div>
     </>
   );
 
   return (
     <section
-      className="mb-[102px] mt-8 h-auto px-4 sm:mt-16 lg:px-8 lg:max-xl:mt-44 xl:mb-[250px] xl:mt-[223px] xl:px-16 3xl:px-[75px]"
+      ref={igRef}
+      className="mb-[102px] mt-8 h-auto px-5 sm:mt-16 lg:px-8 lg:max-xl:mt-44 xl:mb-[128px] xl:mt-[150px] xl:px-16 3xl:mb-[285px] 3xl:px-[75px]"
       id="instagram"
     >
       {isLoading ? <LoadingState /> : error ? <ErrorState /> : <Content />}

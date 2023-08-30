@@ -77,6 +77,6 @@ export interface Testimony {
   image: ImageContent;
   title: string;
   description: string;
-  name: string;
+  names: string;
   date: string;
 }

@@ -1,32 +1,20 @@
 import { Testimony } from '@/types';
+import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
 import React from 'react';
+import PeopleExperiencesMobile from './PeopleExperiences/PeopleExperiencesMobile';
+import PeopleExperiencesDesktop from './PeopleExperiences/PeopleExperiencesDesktop';
 
 function PeopleExperiences(props: { testimonies: Testimony[] }) {
-  const title = props.testimonies[0].title;
-  console.log(title);
+  const isMobile = useMediaQuery(mediaQueries.mobile);
+  const isIpad = useMediaQuery(mediaQueries.iPad);
 
   return (
-    <section className="h-full w-full pt-20" id="testimonies">
-      <div className="flex flex-col">
-        <div className="flex justify-center font-butler text-2xl font-normal">
-          Experiencias Compartidas
-        </div>
-        <div className="mr-4 mt-4 flex justify-end">
-          <p>Desliza</p>
-        </div>
-        {/* Imagen */}
-        <div className="flex justify-center">
-          <div className="mt-3 flex h-[200px] w-[200px] items-center justify-center border-2 border-typographyPink">
-            Imagen
-          </div>
-        </div>
-        {/* Card */}
-        <div className="flex justify-center">
-          <div className="mt-2 flex h-[200px] w-[200px] items-center justify-center border-2 border-typographyPink">
-            Card
-          </div>
-        </div>
-      </div>
+    <section className="mb-5 h-auto w-full pt-24" id="testimonies">
+      {isMobile || isIpad ? (
+        <PeopleExperiencesMobile testimonies={props.testimonies} />
+      ) : (
+        <PeopleExperiencesDesktop testimonies={props.testimonies} />
+      )}
     </section>
   );
 }

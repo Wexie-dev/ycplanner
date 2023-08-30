@@ -5,3 +5,37 @@
 @media (prefers-color-scheme: dark) {
   
 }
+
+@keyframes fade-in {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+  
+  .fade-in {
+    animation: fade-in 0.5s ease-in-out;
+  }
+
+  @keyframes custom-pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.15);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  
+  .custom-pulse-animation {
+    animation-name: custom-pulse;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+  }
+
+  @media (max-width: 767px) { ::-webkit-scrollbar { display: none; }}
+ 

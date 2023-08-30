@@ -1,6 +1,7 @@
 import React from 'react';
 import { GalleryProps } from '@/types';
 import useMediaQuery, { mediaQueries } from '@/hooks/useMediaQueries';
+import Title from '../components/Title';
 
 function Gallery(galleryProps: GalleryProps) {
   const isMobile = useMediaQuery(mediaQueries.mobile);
@@ -11,13 +12,11 @@ function Gallery(galleryProps: GalleryProps) {
   return (
     <section id="gallery" className="h-full w-full pt-16 lg:pt-20">
       <div className="mb-[24px] flex justify-center sm:mb-[32px] sm:mt-[32px] 2xl:mb-[56px] 2xl:mt-[56px]">
-        <div className="font-butler text-[24px] font-normal text-[#36373A] sm:text-[26px] 2xl:text-5xl">
-          {title}
-        </div>
+        <Title>{title}</Title>
       </div>
       <div className="h-full w-full">
-        <div className="mx-[10px] h-[1592px] sm:mx-[24px] sm:h-[424px] 2xl:mx-[72px] 2xl:h-[776px]">
-          <div className="flex h-full w-full flex-col justify-center gap-[8px] sm:flex-row sm:gap-[8px] 2xl:gap-[16px]">
+        <div className="mx-[10px] sm:mx-[24px] 2xl:mx-[72px]">
+          <div className="flex w-full flex-col justify-center gap-[8px] sm:flex-row sm:gap-[8px] 2xl:gap-[16px]">
             <div className="mx-auto flex-col sm:mx-0">
               <img
                 src={isMobile ? mobileImages[0].url : images[0].url}
