@@ -1,9 +1,9 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useState, useRef } from 'react';
 import Image from 'next/image';
 import { useFormik } from 'formik';
 import { useMutation } from 'react-query';
 import * as Yup from 'yup';
-import DatePicker from 'react-datepicker';
+import DatePicker, { ReactDatePickerProps } from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import { ContactMePayload, postContactMe } from '@/services/contact';
 import '../sections/DatePicker.css';
@@ -134,6 +134,16 @@ function Contactme() {
     }
   };
 
+  const datepickerRef = useRef<DatePicker | null>(null);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const handleIconClick = () => {
+    setIsOpen(true);
+    if (datepickerRef.current) {
+      datepickerRef.current.setFocus();
+    }
+  };
+
   return (
     <section id="contactMe" className="w-full pt-16">
       <div className="flex flex-col items-center bg-[#D7D8DB] lg:mt-28 lg:h-[530px] lg:flex-row-reverse lg:justify-around xl:h-[640px]">
@@ -239,6 +249,7 @@ function Contactme() {
                 </div>
                 <div className="relative">
                   <DatePicker
+                    ref={datepickerRef}
                     selected={formik.values.date}
                     onChange={(date) => formik.setFieldValue('date', date)}
                     onBlur={() => formik.setFieldTouched('date', true)}
@@ -246,7 +257,7 @@ function Contactme() {
                     placeholderText="Fecha estimada del evento*"
                     className="focus:shadow-outline-[#C2857D] block w-full appearance-none border-b-2 border-[#C2857D] pb-4 pl-0 text-base font-semibold leading-normal placeholder-[#5B5A5A] focus:outline-none 2xl:text-lg"
                     wrapperClassName="w-full"
-                    calendarClassName="my-calendar"
+                    calendarClassName={isOpen ? 'my-calendar' : 'my-calendar hidden'}
                     minDate={new Date()}
                   />
                   {formik.errors.date && formik.touched.date ? (
@@ -258,6 +269,7 @@ function Contactme() {
                     src={calendar}
                     alt="Calendario"
                     className="absolute -right-1 top-1/2 mr-2 -translate-y-6 transform"
+                    onClick={handleIconClick}
                   />
                 </div>
                 <div>
