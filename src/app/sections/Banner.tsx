@@ -33,7 +33,7 @@ function Banner(bannerProps: BannerProps) {
               src={remoteBannerImg ?? '/images/sections/banner/banner.png'}
               placeholder="blur"
               blurDataURL="/images/sections/banner/banner-blur.png"
-              layout="fill"
+              fill
               objectFit="cover"
               quality={90}
               priority

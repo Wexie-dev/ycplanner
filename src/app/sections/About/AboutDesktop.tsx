@@ -23,7 +23,8 @@ export default function AboutDesktop({
             <Image
               src={image?.url}
               alt={image.fileName}
-              fill
+              width={584}
+              height={576}
               objectFit="cover"
               className="rounded-sm"
               sizes="(max-width: 768px) 100vw, 50vw"
