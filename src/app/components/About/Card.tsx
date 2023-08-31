@@ -1,6 +1,7 @@
 import { ImageContent, KeyPoints } from '@/types';
 import { Transition } from '@headlessui/react';
 import React, { useState } from 'react';
+import Image from 'next/image';
 
 export type AboutCardProps = {
   image: ImageContent;
@@ -15,8 +16,11 @@ function Card({ image, body, subtitle, keyPoints }: AboutCardProps) {
     setIsExpanded(!isExpanded);
   };
   return (
-    <div className="mx-auto max-w-md overflow-hidden rounded-lg bg-white shadow-xl">
-      <img className="h-74 w-full object-cover" src={image.url} alt={image.fileName} />
+    <div className="mx-auto w-11/12 max-w-md overflow-hidden rounded-lg bg-white shadow-xl">
+      <div className="relative flex h-[296px] w-full justify-center">
+        <Image fill objectFit="cover" src={image.url} alt={image.fileName} />
+      </div>
+
       <div className="p-6">
         <pre
           className="leading-relaxe my-2 whitespace-pre-wrap font-sans"
